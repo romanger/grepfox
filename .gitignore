@@ -34,3 +34,8 @@ payload-types.ts.bak
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Playwright MCP local cache + screenshots
+.playwright-mcp/
+*-desktop.png
+*-mobile.png
