@@ -1,0 +1,40 @@
+{
+  "name": "grepfox-site",
+  "version": "0.1.0",
+  "description": "Grepfox — technical maintenance services. Payload 3 + Next.js 15.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "migrate": "payload migrate",
+    "migrate:create": "payload migrate:create",
+    "seed": "payload run src/seed/index.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "^3.29.0",
+    "@payloadcms/next": "^3.29.0",
+    "@payloadcms/richtext-lexical": "^3.29.0",
+    "@payloadcms/ui": "^3.29.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.9.0",
+    "next": "15.4.11",
+    "payload": "^3.29.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.20.2"
+  }
+}

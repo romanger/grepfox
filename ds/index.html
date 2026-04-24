@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grepfox Design System</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/icons.js"></script>
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PART 1 — FOUNDATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <header class="page-header">
+    <div>
+      <div class="mono-label mono-label--accent">Grepfox · Design System</div>
+      <h1 class="page-header__title" style="font-size:180px">FOUNDATIONS.</h1>
+      <p style="font-size:17px; color:var(--gf-subtle); margin-top:16px; max-width:680px">
+        The atomic layer — color, type, spacing, icons, motion. Everything downstream (components, layouts, the site) inherits from here. Dark-first. Orange as hazard.
+      </p>
+    </div>
+    <div class="page-header__meta">
+      GREPFOX / DS / B<br>v0.2 · 2026.04<br>STATUS: ACTIVE
+    </div>
+  </header>
+
+  <!-- 01 · COLOR ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 01</div>
+    <div>
+      <h2 class="section-head__title">COLOR</h2>
+      <p class="section-head__sub">Five surfaces, one hazard accent, three data-supporting hues.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="color-grid color-grid--6">
+      <div class="color-swatch" style="background:#0A0A0A; color:var(--gf-bone)">
+        <div><div class="color-swatch__name">VOID</div><div class="color-swatch__role">bg default</div></div>
+        <div class="color-swatch__hex">#0A0A0A</div>
+      </div>
+      <div class="color-swatch" style="background:#121212; color:var(--gf-bone)">
+        <div><div class="color-swatch__name">SURFACE</div><div class="color-swatch__role">cards</div></div>
+        <div class="color-swatch__hex">#121212</div>
+      </div>
+      <div class="color-swatch" style="background:#181818; color:var(--gf-bone)">
+        <div><div class="color-swatch__name">SURFACE 2</div><div class="color-swatch__role">elevated</div></div>
+        <div class="color-swatch__hex">#181818</div>
+      </div>
+      <div class="color-swatch" style="background:#262626; color:var(--gf-bone)">
+        <div><div class="color-swatch__name">RULE</div><div class="color-swatch__role">dividers</div></div>
+        <div class="color-swatch__hex">#262626</div>
+      </div>
+      <div class="color-swatch" style="background:#6B6B6B; color:var(--gf-void)">
+        <div><div class="color-swatch__name">DIM</div><div class="color-swatch__role">meta text</div></div>
+        <div class="color-swatch__hex">#6B6B6B</div>
+      </div>
+      <div class="color-swatch" style="background:#EBE8E3; color:var(--gf-void)">
+        <div><div class="color-swatch__name">BONE</div><div class="color-swatch__role">body text</div></div>
+        <div class="color-swatch__hex">#EBE8E3</div>
+      </div>
+    </div>
+    <div class="color-grid color-grid--4" style="margin-top:16px">
+      <div class="color-swatch" style="background:#FF5A1F; color:var(--gf-void)">
+        <div><div class="color-swatch__name">HAZARD</div><div class="color-swatch__role">primary accent</div></div>
+        <div class="color-swatch__hex">#FF5A1F</div>
+      </div>
+      <div class="color-swatch" style="background:#8A9478; color:var(--gf-void)">
+        <div><div class="color-swatch__name">SAGE</div><div class="color-swatch__role">ok / shipped</div></div>
+        <div class="color-swatch__hex">#8A9478</div>
+      </div>
+      <div class="color-swatch" style="background:#C9A46A; color:var(--gf-void)">
+        <div><div class="color-swatch__name">OCHRE</div><div class="color-swatch__role">attn / in-progress</div></div>
+        <div class="color-swatch__hex">#C9A46A</div>
+      </div>
+      <div class="color-swatch" style="background:#7A8794; color:var(--gf-void)">
+        <div><div class="color-swatch__name">SLATE</div><div class="color-swatch__role">info / archive</div></div>
+        <div class="color-swatch__hex">#7A8794</div>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <div class="hazard-rule"></div>
+      <div class="mono-label" style="margin-top:8px; letter-spacing:0.1em">HAZARD STRIPE · SECTION DIVIDER · USED SPARINGLY</div>
+    </div>
+  </div>
+
+  <!-- 02 · TYPE ─────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 02</div>
+    <div>
+      <h2 class="section-head__title">TYPE</h2>
+      <p class="section-head__sub">Three families. Display for scale, body for sentences, mono for coordinates.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <!-- Display -->
+    <div class="type-specimen">
+      <div class="mono-label">DISPLAY / 700<br>Space Grotesk</div>
+      <div style="font-family:var(--ff-display); font-weight:700; font-size:180px; letter-spacing:-0.05em; line-height:0.85">
+        Aa <span style="color:var(--gf-accent)">Kk</span>
+      </div>
+      <div class="type-specimen__meta">180 / 85%<br>tracking -5%</div>
+    </div>
+    <!-- Type Ladder -->
+    <div style="border-top:1px solid var(--gf-rule); padding:24px 0">
+      <div class="mono-label" style="margin-bottom:20px">TYPE LADDER</div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">DISPLAY / MEGA</div>
+        <div class="type-ladder-sample" style="font-size:180px; font-weight:700; letter-spacing:-0.03em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">180px · 700</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">DISPLAY / LARGE</div>
+        <div class="type-ladder-sample" style="font-size:120px; font-weight:700; letter-spacing:-0.03em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">120px · 700</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">HEADING / 01</div>
+        <div class="type-ladder-sample" style="font-size:72px; font-weight:700; letter-spacing:-0.03em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">72px · 700</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">HEADING / 02</div>
+        <div class="type-ladder-sample" style="font-size:48px; font-weight:600; letter-spacing:-0.01em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">48px · 600</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">HEADING / 03</div>
+        <div class="type-ladder-sample" style="font-size:32px; font-weight:600; letter-spacing:-0.01em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">32px · 600</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">LEAD</div>
+        <div class="type-ladder-sample" style="font-size:22px; font-weight:500; letter-spacing:-0.01em">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">22px · 500</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">BODY</div>
+        <div class="type-ladder-sample" style="font-size:16px; font-weight:400">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">16px · 400</div>
+      </div>
+      <div class="type-ladder-row">
+        <div class="type-ladder-label">SMALL</div>
+        <div class="type-ladder-sample" style="font-size:13px; font-weight:400">We ship the boring stuff.</div>
+        <div class="type-ladder-spec">13px · 400</div>
+      </div>
+    </div>
+    <!-- Body -->
+    <div class="type-specimen">
+      <div class="mono-label">BODY / 400<br>Inter</div>
+      <div style="font-size:20px; line-height:1.55; max-width:760px">
+        Websites, integrations, AI agents, dashboards. We sit between your marketing tools and your goals — fixing the duct tape, shipping the thing your in-house team couldn't get to this quarter, and keeping it running after.
+      </div>
+      <div class="type-specimen__meta">20 / 155%</div>
+    </div>
+    <!-- Mono -->
+    <div class="type-specimen">
+      <div class="mono-label">MONO / 500<br>JetBrains Mono</div>
+      <div style="font-family:var(--ff-mono); font-size:14px; line-height:1.75">
+        <div style="color:var(--gf-dim)"># services/ai-agents.md</div>
+        kind:   pilot<br>
+        stack:  openai + langchain + supabase<br>
+        price:  $5k–$20k<br>
+        status: <span style="color:var(--gf-ok)">accepting</span>
+      </div>
+      <div class="type-specimen__meta">14 / 175%</div>
+    </div>
+  </div>
+
+  <!-- 03 · GRID & SPACE ─────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 03</div>
+    <div>
+      <h2 class="section-head__title">GRID & SPACE</h2>
+      <p class="section-head__sub">12-column, 4px base, 56px gutter at desktop.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="grid-demo" id="grid-demo"></div>
+    <div class="spacing-demo" id="spacing-demo"></div>
+  </div>
+
+  <!-- 04 · ICONS ─────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 04</div>
+    <div>
+      <h2 class="section-head__title">ICONS</h2>
+      <p class="section-head__sub">Lucide — 2px stroke, square caps, 24px grid. 64 glyphs. Always currentColor.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="icon-grid" id="icon-grid"></div>
+    <div class="icon-spec-bar" id="icon-spec-bar"></div>
+  </div>
+
+  <!-- 05 · MOTION ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 05</div>
+    <div>
+      <h2 class="section-head__title">MOTION</h2>
+      <p class="section-head__sub">Everything either snaps (0ms) or cuts (120–180ms ease-out). No bouncing.</p>
+    </div>
+  </div>
+  <div class="section-body" style="padding-bottom:48px">
+    <div class="motion-grid">
+      <div class="motion-card">
+        <div class="mono-label mono-label--accent">SNAP · 0ms</div>
+        <div style="font-size:16px; margin-top:14px">State changes, tab switches, focus</div>
+        <div class="motion-card__bar"><div class="motion-card__fill" style="--dur:0.4s"></div></div>
+      </div>
+      <div class="motion-card">
+        <div class="mono-label mono-label--accent">CUT · 140ms</div>
+        <div style="font-size:16px; margin-top:14px">Hover, reveal, panel slide</div>
+        <div class="motion-card__bar"><div class="motion-card__fill" style="--dur:0.7s"></div></div>
+      </div>
+      <div class="motion-card">
+        <div class="mono-label mono-label--accent">SLIDE · 220ms</div>
+        <div style="font-size:16px; margin-top:14px">Page transitions, drawer, modal</div>
+        <div class="motion-card__bar"><div class="motion-card__fill" style="--dur:1.1s"></div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 06 · LOGO ──────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 06</div>
+    <div>
+      <h2 class="section-head__title">LOGO</h2>
+      <p class="section-head__sub">Fox badge mark + GREPFOX wordmark. Five variants for different surfaces.</p>
+    </div>
+  </div>
+  <div class="section-body" style="padding-bottom:48px" id="logo-section"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PART 2 — COMPONENTS
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="part-divider"></div>
+
+  <div class="part-header">
+    <div class="mono-label mono-label--accent">Grepfox · DS · Part 2</div>
+    <h2 class="part-header__title">COMPONENTS.</h2>
+  </div>
+
+  <!-- 06 · BUTTONS ───────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 07</div>
+    <div>
+      <h2 class="section-head__title">BUTTONS</h2>
+      <p class="section-head__sub">Five weights. Uppercase mono-adjacent labels. Square edges.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px">
+      <button class="btn btn--primary">START A PROJECT <span id="btn-arrow-1"></span></button>
+      <button class="btn btn--secondary"><span id="btn-cal"></span> BOOK A CALL</button>
+      <button class="btn btn--outline"><span id="btn-folder"></span> SEE WORK</button>
+      <button class="btn btn--outline-accent"><span id="btn-bot"></span> AI AGENTS</button>
+      <button class="btn btn--ghost"><span id="btn-dl"></span> DOWNLOAD</button>
+      <button class="btn btn--disabled"><span id="btn-lock"></span> SOON · SAAS 001</button>
+    </div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center">
+      <button class="btn btn--primary btn--lg">LARGE <span id="btn-arrow-lg"></span></button>
+      <button class="btn btn--primary">DEFAULT <span id="btn-arrow-md"></span></button>
+      <button class="btn btn--primary btn--sm">SMALL <span id="btn-arrow-sm"></span></button>
+      <button class="btn btn--icon btn--primary" title="Add"><span id="btn-ic-plus"></span></button>
+      <button class="btn btn--icon btn--ghost" title="Search"><span id="btn-ic-search"></span></button>
+      <button class="btn btn--icon btn--ghost" title="Settings"><span id="btn-ic-settings"></span></button>
+      <button class="btn btn--icon btn--outline" title="More"><span id="btn-ic-more"></span></button>
+    </div>
+  </div>
+
+  <!-- 08 · INPUTS ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 08</div>
+    <div>
+      <h2 class="section-head__title">INPUTS</h2>
+      <p class="section-head__sub">Monospace labels above fields. Underline on focus, hazard on error.</p>
+    </div>
+  </div>
+  <div class="section-body" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px">
+    <div class="input-group">
+      <label class="mono-label">COMPANY</label>
+      <input class="input" value="Acme Growth" readonly>
+    </div>
+    <div class="input-group">
+      <label class="mono-label">EMAIL · FOCUS</label>
+      <input class="input" value="dani@acme.com" style="border-color:var(--gf-accent)">
+      <div style="font-family:var(--ff-mono); font-size:11px; color:var(--gf-dim)">→ WE'LL NEVER SHARE THIS</div>
+    </div>
+    <div class="input-group">
+      <label class="mono-label mono-label--accent">BUDGET · ERROR</label>
+      <input class="input input--error" value="">
+      <div style="font-family:var(--ff-mono); font-size:11px; color:var(--gf-accent)">× REQUIRED · PICK A RANGE</div>
+    </div>
+    <div class="input-group" style="grid-column:span 3">
+      <label class="mono-label">BRIEF</label>
+      <textarea class="input">Replace the HubSpot form-and-image landing with a real marketing site. Needs to handle product launches, case studies, and a job board. Stack open.</textarea>
+    </div>
+    <div class="input-group">
+      <label class="mono-label">SERVICE</label>
+      <div class="select-wrap">
+        <span>Web platforms</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gf-dim)" stroke-width="2"><path d="M6 9 L12 15 L18 9"/></svg>
+      </div>
+    </div>
+    <div class="input-group">
+      <label class="mono-label">TOGGLE</label>
+      <div style="display:flex; gap:24px; align-items:center">
+        <div class="toggle toggle--on"><div class="toggle__knob"></div></div>
+        <div class="toggle toggle--off"><div class="toggle__knob"></div></div>
+      </div>
+    </div>
+    <div class="input-group">
+      <label class="mono-label">CHECKBOX / RADIO</label>
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <label class="checkbox">
+          <div class="checkbox__box">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--gf-void)" stroke-width="3"><path d="M3 8 L7 12 L13 4"/></svg>
+          </div>
+          Need retainer too
+        </label>
+        <label class="checkbox">
+          <div class="radio__dot"><div class="radio__dot-inner"></div></div>
+          $10k — $25k
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 · BADGES & TAGS ─────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 08</div>
+    <div>
+      <h2 class="section-head__title">BADGES & TAGS</h2>
+      <p class="section-head__sub">Status chips. Numeric counters. Filter tags.</p>
+    </div>
+  </div>
+  <div class="section-body" style="display:flex; flex-direction:column; gap:18px">
+    <div style="display:flex; gap:10px; flex-wrap:wrap" id="badges-row"></div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap" id="tags-row"></div>
+    <div style="display:flex; gap:12px; align-items:center" id="counters-row"></div>
+  </div>
+
+  <!-- 09 · TABS & SEGMENTS ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 09</div>
+    <div>
+      <h2 class="section-head__title">TABS & SEGMENTS</h2>
+      <p class="section-head__sub">Hairline row, hazard underline on active.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="tabs" id="tabs-row"></div>
+    <div class="segments" style="margin-top:24px" id="segments-row"></div>
+  </div>
+
+  <!-- 10 · ACCORDION ─────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 10</div>
+    <div>
+      <h2 class="section-head__title">ACCORDION</h2>
+      <p class="section-head__sub">Indexed rows, hazard prefix on open.</p>
+    </div>
+  </div>
+  <div class="accordion" id="accordion"></div>
+
+  <!-- 11 · TABLE ──────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 11</div>
+    <div>
+      <h2 class="section-head__title">TABLE</h2>
+      <p class="section-head__sub">Dense monospace data. Hover row highlight.</p>
+    </div>
+  </div>
+  <div class="section-body">
+    <div class="data-table" id="data-table"></div>
+  </div>
+
+  <!-- 12 · ALERTS & TOASTS ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 12</div>
+    <div>
+      <h2 class="section-head__title">ALERTS & TOASTS</h2>
+    </div>
+  </div>
+  <div class="section-body" style="display:grid; grid-template-columns:1fr 1fr; gap:20px" id="alerts-grid"></div>
+
+  <!-- 13 · NAVIGATION ────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 13</div>
+    <div>
+      <h2 class="section-head__title">NAVIGATION</h2>
+      <p class="section-head__sub">Top nav, breadcrumbs, sidebar.</p>
+    </div>
+  </div>
+  <div class="section-body" id="nav-section"></div>
+
+  <!-- 14 · FOOTER ────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 14</div>
+    <div>
+      <h2 class="section-head__title">FOOTER</h2>
+    </div>
+  </div>
+  <div class="section-body" style="padding-bottom:64px" id="footer-section"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PART 3 — LAYOUTS
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="part-divider"></div>
+
+  <div class="part-header">
+    <div class="mono-label mono-label--accent">Grepfox · DS · Part 3</div>
+    <h2 class="part-header__title">LAYOUTS.</h2>
+  </div>
+
+  <!-- 15 · HERO SPLIT ────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 15</div>
+    <div><h2 class="section-head__title">HERO · SPLIT + IMAGE</h2></div>
+  </div>
+  <div class="section-body" id="hero-split-section"></div>
+
+  <!-- 16 · HERO FULL-BLEED ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 16</div>
+    <div><h2 class="section-head__title">HERO · FULL-BLEED IMAGE</h2></div>
+  </div>
+  <div class="section-body" id="hero-fullbleed-section"></div>
+
+  <!-- 17 · HERO TYPE ONLY ────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 17</div>
+    <div><h2 class="section-head__title">HERO · TYPE ONLY</h2></div>
+  </div>
+  <div class="section-body" id="hero-type-section"></div>
+
+  <!-- 18 · FEATURE GRID ──────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 18</div>
+    <div><h2 class="section-head__title">FEATURE GRID · IMAGE TILES</h2></div>
+  </div>
+  <div class="section-body" id="feature-grid-section"></div>
+
+  <!-- 19 · NUMBERS BLOCK ─────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 19</div>
+    <div><h2 class="section-head__title">NUMBERS BLOCK</h2></div>
+  </div>
+  <div class="section-body" id="numbers-section"></div>
+
+  <!-- 20 · PROCESS TIMELINE ──────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 20</div>
+    <div><h2 class="section-head__title">PROCESS TIMELINE</h2></div>
+  </div>
+  <div class="section-body" id="timeline-section"></div>
+
+  <!-- 21 · PRICING TABLE ─────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 21</div>
+    <div><h2 class="section-head__title">PRICING TABLE</h2></div>
+  </div>
+  <div class="section-body" id="pricing-section"></div>
+
+  <!-- 22 · TESTIMONIAL ───────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 22</div>
+    <div><h2 class="section-head__title">TESTIMONIAL · PORTRAIT</h2></div>
+  </div>
+  <div class="section-body" id="testimonial-section"></div>
+
+  <!-- 23 · LOGO WALL ─────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 23</div>
+    <div><h2 class="section-head__title">LOGO WALL / TRUST</h2></div>
+  </div>
+  <div class="section-body" id="logowall-section"></div>
+
+  <!-- 24 · CTA ────────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 24</div>
+    <div><h2 class="section-head__title">CTA · CLOSING</h2></div>
+  </div>
+  <div class="section-body" style="padding-bottom:64px" id="cta-section"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PART 4 — IMAGERY
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="part-divider"></div>
+
+  <div class="part-header">
+    <div class="mono-label mono-label--accent">Grepfox · DS · Part 4</div>
+    <h2 class="part-header__title">IMAGERY.</h2>
+    <p class="part-header__sub">How images behave in the system. Placeholders show the stripe treatment — real photos will be grainy, high-contrast, documentary. Orange only appears in UI, never tinting the photo.</p>
+  </div>
+
+  <!-- 25 · TEXT ON IMAGE ──────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 25</div>
+    <div><h2 class="section-head__title">TEXT ON IMAGE · GRADIENT PROTECTION</h2></div>
+  </div>
+  <div class="section-body" id="text-on-image-section"></div>
+
+  <!-- 26 · SPLIT IMAGE/TEXT ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 26</div>
+    <div><h2 class="section-head__title">SPLIT · IMAGE ↔ TEXT</h2></div>
+  </div>
+  <div class="section-body" id="split-section"></div>
+
+  <!-- 27 · MOSAIC ─────────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 27</div>
+    <div><h2 class="section-head__title">MOSAIC · ASYMMETRIC</h2></div>
+  </div>
+  <div class="section-body" id="mosaic-section"></div>
+
+  <!-- 28 · ACCENT BLOCK ──────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 28</div>
+    <div><h2 class="section-head__title">ACCENT BLOCK · TYPE + IMAGE</h2></div>
+  </div>
+  <div class="section-body" id="accent-block-section"></div>
+
+  <!-- 29 · CODE / TERMINAL ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 29</div>
+    <div><h2 class="section-head__title">CODE · TERMINAL MOMENT</h2></div>
+  </div>
+  <div class="section-body" id="code-section"></div>
+
+  <!-- 30 · MARQUEE ───────────────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 30</div>
+    <div><h2 class="section-head__title">MARQUEE / TICKER</h2></div>
+  </div>
+  <div class="section-body" id="marquee-section"></div>
+
+  <!-- 31 · IMAGE + STICKER ───────────────────────────────────── -->
+  <div class="section-head">
+    <div class="section-head__n">SECTION 31</div>
+    <div><h2 class="section-head__title">IMAGE · WITH STICKER</h2></div>
+  </div>
+  <div class="section-body" style="padding-bottom:64px" id="sticker-section"></div>
+
+</div><!-- /.frame -->
+
+<script src="js/icons.js"></script>
+<script>
+// ── Helper: image placeholder ───────────────────────────────
+function imgPlaceholder(label, h = 240, tone = 'dark', extraStyle = '') {
+  const base = tone === 'dark' ? '#121212' : tone === 'accent' ? '#c4420f' : tone === 'bone' ? '#2a2722' : '#181818';
+  const stripe = tone === 'dark' ? '#1c1c1c' : tone === 'accent' ? '#a53808' : tone === 'bone' ? '#322d26' : '#242424';
+  return `<div class="img-placeholder" style="width:100%; height:${typeof h === 'number' ? h + 'px' : h}; background:repeating-linear-gradient(135deg, ${base} 0 14px, ${stripe} 14px 28px); ${extraStyle}">
+    <div class="img-placeholder__label">IMG · ${label}</div>
+  </div>`;
+}
+
+// ── Grid & Spacing demo ─────────────────────────────────────
+(function() {
+  const gridEl = document.getElementById('grid-demo');
+  for (let i = 1; i <= 12; i++) {
+    gridEl.innerHTML += `<div class="grid-demo__col">${i}</div>`;
+  }
+  const spacingEl = document.getElementById('spacing-demo');
+  [4, 8, 12, 16, 24, 32, 48, 64].forEach(n => {
+    spacingEl.innerHTML += `<div class="spacing-demo__item"><div class="spacing-demo__bar" style="height:${n}px"></div><div class="spacing-demo__label">S-${n}</div></div>`;
+  });
+})();
+
+// ── Icon Grid ───────────────────────────────────────────────
+(function() {
+  const names = ['zap','bot','code','terminal','database','server','cpu','layers','grid','layout','plug','box','trending-up','bar-chart','pie-chart','target','sparkles','compass','shield','lock','mail','phone','map-pin','calendar','clock','user','users','message','file-text','folder','github','git-branch','arrow-right','arrow-up-right','check','plus','search','filter','settings','bell'];
+  const el = document.getElementById('icon-grid');
+  names.forEach(n => {
+    el.innerHTML += `<div class="icon-cell">${icon(n, 26)}<div class="icon-cell__name">${n}</div></div>`;
+  });
+  const specEl = document.getElementById('icon-spec-bar');
+  let sizesHtml = '<div class="mono-label">SIZES</div>';
+  [14, 16, 18, 22, 28, 36].forEach(s => {
+    sizesHtml += `<div class="icon-size-sample">${icon('zap', s)}<span class="icon-size-sample__label">${s}px</span></div>`;
+  });
+  sizesHtml += '<div style="flex:1"></div>';
+  sizesHtml += `<div style="display:flex; gap:20px">
+    <div style="color:var(--gf-bone)">${icon('arrow-right', 22)}</div>
+    <div style="color:var(--gf-accent)">${icon('arrow-right', 22)}</div>
+    <div style="color:var(--gf-dim)">${icon('arrow-right', 22)}</div>
+    <div style="color:var(--gf-ok)">${icon('arrow-right', 22)}</div>
+  </div>`;
+  specEl.innerHTML = sizesHtml;
+})();
+
+// ── Logo Section ────────────────────────────────────────────
+(function() {
+  const variants = [
+    ['badge', 'Primary', 'Original badge + heavy caps. The default.', 'var(--gf-void)'],
+    ['plate', 'Plate', 'Void plate, accent fox. Quieter, editorial.', 'var(--gf-void)'],
+    ['mono-light', 'Mono Light', 'Bone fox on transparent. For dark navs.', 'var(--gf-void)'],
+    ['mono-accent', 'Mono Accent', 'Accent fox on transparent. For light surfaces.', 'var(--gf-bone)'],
+    ['knockout', 'Knockout', 'Bone fox on accent plate. For orange CTAs.', 'var(--gf-accent)'],
+  ];
+  document.getElementById('logo-section').innerHTML = `
+    <!-- Lockups -->
+    <div style="display:grid; grid-template-columns:repeat(${variants.length}, 1fr); gap:0; border:1px solid var(--gf-rule)">
+      ${variants.map(([v, name, desc, bg]) => `
+        <div style="padding:32px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; background:${bg}; border-right:1px solid var(--gf-rule); min-height:200px">
+          ${logoLockup(22, v)}
+          <div style="text-align:center">
+            <div class="mono-label" style="color:${v === 'mono-accent' ? 'var(--gf-dim)' : v === 'knockout' ? 'var(--gf-void)' : 'var(--gf-accent)'}">${name.toUpperCase()}</div>
+            <div style="font-size:12px; color:${v === 'mono-accent' ? 'var(--gf-dim)' : v === 'knockout' ? 'var(--gf-void)' : 'var(--gf-subtle)'}; margin-top:6px; max-width:180px">${desc}</div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <!-- Mark only -->
+    <div style="margin-top:24px; display:flex; gap:24px; align-items:center; border:1px solid var(--gf-rule); padding:24px 32px; flex-wrap:wrap">
+      <div class="mono-label">MARK SIZES</div>
+      ${[24, 32, 40, 56, 80].map(s => `
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px">
+          ${logoMark(s, 'badge')}
+          <div class="mono-label">${s}px</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+})();
+
+// ── Button icons ────────────────────────────────────────────
+document.getElementById('btn-arrow-1').innerHTML = icon('arrow-right', 16);
+document.getElementById('btn-cal').innerHTML = icon('calendar', 16);
+document.getElementById('btn-folder').innerHTML = icon('folder', 16);
+document.getElementById('btn-bot').innerHTML = icon('bot', 16);
+document.getElementById('btn-dl').innerHTML = icon('download', 16);
+document.getElementById('btn-lock').innerHTML = icon('lock', 14);
+document.getElementById('btn-arrow-lg').innerHTML = icon('arrow-right', 20);
+document.getElementById('btn-arrow-md').innerHTML = icon('arrow-right', 16);
+document.getElementById('btn-arrow-sm').innerHTML = icon('arrow-right', 13);
+document.getElementById('btn-ic-plus').innerHTML = icon('plus', 20);
+document.getElementById('btn-ic-search').innerHTML = icon('search', 18);
+document.getElementById('btn-ic-settings').innerHTML = icon('settings', 18);
+document.getElementById('btn-ic-more').innerHTML = icon('more', 18);
+
+// ── Badges & Tags ───────────────────────────────────────────
+(function() {
+  const badges = [
+    ['ACCEPTING Q2', '--gf-ok', 'check'], ['IN PROGRESS', '--gf-accent', 'zap'],
+    ['BACKLOG', '--gf-warn', 'clock'], ['SHIPPED', '--gf-info', 'box'], ['DEPRECATED', '--gf-dim', 'x']
+  ];
+  document.getElementById('badges-row').innerHTML = badges.map(([t, c, ic]) =>
+    `<div class="badge" style="background:var(${c}); color:var(--gf-void)">${icon(ic, 12)}${t}</div>`
+  ).join('');
+
+  const tags = [['WEB PLATFORMS','layout'],['NEXT.JS','code'],['HUBSPOT','users'],['OPENAI','sparkles'],['MAKE','git-branch'],['SUPABASE','database'],['GA4','bar-chart'],['MIXPANEL','pie-chart']];
+  document.getElementById('tags-row').innerHTML = tags.map(([t, ic]) =>
+    `<div class="tag">${icon(ic, 12)}${t}</div>`
+  ).join('');
+
+  document.getElementById('counters-row').innerHTML = `
+    <div class="counter" style="background:var(--gf-accent); color:var(--gf-void)">12</div>
+    <div class="counter" style="background:var(--gf-surface); border:1px solid var(--gf-rule); color:var(--gf-bone)">NEW</div>
+    <div class="counter" style="border:1px solid var(--gf-accent); color:var(--gf-accent)">LIVE</div>
+    <div class="status-dot" style="color:var(--gf-ok)"><div class="status-dot__dot" style="background:var(--gf-ok)"></div>OPERATIONAL</div>
+  `;
+})();
+
+// ── Tabs & Segments ─────────────────────────────────────────
+(function() {
+  const tabs = [['OVERVIEW','eye'],['SCOPE','target'],['TIMELINE','calendar'],['PRICING','trending-up'],['FAQ','message']];
+  document.getElementById('tabs-row').innerHTML = tabs.map(([t, ic], i) =>
+    `<button class="tab${i === 1 ? ' tab--active' : ''}">${icon(ic, 13)}${t}</button>`
+  ).join('');
+
+  const segs = [['WEB','layout'],['INTEGRATIONS','plug'],['AI AGENTS','bot'],['DATA','database'],['RETAINER','shield']];
+  document.getElementById('segments-row').innerHTML = segs.map(([t, ic], i) =>
+    `<button class="segment${i === 2 ? ' segment--active' : ''}">${icon(ic, 13)}${t}</button>`
+  ).join('');
+})();
+
+// ── Accordion ───────────────────────────────────────────────
+(function() {
+  const items = [
+    ['How long does a typical engagement run?', '6 to 10 weeks for a website. Integrations land in 2 to 4. AI pilots close in 3.'],
+    ['Do you work with our existing team?', 'Yes — we embed with marketing, design, and engineering as needed. No hand-offs lost in translation.'],
+    ['What about ongoing support?', 'Retainer from 20 to 100 hours a month, SLA-backed, with a named lead engineer.'],
+    ['Where are you based?', 'US and Israel. We run on a 10-hour overlap window.'],
+  ];
+  document.getElementById('accordion').innerHTML = items.map(([q, a], i) =>
+    `<div class="accordion-item${i === 1 ? ' accordion-item--open' : ''}" data-index="${i}">
+      <div class="accordion-item__n">${String(i + 1).padStart(2, '0')}</div>
+      <div style="flex:1">
+        <div class="accordion-item__q">${q}</div>
+        <div class="accordion-item__a">${a}</div>
+      </div>
+      <div class="accordion-item__icon">${icon(i === 1 ? 'minus' : 'plus', 18)}</div>
+    </div>`
+  ).join('');
+})();
+
+// ── Table ───────────────────────────────────────────────────
+(function() {
+  const rows = [
+    ['014', 'Lead-routing automation', 'B2B SaaS', 'HubSpot · Make · Slack', '3 wk', 'SHIPPED', '--gf-ok'],
+    ['013', 'Next.js marketing site', 'Fintech agency', 'Next · Sanity', '8 wk', 'IN PROGRESS', '--gf-accent'],
+    ['012', 'AI knowledge bot', 'Healthtech', 'OpenAI · Supabase', '5 wk', 'SHIPPED', '--gf-ok'],
+    ['011', 'Reporting dashboard', 'E-commerce', 'Metabase · GA4', '2 wk', 'SHIPPED', '--gf-ok'],
+    ['010', 'Headless WP replatform', 'Media co.', 'WP · Next · Vercel', '10 wk', 'BACKLOG', '--gf-warn'],
+  ];
+  document.getElementById('data-table').innerHTML = `
+    <div class="data-table__head">
+      <div>NO</div><div>PROJECT</div><div class="col-meta">CLIENT</div><div class="col-stack">STACK</div><div class="col-duration">DURATION</div><div class="col-status" style="text-align:right">STATUS</div>
+    </div>
+    ${rows.map(([n, p, c, s, d, st, col]) => `
+      <div class="data-table__row">
+        <div class="col-n">${n}</div>
+        <div class="col-project">${p}</div>
+        <div class="col-meta">${c}</div>
+        <div class="col-stack">${s}</div>
+        <div class="col-duration col-meta">${d}</div>
+        <div class="col-status" style="text-align:right"><span class="status-pill" style="background:var(${col})">${st}</span></div>
+      </div>
+    `).join('')}
+  `;
+})();
+
+// ── Alerts ──────────────────────────────────────────────────
+(function() {
+  const alerts = [
+    ['HEADS UP', 'We moved to a new scheduling system. Book via the link below.', '--gf-info', 'info'],
+    ['SHIPPED', 'Your staging site is live at grepfox-acme.vercel.app.', '--gf-ok', 'check'],
+    ['ATTENTION', "We'll need SSO access by EOW to stay on timeline.", '--gf-warn', 'alert'],
+    ['FAILED', 'Zapier run #482 failed — retry queued, no data lost.', '--gf-accent', 'x'],
+  ];
+  document.getElementById('alerts-grid').innerHTML = alerts.map(([t, m, col, ic]) =>
+    `<div class="alert" style="border-left:4px solid var(${col})">
+      <div style="color:var(${col}); margin-top:2px">${icon(ic, 20)}</div>
+      <div>
+        <div class="alert__title" style="color:var(${col})">${t}</div>
+        <div class="alert__msg">${m}</div>
+      </div>
+    </div>`
+  ).join('');
+})();
+
+// ── Navigation ──────────────────────────────────────────────
+(function() {
+  const navLinks = [['SERVICES','layers'],['WORK','folder'],['NOTES','file-text'],['ABOUT','users']];
+  document.getElementById('nav-section').innerHTML = `
+    <!-- Top Nav -->
+    <div class="top-nav">
+      ${logoLockup(20)}
+      <div class="top-nav__links">
+        ${navLinks.map(([t, ic], i) => `<a href="#" class="top-nav__link${i === 2 ? ' top-nav__link--active' : ''}">${icon(ic, 13)}${t}</a>`).join('')}
+      </div>
+      <button class="btn btn--primary btn--sm">START ${icon('arrow-right', 13)}</button>
+    </div>
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="margin-top:24px">
+      <span>HOME</span>${icon('chevron-right', 12)}<span>WORK</span>${icon('chevron-right', 12)}<span class="breadcrumbs__current">LEAD ROUTING — ACME</span>
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar-layout" style="margin-top:24px">
+      <div class="sidebar">
+        <div class="mono-label" style="margin-bottom:14px">SERVICES</div>
+        ${[['Web platforms','layout'],['Integrations','plug'],['AI agents','bot'],['Reporting','bar-chart'],['Retainer','shield']].map(([s, ic], i) =>
+          `<div class="sidebar__item${i === 2 ? ' sidebar__item--active' : ''}">
+            <span class="sidebar__item-label">${icon(ic, 15)}${s}</span>
+            ${i === 2 ? icon('arrow-right', 13) : ''}
+          </div>`
+        ).join('')}
+      </div>
+      <div class="sidebar__content">
+        <div class="mono-label mono-label--accent">AI AGENTS / OVERVIEW</div>
+        <div style="font-family:var(--ff-display); font-size:40px; font-weight:700; letter-spacing:-0.03em; margin-top:12px; line-height:1">Applied LLMs, not science projects.</div>
+        <p style="font-size:15px; color:var(--gf-subtle); margin-top:14px; max-width:560px; line-height:1.55">Chatbots, internal assistants, content helpers, knowledge search. Built on OpenAI / Claude / LangChain — shipped in weeks, maintained on a retainer.</p>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Footer ──────────────────────────────────────────────────
+(function() {
+  document.getElementById('footer-section').innerHTML = `
+    <div class="site-footer">
+      <div class="site-footer__grid">
+        <div>
+          <div style="display:inline-flex; flex-direction:column; align-items:flex-start; gap:6px">
+            ${logoLockup(28)}
+            <div style="font-family:var(--ff-mono); font-size:10px; letter-spacing:0.14em; color:var(--gf-dim); text-transform:uppercase">TECH PARTNER · MARKETING</div>
+          </div>
+          <p style="font-size:14px; color:var(--gf-subtle); margin-top:20px; max-width:360px; line-height:1.5">Small crew, serious output. Based in the US & Israel. Book a scoping call and get a straight answer within 24h.</p>
+        </div>
+        <div>
+          <div class="site-footer__col-title">SERVICES</div>
+          ${[['Web platforms','layout'],['Integrations','plug'],['AI agents','bot'],['Reporting','bar-chart'],['Retainer','shield']].map(([l, ic]) =>
+            `<a href="#" class="site-footer__link">${icon(ic, 13)}${l}</a>`
+          ).join('')}
+        </div>
+        <div>
+          <div class="site-footer__col-title">COMPANY</div>
+          ${[['Work','folder'],['Notes','file-text'],['About','users'],['Careers','flag']].map(([l, ic]) =>
+            `<a href="#" class="site-footer__link">${icon(ic, 13)}${l}</a>`
+          ).join('')}
+        </div>
+        <div>
+          <div class="site-footer__col-title">CONTACT</div>
+          ${[['hello@grepfox.co','mail'],['+1 (415) 555 0123','phone'],['Tel Aviv · NYC','map-pin']].map(([l, ic]) =>
+            `<a href="#" class="site-footer__link">${icon(ic, 13)}${l}</a>`
+          ).join('')}
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <div style="display:inline-flex; align-items:center; gap:10px">${icon('check', 12)}© GREPFOX 2026 — ALL SYSTEMS NOMINAL</div>
+        <div style="display:inline-flex; align-items:center; gap:16px">
+          <a href="#">${icon('github', 13)}GITHUB</a>
+          <a href="#">PRIVACY</a><a href="#">TERMS</a><a href="#">IMPRINT</a>
+        </div>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Hero Split ──────────────────────────────────────────────
+(function() {
+  document.getElementById('hero-split-section').innerHTML = `
+    <div class="hero-split">
+      <div class="hero-split__content">
+        <div class="mono-label mono-label--accent">— GREPFOX / EST. 2025</div>
+        <div>
+          <div class="hero-split__title">We ship the <span style="color:var(--gf-accent)">boring</span> stuff your marketing runs on.</div>
+          <div class="hero-split__sub">Websites, integrations, AI agents, reporting. Small crew, fast moves, no in-house IT required. Based in the US & Israel.</div>
+        </div>
+        <div class="hero-split__actions">
+          <button class="btn btn--primary" style="height:56px">START A PROJECT ${icon('arrow-right', 14)}</button>
+          <button class="btn btn--outline" style="height:56px">${icon('folder', 14)} SEE THE WORK</button>
+        </div>
+      </div>
+      <div class="hero-split__image">
+        ${imgPlaceholder('studio · hands-on-keyboard', '100%', 'dark', 'position:absolute; inset:0')}
+        <div style="position:absolute; top:24px; right:24px">
+          <div class="crosshair crosshair--tl"></div>
+          <div class="crosshair crosshair--tr"></div>
+          <div class="crosshair crosshair--bl"></div>
+          <div class="crosshair crosshair--br"></div>
+        </div>
+        <div style="position:absolute; bottom:24px; right:24px; font-family:var(--ff-mono); font-size:11px; color:var(--gf-bone); letter-spacing:0.14em; background:var(--gf-void); padding:6px 10px">[01 / 05]</div>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Hero Full-bleed ─────────────────────────────────────────
+(function() {
+  document.getElementById('hero-fullbleed-section').innerHTML = `
+    <div class="hero-fullbleed">
+      ${imgPlaceholder('team · long-exposure, tel aviv office', 540, 'accent', 'position:absolute; inset:0')}
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.8) 80%, var(--gf-void) 100%)"></div>
+      <div class="hero-fullbleed__content">
+        <div style="display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap">
+          <div class="mono-label" style="color:var(--gf-bone)">CASE · 014 / LEAD ROUTING</div>
+          <div class="mono-label" style="color:var(--gf-bone)">2026.Q1</div>
+        </div>
+        <div>
+          <div class="hero-fullbleed__stat">28×</div>
+          <div class="hero-fullbleed__desc">faster lead handoff for a B2B agency — 14 minutes down to 30 seconds.</div>
+          <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
+            ${[['HUBSPOT','users'],['MAKE','git-branch'],['SLACK','message'],['GA4','bar-chart']].map(([t, ic]) =>
+              `<div class="tag" style="border-color:var(--gf-bone); color:var(--gf-bone); padding:6px 12px">${icon(ic, 12)}${t}</div>`
+            ).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Hero Type Only ──────────────────────────────────────────
+(function() {
+  document.getElementById('hero-type-section').innerHTML = `
+    <div class="hero-type">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px">
+        <div class="mono-label">INDEX / PAGE 00</div>
+        <div class="mono-label">GREPFOX — TECH PARTNER / US · IL</div>
+      </div>
+      <div class="hero-type__headline">GREP<br><span style="color:var(--gf-accent)">THE SIGNAL.</span><br>SHIP<br>THE REST.</div>
+      <div class="hero-type__stats">
+        ${[['CLIENTS', '38'], ['SHIPPED', '127'], ['UPTIME', '99.98%'], ['NPS', '72']].map(([l, v]) =>
+          `<div><div class="mono-label">${l}</div><div class="hero-type__stat-value">${v}</div></div>`
+        ).join('')}
+      </div>
+    </div>
+  `;
+})();
+
+// ── Feature Grid ────────────────────────────────────────────
+(function() {
+  const items = [
+    { n: '01', t: 'WEB PLATFORMS', ic: 'layout', d: 'WordPress & Next.js sites with a real CMS, real SEO, and real integrations.', img: 'code · vs studio', tone: 'dark' },
+    { n: '02', t: 'INTEGRATIONS', ic: 'plug', d: 'Make, Zapier, n8n. Glue between CRM, email, analytics, and Slack.', img: 'pipelines · mission control', tone: 'accent' },
+    { n: '03', t: 'AI AGENTS', ic: 'bot', d: 'LLM-powered chat, search, and content — built on OpenAI / Claude / LangChain.', img: 'terminal · agent log', tone: 'dark' },
+    { n: '04', t: 'REPORTING', ic: 'bar-chart', d: 'Looker Studio, Metabase, and custom dashboards that finance and marketing both read.', img: 'dashboard · quarterly', tone: 'bone' },
+    { n: '05', t: 'RETAINER', ic: 'shield', d: '20–100 hrs / month of SLA-backed support with a named lead engineer.', img: 'ticket · triage', tone: 'dark' },
+    { n: '06', t: 'CONSULTING', ic: 'compass', d: 'Architecture, security, stack reviews. A second opinion before you sign with anyone.', img: 'whiteboard · review', tone: 'dark' },
+  ];
+  document.getElementById('feature-grid-section').innerHTML = `
+    <div class="feature-grid">
+      ${items.map(s => `
+        <div class="feature-card">
+          <div class="feature-card__img">${imgPlaceholder(s.img, 180, s.tone)}</div>
+          <div class="feature-card__body">
+            <div>
+              <div class="feature-card__head">
+                <div class="mono-label mono-label--accent">SERVICE / ${s.n}</div>
+                <div style="color:var(--gf-bone)">${icon('arrow-up-right', 14)}</div>
+              </div>
+              <div class="feature-card__title-row">
+                <div style="color:var(--gf-accent)">${icon(s.ic, 28)}</div>
+                <div class="feature-card__title">${s.t}</div>
+              </div>
+              <div class="feature-card__desc">${s.d}</div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+})();
+
+// ── Numbers Block ───────────────────────────────────────────
+(function() {
+  const stats = [
+    ['$2.4M', 'CLIENT PIPELINE AUTOMATED', 'ACROSS 38 ENGAGEMENTS', true],
+    ['127', 'SHIPPED PROJECTS', '& COUNTING — 2025→', false],
+    ['< 24H', 'AVG SCOPING REPLY', "WE DON'T GHOST", false],
+    ['99.98%', 'RETAINER UPTIME', '6-MONTH ROLLING AVG', false],
+  ];
+  document.getElementById('numbers-section').innerHTML = `
+    <div class="numbers-block">
+      ${stats.map(([n, l, s, accent]) => `
+        <div class="numbers-block__item">
+          <div class="numbers-block__value" style="color:var(${accent ? '--gf-accent' : '--gf-bone'})">${n}</div>
+          <div><div class="mono-label">${l}</div><div class="numbers-block__label-sub">${s}</div></div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+})();
+
+// ── Process Timeline ────────────────────────────────────────
+(function() {
+  const steps = [
+    ['W 0', 'SCOPE', 'Intake, goals, constraints. A written brief in 48h.', true],
+    ['W 1', 'ARCHITECT', 'Stack, integrations, data model. Go/no-go decision.', true],
+    ['W 2–6', 'BUILD', 'Weekly staging, live Loom reviews, async Slack.', true],
+    ['W 7', 'SHIP', 'Production cut-over, handoff docs, team training.', false],
+    ['W 8+', 'KEEP', 'Retainer kicks in. We pick up Monday like nothing happened.', false],
+  ];
+  document.getElementById('timeline-section').innerHTML = `
+    <div class="process-timeline">
+      <div class="process-timeline__track"></div>
+      <div class="process-timeline__progress"></div>
+      <div class="process-timeline__grid">
+        ${steps.map(([w, t, d, done]) => `
+          <div class="process-step${done ? ' process-step--done' : ''}">
+            <div class="process-step__dot"></div>
+            <div class="mono-label${done ? ' mono-label--accent' : ''}">${w}</div>
+            <div class="process-step__title">${t}</div>
+            <div class="process-step__desc">${d}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+})();
+
+// ── Pricing Table ───────────────────────────────────────────
+(function() {
+  const plans = [
+    { n: 'PROJECT', p: '$10–25K', sub: 'Fixed scope, 6–10 wk', items: ['New site or replatform', 'Up to 3 integrations', 'SEO baseline + analytics', 'Handoff docs + training'], cta: 'START SCOPING', hot: false },
+    { n: 'RETAINER', p: '$1.5–5K /mo', sub: '20–100 hrs / month', items: ['Named lead engineer', 'SLA-backed support', 'Ongoing optimization', 'Monthly review + report'], cta: 'TALK RETAINER', hot: true },
+    { n: 'AI PILOT', p: '$5–20K', sub: '3–5 wk', items: ['Chatbot / assistant / search', 'OpenAI / Claude / LangChain', 'Data ingestion + eval', 'Handoff or subscription'], cta: 'LAUNCH PILOT', hot: false },
+  ];
+  document.getElementById('pricing-section').innerHTML = `
+    <div class="pricing-grid">
+      ${plans.map(p => `
+        <div class="pricing-card${p.hot ? ' pricing-card--hot' : ''}">
+          ${p.hot ? '<div class="pricing-card__badge">MOST PICKED</div>' : ''}
+          <div class="mono-label${p.hot ? ' mono-label--accent' : ''}">${p.n}</div>
+          <div class="pricing-card__price">${p.p}</div>
+          <div class="pricing-card__sub">${p.sub}</div>
+          <div class="pricing-card__features">
+            ${p.items.map(x => `<div class="pricing-card__feature">${icon('check', 14, 2.5)}<span>${x}</span></div>`).join('')}
+          </div>
+          <button class="pricing-card__cta">${p.cta} ${icon('arrow-right', 14)}</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+})();
+
+// ── Testimonial ─────────────────────────────────────────────
+(function() {
+  document.getElementById('testimonial-section').innerHTML = `
+    <div class="testimonial">
+      ${imgPlaceholder('portrait · maya l · director, growth', 440, 'dark', 'width:100%')}
+      <div class="testimonial__content">
+        <div class="mono-label mono-label--accent">TESTIMONIAL / 007</div>
+        <div class="testimonial__quote">"They scoped the thing in a day, shipped it in two weeks, and kept it running for a year without drama. The team in-house calls them before they call us now."</div>
+        <div>
+          <div class="testimonial__name">MAYA LENSKY</div>
+          <div class="testimonial__role">DIRECTOR OF GROWTH · ACME SAAS</div>
+        </div>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Logo Wall ───────────────────────────────────────────────
+(function() {
+  const logos = ['NORTHLINE', 'MERIDIAN', 'PARALLAX', 'FOGHORN', 'KEELHAUL', 'DAYSHIFT', 'BOXCAR', 'QUARRYFIELD', 'PLAINSONG', 'REGATTA'];
+  document.getElementById('logowall-section').innerHTML = `
+    <div class="logo-wall">
+      <div class="logo-wall__header">
+        <div class="mono-label">TRUSTED BY</div>
+        <div class="mono-label">38 TEAMS · GROWING</div>
+      </div>
+      <div class="logo-wall__grid">
+        ${logos.map(l => `<div class="logo-wall__item">${l}</div>`).join('')}
+      </div>
+    </div>
+  `;
+})();
+
+// ── CTA Banner ──────────────────────────────────────────────
+(function() {
+  document.getElementById('cta-section').innerHTML = `
+    <div class="cta-banner">
+      <div class="cta-banner__inner">
+        <div>
+          <div class="mono-label" style="color:var(--gf-void)">READY / LET'S TALK</div>
+          <div class="cta-banner__title">Book a scoping call.<br>Get a real answer in 24h.</div>
+        </div>
+        <button class="cta-banner__btn">BOOK A CALL ${icon('arrow-right', 18)}</button>
+      </div>
+      <div class="cta-banner__contacts">
+        <span class="cta-banner__contact">${icon('mail', 13)}HELLO@GREPFOX.CO</span>
+        <span class="cta-banner__contact">${icon('phone', 13)}+1 (415) 555 0123</span>
+        <span class="cta-banner__contact">${icon('map-pin', 13)}TEL AVIV · NYC</span>
+        <span class="cta-banner__contact" style="margin-left:auto">${icon('clock', 13)}24H REPLY · NO BOTS</span>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Text on Image ───────────────────────────────────────────
+(function() {
+  document.getElementById('text-on-image-section').innerHTML = `
+    <div style="position:relative; min-height:480px">
+      ${imgPlaceholder('workspace · macbook · keyboard close', 480, 'dark')}
+      <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,10,10,0.93) 0%, rgba(10,10,10,0.67) 40%, transparent 100%)"></div>
+      <div style="position:absolute; inset:0; padding:48px; display:flex; flex-direction:column; justify-content:space-between; max-width:720px">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start">
+          <div class="mono-label" style="color:var(--gf-bone)">NOTES / 043</div>
+          <div style="font-family:var(--ff-mono); font-size:11px; color:var(--gf-bone); letter-spacing:0.14em">2026.03.14</div>
+        </div>
+        <div>
+          <div style="font-family:var(--ff-display); font-size:52px; font-weight:600; letter-spacing:-0.02em; line-height:1.05">
+            A retainer isn't a subscription — it's a promise that the thing you shipped last quarter will still work next quarter.
+          </div>
+          <div style="font-family:var(--ff-mono); font-size:12px; color:var(--gf-subtle); letter-spacing:0.14em; margin-top:20px">READ NOTE → 04 MIN</div>
+        </div>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Split Image/Text ────────────────────────────────────────
+(function() {
+  document.getElementById('split-section').innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:2px">
+      <div class="split-layout">
+        ${imgPlaceholder('server rack · cool blue', 420, 'dark', 'width:100%')}
+        <div class="split-layout__content" style="border-left:1px solid var(--gf-rule)">
+          <div class="mono-label mono-label--accent">CASE · 011 / REPORTING</div>
+          <div class="split-layout__title">One dashboard. Four disconnected tools. Two days.</div>
+          <div class="split-layout__desc">An e-commerce team had GA4, Mixpanel, Stripe, and HubSpot telling four different stories. We merged them into one Metabase instance with a single source of truth for revenue, funnel, and cohort.</div>
+          <button class="btn btn--outline" style="margin-top:28px; font-size:13px">READ THE CASE →</button>
+        </div>
+      </div>
+      <div class="split-layout" style="border-top:none">
+        <div class="split-layout__content" style="border-right:1px solid var(--gf-rule)">
+          <div class="mono-label mono-label--accent">CASE · 012 / AI</div>
+          <div class="split-layout__title">A healthtech knowledge bot that never hallucinates dosages.</div>
+          <div class="split-layout__desc">Internal assistant for a clinical ops team. Built on OpenAI + Supabase vector store with a retrieval gate that refuses to answer outside the source corpus.</div>
+          <button class="btn btn--outline" style="margin-top:28px; font-size:13px">READ THE CASE →</button>
+        </div>
+        ${imgPlaceholder('monitor · chat log · night shift', 420, 'accent', 'width:100%')}
+      </div>
+    </div>
+  `;
+})();
+
+// ── Mosaic ──────────────────────────────────────────────────
+(function() {
+  document.getElementById('mosaic-section').innerHTML = `
+    <div class="mosaic-grid">
+      <div style="grid-column:span 2; grid-row:span 2">${imgPlaceholder('founder · portrait', '100%', 'dark', 'height:100%')}</div>
+      ${imgPlaceholder('whiteboard · arch', '100%', 'dark', 'height:100%')}
+      ${imgPlaceholder('hands · pair', '100%', 'bone', 'height:100%')}
+      <div style="background:var(--gf-accent); color:var(--gf-void); padding:20px; display:flex; flex-direction:column; justify-content:space-between">
+        <div class="mono-label" style="color:var(--gf-void)">IN STUDIO / Q1</div>
+        <div style="font-family:var(--ff-display); font-size:22px; font-weight:700; letter-spacing:-0.02em; line-height:1">Tel Aviv office — new quarter, same crew.</div>
+      </div>
+      ${imgPlaceholder('ship · review', '100%', 'dark', 'height:100%')}
+      <div style="grid-column:span 2">${imgPlaceholder('team · wide', '100%', 'dark', 'height:100%')}</div>
+    </div>
+  `;
+})();
+
+// ── Accent Block ────────────────────────────────────────────
+(function() {
+  document.getElementById('accent-block-section').innerHTML = `
+    <div class="accent-block">
+      <div class="accent-block__content">
+        <div class="mono-label" style="color:var(--gf-void)">WHO WE ARE / 01</div>
+        <div>
+          <div class="accent-block__title">Three humans.<br>One Slack.</div>
+          <p style="font-size:17px; margin-top:20px; max-width:420px; line-height:1.5">No project managers forwarding other project managers' emails. You talk to the people writing the code.</p>
+        </div>
+        <div style="font-family:var(--ff-mono); font-size:12px; letter-spacing:0.14em">— EST. 2025 · US + IL</div>
+      </div>
+      ${imgPlaceholder('crew · tel aviv roof', '100%', 'accent', 'height:100%')}
+    </div>
+  `;
+})();
+
+// ── Code Block ──────────────────────────────────────────────
+(function() {
+  document.getElementById('code-section').innerHTML = `
+    <div class="code-block">
+      <div class="code-block__editor">
+        <div class="code-block__dots">
+          <div class="code-block__dot" style="background:var(--gf-dim)"></div>
+          <div class="code-block__dot" style="background:var(--gf-dim)"></div>
+          <div class="code-block__dot" style="background:var(--gf-accent)"></div>
+        </div>
+        <pre class="code-block__pre"><span style="color:var(--gf-dim)">// grepfox/agents/intake.ts</span>
+<span style="color:var(--gf-info)">export</span> <span style="color:var(--gf-info)">async function</span> <span style="color:var(--gf-accent)">route</span>(lead: Lead) {
+  <span style="color:var(--gf-info)">const</span> score = <span style="color:var(--gf-info)">await</span> <span style="color:var(--gf-accent)">classify</span>(lead);
+  <span style="color:var(--gf-info)">if</span> (score &gt; <span style="color:var(--gf-warn)">0.72</span>) {
+    <span style="color:var(--gf-info)">await</span> <span style="color:var(--gf-accent)">slack</span>(<span style="color:var(--gf-ok)">"#sales-hot"</span>, lead);
+  } <span style="color:var(--gf-info)">else</span> {
+    <span style="color:var(--gf-info)">await</span> <span style="color:var(--gf-accent)">hubspot</span>.<span style="color:var(--gf-accent)">nurture</span>(lead);
+  }
+}</pre>
+      </div>
+      <div style="padding:40px; display:flex; flex-direction:column; justify-content:center; background:var(--gf-void)">
+        <div class="mono-label mono-label--accent">HOW WE WORK</div>
+        <div style="font-family:var(--ff-display); font-size:56px; font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-top:18px">We write the glue. You own it.</div>
+        <p style="font-size:15px; color:var(--gf-subtle); margin-top:20px; line-height:1.55">Every line we ship lives in your repo, your Vercel, your cloud. No lock-in, no black box. If you fire us tomorrow, your team keeps the keys.</p>
+      </div>
+    </div>
+  `;
+})();
+
+// ── Marquee ─────────────────────────────────────────────────
+(function() {
+  const text = 'NEXT.JS <span style="color:var(--gf-accent)">+</span> WORDPRESS <span style="color:var(--gf-accent)">+</span> HUBSPOT <span style="color:var(--gf-accent)">+</span> MAKE <span style="color:var(--gf-accent)">+</span> OPENAI <span style="color:var(--gf-accent)">+</span> SUPABASE <span style="color:var(--gf-accent)">+</span> GA4 <span style="color:var(--gf-accent)">+</span> MIXPANEL';
+  document.getElementById('marquee-section').innerHTML = `
+    <div class="marquee">
+      <div class="marquee__text">${text}&nbsp;&nbsp;&nbsp;${text}&nbsp;&nbsp;&nbsp;</div>
+    </div>
+  `;
+})();
+
+// ── Image + Sticker ─────────────────────────────────────────
+(function() {
+  document.getElementById('sticker-section').innerHTML = `
+    <div style="position:relative; min-height:460px">
+      ${imgPlaceholder('shipped · retro sticker pack', 460, 'dark')}
+      <div style="position:absolute; top:32px; left:32px; background:var(--gf-accent); color:var(--gf-void); padding:20px 24px; max-width:260px">
+        <div class="mono-label" style="color:var(--gf-void)">SHIPPED / 127</div>
+        <div style="font-family:var(--ff-display); font-size:28px; font-weight:700; letter-spacing:-0.02em; margin-top:10px; line-height:1">Every project gets a sticker. 127 and counting.</div>
+      </div>
+      <div style="position:absolute; bottom:32px; right:32px; background:var(--gf-void); color:var(--gf-bone); padding:16px 20px; border:1px solid var(--gf-accent); font-family:var(--ff-mono); font-size:12px; letter-spacing:0.14em">
+        [IMG · STUDIO / STICKER DRAWER]
+      </div>
+    </div>
+  `;
+})();
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

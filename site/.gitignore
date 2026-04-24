@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+.DS_Store
+*.log
+/media
+/public/media
+payload-types.ts.bak

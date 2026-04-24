@@ -1,0 +1,156 @@
+export type ImageManifest = {
+  key: string
+  url: string
+  filename: string
+  alt: string
+  credit?: string
+}
+
+// All images sourced from Unsplash (free-to-use license).
+// Resolved URLs: https://images.unsplash.com/photo-<id>?w=1920&q=80
+const U = (id: string) => `https://images.unsplash.com/photo-${id}?w=1920&q=80&fm=jpg&fit=crop`
+
+export const images: ImageManifest[] = [
+  {
+    key: 'home-hero',
+    url: U('1558494949-ef010cbdcc31'),
+    filename: 'home-hero-server-room.jpg',
+    alt: 'Dark data center — server racks with blue lights',
+    credit: 'Taylor Vick · Unsplash',
+  },
+  {
+    key: 'ai-layer',
+    url: U('1620712943543-bcc4688e7485'),
+    filename: 'ai-abstract-glow.jpg',
+    alt: 'Abstract AI visualization — glowing neural patterns',
+    credit: 'Jonathan Kemper · Unsplash',
+  },
+  {
+    key: 'services-hero',
+    url: U('1519389950473-47ba0277781c'),
+    filename: 'services-hero-team-laptops.jpg',
+    alt: 'Team collaborating around laptops',
+    credit: 'Marvin Meyer · Unsplash',
+  },
+  {
+    key: 'ai-solutions-hero',
+    url: U('1591453089816-0fbb971b454c'),
+    filename: 'ai-solutions-hero-circuit.jpg',
+    alt: 'Circuit board macro — AI infrastructure',
+    credit: 'Michael Dziedzic · Unsplash',
+  },
+  {
+    key: 'approach-split',
+    url: U('1542831371-29b0f74f9713'),
+    filename: 'approach-code-editor.jpg',
+    alt: 'Close-up of code on a dark screen',
+    credit: 'Markus Spiske · Unsplash',
+  },
+  {
+    key: 'approach-hero',
+    url: U('1531297484001-80022131f5a1'),
+    filename: 'approach-hero-workspace.jpg',
+    alt: 'Dark engineering workspace with laptop',
+    credit: 'Christopher Gower · Unsplash',
+  },
+  {
+    key: 'about-hero',
+    url: U('1522071820081-009f0129c71c'),
+    filename: 'about-hero-team-meeting.jpg',
+    alt: 'Small team in a working session',
+    credit: 'Annie Spratt · Unsplash',
+  },
+  {
+    key: 'about-mission',
+    url: U('1556761175-5973dc0f32e7'),
+    filename: 'about-mission-workspace.jpg',
+    alt: 'Hands on keyboard, engineering workspace',
+    credit: 'Unsplash',
+  },
+  {
+    key: 'contact-hero',
+    url: U('1451187580459-43490279c0fa'),
+    filename: 'contact-hero-network.jpg',
+    alt: 'Abstract network globe at night',
+    credit: 'NASA · Unsplash',
+  },
+  // Feature-grid cards on home page
+  {
+    key: 'card-ai-agents',
+    url: U('1677442136019-21780ecad995'),
+    filename: 'card-ai-agents.jpg',
+    alt: 'Abstract AI mesh visualization',
+    credit: 'Google DeepMind · Unsplash',
+  },
+  {
+    key: 'card-automation',
+    url: U('1518770660439-4636190af475'),
+    filename: 'card-automation-circuit.jpg',
+    alt: 'Circuit board automation macro',
+    credit: 'Alexandre Debiève · Unsplash',
+  },
+  {
+    key: 'card-assistants',
+    url: U('1526374965328-7f61d4dc18c5'),
+    filename: 'card-assistants-matrix.jpg',
+    alt: 'Green matrix code on black screen',
+    credit: 'Markus Spiske · Unsplash',
+  },
+  {
+    key: 'card-web',
+    url: U('1555066931-4365d14bab8c'),
+    filename: 'card-web-code.jpg',
+    alt: 'MacBook with code, dark theme',
+    credit: 'Luca Bravo · Unsplash',
+  },
+  {
+    key: 'card-analytics',
+    url: U('1551288049-bebda4e38f71'),
+    filename: 'card-analytics-dashboard.jpg',
+    alt: 'Dashboard with charts on a laptop',
+    credit: 'Carlos Muza · Unsplash',
+  },
+  {
+    key: 'card-maintenance',
+    url: U('1527689368864-3a821dbccc34'),
+    filename: 'card-maintenance-server.jpg',
+    alt: 'Engineer inspecting server hardware',
+    credit: 'Taylor Vick · Unsplash',
+  },
+  // Service detail hero images
+  {
+    key: 'svc-ai-agents',
+    url: U('1677442136019-21780ecad995'),
+    filename: 'svc-ai-agents.jpg',
+    alt: 'AI neural network visualization',
+    credit: 'Google DeepMind · Unsplash',
+  },
+  {
+    key: 'svc-automation',
+    url: U('1518770660439-4636190af475'),
+    filename: 'svc-automation.jpg',
+    alt: 'Automation circuitry',
+    credit: 'Alexandre Debiève · Unsplash',
+  },
+  {
+    key: 'svc-web',
+    url: U('1517694712202-14dd9538aa97'),
+    filename: 'svc-web-platforms.jpg',
+    alt: 'Developer workstation with code',
+    credit: 'Florian Olivo · Unsplash',
+  },
+  {
+    key: 'svc-analytics',
+    url: U('1460925895917-afdab827c52f'),
+    filename: 'svc-analytics.jpg',
+    alt: 'Business analytics dashboards',
+    credit: 'Luke Chesser · Unsplash',
+  },
+  {
+    key: 'svc-maintenance',
+    url: U('1573164713714-d95e436ab8d6'),
+    filename: 'svc-maintenance.jpg',
+    alt: 'Server diagnostics',
+    credit: 'Unsplash',
+  },
+]
