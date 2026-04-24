@@ -11,26 +11,22 @@ type Props = { items: Item[] }
 export function Numbers({ items }: Props) {
   const cols = Math.min(Math.max(items.length, 2), 4) as 2 | 3 | 4
   return (
-    <div className="block-spacer">
-      <div className={`numbers-block numbers-block--${cols}col`}>
+    <section className="block-spacer" aria-label="Key numbers">
+      <ul className={`numbers-block numbers-block--${cols}col`} role="list">
         {items.map((item, i) => {
           const isAccent = item.accent ?? i === 0
+          const valueCls = `numbers-block__value${isAccent ? ' numbers-block__value--accent' : ''}`
           return (
-            <div className="numbers-block__item" key={item.id || i}>
-              <div
-                className="numbers-block__value"
-                style={{ color: isAccent ? 'var(--gf-accent)' : 'var(--gf-bone)' }}
-              >
-                {item.value}
+            <li className="numbers-block__item" key={item.id || i}>
+              <p className={valueCls}>{item.value}</p>
+              <div className="numbers-block__meta">
+                <p className="mono-label">{item.label}</p>
+                {item.sublabel && <p className="numbers-block__label-sub">{item.sublabel}</p>}
               </div>
-              <div>
-                <div className="mono-label">{item.label}</div>
-                {item.sublabel && <div className="numbers-block__label-sub">{item.sublabel}</div>}
-              </div>
-            </div>
+            </li>
           )
         })}
-      </div>
-    </div>
+      </ul>
+    </section>
   )
 }

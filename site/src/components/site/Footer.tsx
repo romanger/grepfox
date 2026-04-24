@@ -21,49 +21,18 @@ export async function Footer() {
   const copyright = (data?.copyright as string) || '© GREPFOX'
 
   return (
-    <div className="site-footer">
+    <footer className="site-footer">
       <div className="site-footer__grid">
-        <div>
-          <div
-            style={{
-              display: 'inline-flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: 6,
-            }}
-          >
+        <div className="site-footer__brand">
+          <div className="site-footer__brand-mark">
             <LogoLockup size={28} variant="badge" />
-            {brandTag && (
-              <div
-                style={{
-                  fontFamily: 'var(--ff-mono)',
-                  fontSize: 10,
-                  letterSpacing: '0.14em',
-                  color: 'var(--gf-dim)',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {brandTag}
-              </div>
-            )}
+            {brandTag && <p className="site-footer__brand-tag">{brandTag}</p>}
           </div>
-          {tagline && (
-            <p
-              style={{
-                fontSize: 14,
-                color: 'var(--gf-subtle)',
-                marginTop: 20,
-                maxWidth: 360,
-                lineHeight: 1.5,
-              }}
-            >
-              {tagline}
-            </p>
-          )}
+          {tagline && <p className="site-footer__tagline">{tagline}</p>}
         </div>
         {columns.map((col, i) => (
-          <div key={i}>
-            <div className="site-footer__col-title">{col.title}</div>
+          <nav key={i} className="site-footer__col" aria-label={col.title}>
+            <h3 className="site-footer__col-title">{col.title}</h3>
             {col.links?.map((l, idx) =>
               l.link ? (
                 <Link
@@ -77,30 +46,32 @@ export async function Footer() {
                 </Link>
               ) : null,
             )}
-          </div>
+          </nav>
         ))}
       </div>
       <div className="site-footer__bottom">
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
+        <p className="site-footer__copy">
           <Icon name="check" size={12} />
-          {copyright}
-        </div>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 16 }}>
-          {legal.map((l, i) =>
-            l.link ? (
-              <Link
-                key={i}
-                href={resolveLinkHref(l.link)}
-                target={l.link.newTab ? '_blank' : undefined}
-                style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}
-              >
-                {l.icon && <Icon name={l.icon} size={13} />}
-                {l.link.label}
-              </Link>
-            ) : null,
-          )}
-        </div>
+          <span>{copyright}</span>
+        </p>
+        {legal.length > 0 && (
+          <nav className="site-footer__legal" aria-label="Legal">
+            {legal.map((l, i) =>
+              l.link ? (
+                <Link
+                  key={i}
+                  href={resolveLinkHref(l.link)}
+                  target={l.link.newTab ? '_blank' : undefined}
+                  className="site-footer__legal-link"
+                >
+                  {l.icon && <Icon name={l.icon} size={13} />}
+                  {l.link.label}
+                </Link>
+              ) : null,
+            )}
+          </nav>
+        )}
       </div>
-    </div>
+    </footer>
   )
 }

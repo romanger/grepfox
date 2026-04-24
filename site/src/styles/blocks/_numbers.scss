@@ -5,6 +5,9 @@
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--gf-rule);
   border-bottom: 1px solid var(--gf-rule);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   &--2col { grid-template-columns: repeat(2, 1fr); }
   &--3col { grid-template-columns: repeat(3, 1fr); }
@@ -21,11 +24,22 @@
 
   &__value {
     @include display(88px, 700, -0.04em, 0.9);
+    color: var(--gf-bone);
+    margin: 0;
+
+    &--accent { color: var(--gf-accent); }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+
+    p { margin: 0; }
   }
 
   &__label-sub {
     @include mono(11px, 0, var(--gf-dim));
-    margin-top: 4px;
+    margin: 4px 0 0;
   }
 
   @include md-down {

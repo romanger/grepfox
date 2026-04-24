@@ -16,23 +16,28 @@
 
   &__image {
     position: relative;
+    margin: 0;
+  }
+
+  &__body {
+    margin: 0;
   }
 
   &__title {
     @include display(96px, 700, -0.05em, 0.85);
-    margin-top: 20px;
+    margin: 20px 0 0;
   }
 
   &__desc {
     font-size: 17px;
-    margin-top: 24px;
+    margin: 24px 0 0;
     max-width: 420px;
     line-height: 1.5;
   }
 
   &__footnote {
-    @include mono(12px, 0.14em);
-    margin-top: 32px;
+    @include mono(12px, 0.14em, inherit);
+    margin: 32px 0 0;
   }
 
   @include md-down {

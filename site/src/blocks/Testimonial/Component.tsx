@@ -14,8 +14,8 @@ export function Testimonial({ eyebrow = 'TESTIMONIAL', quote, name, role, image,
   const hasImage = !!(image || imageUrl)
   const cls = hasImage ? 'testimonial' : 'testimonial testimonial--stacked'
   return (
-    <div className="block-spacer block-pad">
-      <div className={cls}>
+    <section className="block-spacer block-pad">
+      <figure className={cls}>
         {hasImage && (
           <div className="testimonial__image">
             <Media media={image} src={imageUrl} size="card" filtered />
@@ -23,13 +23,15 @@ export function Testimonial({ eyebrow = 'TESTIMONIAL', quote, name, role, image,
         )}
         <div className="testimonial__content">
           <MonoLabel accent>{eyebrow}</MonoLabel>
-          <div className="testimonial__quote">“{quote}”</div>
-          <div>
-            <div className="testimonial__name">{name}</div>
-            {role && <div className="testimonial__role">{role}</div>}
-          </div>
+          <blockquote className="testimonial__quote" cite={name}>
+            <p>“{quote}”</p>
+          </blockquote>
+          <figcaption className="testimonial__caption">
+            <p className="testimonial__name">{name}</p>
+            {role && <p className="testimonial__role">{role}</p>}
+          </figcaption>
         </div>
-      </div>
-    </div>
+      </figure>
+    </section>
   )
 }

@@ -22,15 +22,17 @@ function Line({ items }: { items: Item[] }) {
 
 export function Marquee({ items }: { items: Item[] }) {
   return (
-    <div className="block-spacer">
+    <section className="block-spacer" aria-label="Marquee">
       <div className="marquee">
-        <div className="marquee__text">
+        <p className="marquee__text">
           <Line items={items} />
-          &nbsp;&nbsp;&nbsp;
-          <Line items={items} />
-          &nbsp;&nbsp;&nbsp;
-        </div>
+          <span aria-hidden="true">
+            &nbsp;&nbsp;&nbsp;
+            <Line items={items} />
+            &nbsp;&nbsp;&nbsp;
+          </span>
+        </p>
       </div>
-    </div>
+    </section>
   )
 }

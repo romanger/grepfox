@@ -12,15 +12,19 @@
 
   &__content {
     padding: 48px 40px;
+
+    &--image-right { border-right: 1px solid var(--gf-rule); }
+    &--image-left { border-left: 1px solid var(--gf-rule); }
   }
 
   &__image {
     position: relative;
+    margin: 0;
   }
 
   &__title {
     @include display(48px, 700, -0.035em, 0.95);
-    margin-top: 18px;
+    margin: 18px 0 0;
   }
 
   &__desc {

@@ -21,35 +21,44 @@ export function Accordion({ items, defaultOpenIndex = 1, className }: Props) {
   const toggle = (i: number) => setOpenIndex((cur) => (cur === i ? null : i))
 
   return (
-    <div className={['accordion', className].filter(Boolean).join(' ')}>
+    <ul className={['accordion', className].filter(Boolean).join(' ')} role="list">
       {items.map((item, i) => {
         const open = openIndex === i
+        const panelId = `accordion-panel-${item.id || i}`
+        const headerId = `accordion-header-${item.id || i}`
         return (
-          <div
+          <li
             key={item.id || i}
             className={`accordion-item${open ? ' accordion-item--open' : ''}`}
-            data-index={i}
-            role="button"
-            tabIndex={0}
-            onClick={() => toggle(i)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                toggle(i)
-              }
-            }}
           >
-            <div className="accordion-item__n">{String(i + 1).padStart(2, '0')}</div>
-            <div style={{ flex: 1 }}>
-              <div className="accordion-item__q">{item.question}</div>
-              <div className="accordion-item__a">{item.answer}</div>
+            <h3 className="accordion-item__heading">
+              <button
+                type="button"
+                id={headerId}
+                className="accordion-item__trigger"
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => toggle(i)}
+              >
+                <span className="accordion-item__n">{String(i + 1).padStart(2, '0')}</span>
+                <span className="accordion-item__q">{item.question}</span>
+                <span className="accordion-item__icon" aria-hidden="true">
+                  <Icon name={open ? 'minus' : 'plus'} size={18} />
+                </span>
+              </button>
+            </h3>
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={headerId}
+              hidden={!open}
+              className="accordion-item__a"
+            >
+              {item.answer}
             </div>
-            <div className="accordion-item__icon">
-              <Icon name={open ? 'minus' : 'plus'} size={18} />
-            </div>
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }

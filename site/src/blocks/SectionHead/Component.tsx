@@ -8,8 +8,8 @@ type Props = {
 
 export function SectionHead(props: Props) {
   return (
-    <div className="block-spacer">
+    <header className="block-spacer">
       <SectionHeadDS {...props} />
-    </div>
+    </header>
   )
 }

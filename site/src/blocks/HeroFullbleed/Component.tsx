@@ -23,31 +23,31 @@ export function HeroFullbleed({
   tags,
 }: Props) {
   return (
-    <div className="block-spacer">
+    <section className="block-spacer">
       <div className="hero-fullbleed">
         <Media media={background} src={backgroundUrl} size="hero" filtered />
-        <div className="hero-fullbleed__overlay" />
+        <div className="hero-fullbleed__overlay" aria-hidden="true" />
         <div className="hero-fullbleed__content">
           <div className="hero-fullbleed__meta">
-            {eyebrow && <div className="mono-label mono-label--light">{eyebrow}</div>}
-            {meta && <div className="mono-label mono-label--light">{meta}</div>}
+            {eyebrow && <p className="mono-label mono-label--light">{eyebrow}</p>}
+            {meta && <p className="mono-label mono-label--light">{meta}</p>}
           </div>
-          <div>
-            {statValue && <div className="hero-fullbleed__stat">{statValue}</div>}
-            <div className="hero-fullbleed__desc">{description}</div>
+          <div className="hero-fullbleed__body">
+            {statValue && <p className="hero-fullbleed__stat">{statValue}</p>}
+            <h1 className="hero-fullbleed__desc">{description}</h1>
             {tags && tags.length > 0 && (
-              <div className="hero-fullbleed__tags">
+              <ul className="hero-fullbleed__tags" role="list">
                 {tags.map((t, i) => (
-                  <div key={t.id || i} className="tag tag--light">
+                  <li key={t.id || i} className="tag tag--light">
                     {t.icon && <Icon name={t.icon} size={12} />}
                     {t.label}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

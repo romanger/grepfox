@@ -26,6 +26,9 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     &--3col { grid-template-columns: repeat(3, 1fr); }
     &--4col { grid-template-columns: repeat(4, 1fr); }
@@ -74,13 +77,13 @@
 
   &__title {
     @include display(26px, 700, -0.02em, 1);
-    margin-top: 10px;
+    margin: 10px 0 0;
   }
 
   &__desc {
     font-size: 13px;
     color: var(--gf-subtle);
-    margin-top: 12px;
+    margin: 12px 0 0;
     line-height: 1.5;
   }
 

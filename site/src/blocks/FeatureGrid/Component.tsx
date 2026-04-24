@@ -21,8 +21,8 @@ type Props = {
 
 export function FeatureGrid({ columns = '3', items }: Props) {
   return (
-    <div className="block-spacer block-pad">
-      <div className={`feature-grid feature-grid--${columns}col`}>
+    <section className="block-spacer block-pad">
+      <ul className={`feature-grid feature-grid--${columns}col`} role="list">
         {items.map((item, i) => {
           const serviceSlug =
             typeof item.linkedService === 'object' && item.linkedService
@@ -34,45 +34,49 @@ export function FeatureGrid({ columns = '3', items }: Props) {
           const eyebrow = item.eyebrow ?? `SERVICE / ${n}`
 
           const card = (
-            <div className="feature-card">
+            <article className="feature-card">
               {hasImage && (
-                <div className="feature-card__img">
+                <figure className="feature-card__img">
                   <Media media={item.image} src={item.imageUrl} size="card" filtered />
-                </div>
+                </figure>
               )}
               <div className="feature-card__body">
                 <div>
-                  <div className="feature-card__head">
-                    <div className="mono-label mono-label--accent">{eyebrow}</div>
+                  <header className="feature-card__head">
+                    <p className="mono-label mono-label--accent">{eyebrow}</p>
                     {href && (
-                      <div style={{ color: 'var(--gf-bone)' }}>
+                      <span className="feature-card__arrow" aria-hidden="true">
                         <Icon name="arrow-up-right" size={14} />
-                      </div>
+                      </span>
                     )}
-                  </div>
+                  </header>
                   <div className="feature-card__title-row">
                     {item.icon && (
-                      <div style={{ color: 'var(--gf-accent)' }}>
+                      <span className="feature-card__icon" aria-hidden="true">
                         <Icon name={item.icon} size={28} />
-                      </div>
+                      </span>
                     )}
-                    <div className="feature-card__title">{item.title}</div>
+                    <h3 className="feature-card__title">{item.title}</h3>
                   </div>
-                  {item.description && <div className="feature-card__desc">{item.description}</div>}
+                  {item.description && <p className="feature-card__desc">{item.description}</p>}
                 </div>
               </div>
-            </div>
+            </article>
           )
 
-          return href ? (
-            <Link key={item.id || i} href={href} className="feature-card__link">
-              {card}
-            </Link>
-          ) : (
-            <div key={item.id || i}>{card}</div>
+          return (
+            <li key={item.id || i} className="feature-grid__item">
+              {href ? (
+                <Link href={href} className="feature-card__link">
+                  {card}
+                </Link>
+              ) : (
+                card
+              )}
+            </li>
           )
         })}
-      </div>
-    </div>
+      </ul>
+    </section>
   )
 }

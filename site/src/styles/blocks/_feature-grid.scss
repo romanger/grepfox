@@ -4,6 +4,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--gf-rule);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
 
   &--2col { grid-template-columns: repeat(2, 1fr); }
   &--3col { grid-template-columns: repeat(3, 1fr); }
@@ -26,17 +34,22 @@
   }
 }
 
+.feature-grid__item:not(:nth-child(3n)) { border-right: 1px solid var(--gf-rule); }
+.feature-grid__item:nth-child(-n+3) { border-bottom: 1px solid var(--gf-rule); }
+
 .feature-card {
   display: flex;
   flex-direction: column;
-
-  &:not(:nth-child(3n)) { border-right: 1px solid var(--gf-rule); }
-  &:nth-child(-n+3) { border-bottom: 1px solid var(--gf-rule); }
+  flex: 1;
 
   &__img {
     height: 180px;
     position: relative;
+    margin: 0;
   }
+
+  &__arrow { color: var(--gf-bone); }
+  &__icon { color: var(--gf-accent); display: inline-flex; }
 
   &__badge {
     position: absolute;
@@ -84,24 +97,25 @@
 
   &__title {
     @include display(30px, 700, -0.02em, 1);
+    margin: 0;
   }
 
   &__desc {
     font-size: 14px;
     color: var(--gf-subtle);
-    margin-top: 12px;
+    margin: 12px 0 0;
     line-height: 1.5;
   }
+}
 
-  @include md-down {
-    &:not(:nth-child(3n)) { border-right: none; }
-    &:nth-child(-n+3) { border-bottom: none; }
-    &:nth-child(odd):not(:nth-last-child(-n+1)) { border-right: 1px solid var(--gf-rule); }
-    &:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--gf-rule); }
-  }
+@include md-down {
+  .feature-grid__item:not(:nth-child(3n)) { border-right: none; }
+  .feature-grid__item:nth-child(-n+3) { border-bottom: none; }
+  .feature-grid__item:nth-child(odd):not(:nth-last-child(-n+1)) { border-right: 1px solid var(--gf-rule); }
+  .feature-grid__item:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--gf-rule); }
+}
 
-  @include sm-down {
-    &:nth-child(odd) { border-right: none !important; }
-    &:not(:last-child) { border-bottom: 1px solid var(--gf-rule) !important; }
-  }
+@include sm-down {
+  .feature-grid__item:nth-child(odd) { border-right: none !important; }
+  .feature-grid__item:not(:last-child) { border-bottom: 1px solid var(--gf-rule) !important; }
 }

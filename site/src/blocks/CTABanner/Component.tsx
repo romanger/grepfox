@@ -16,12 +16,12 @@ export function CTABanner({ accent = true, eyebrow, title, action, contacts }: P
   const wrapperClass = accent ? 'cta-banner' : 'cta-banner cta-banner--dark'
   const eyebrowCls = accent ? 'mono-label mono-label--dark' : 'mono-label'
   return (
-    <div className="block-spacer">
+    <aside className="block-spacer" aria-label="Call to action">
       <div className={wrapperClass}>
         <div className="cta-banner__inner">
           <div>
-            {eyebrow && <div className={eyebrowCls}>{eyebrow}</div>}
-            <div className="cta-banner__title">{title}</div>
+            {eyebrow && <p className={eyebrowCls}>{eyebrow}</p>}
+            <h2 className="cta-banner__title">{title}</h2>
           </div>
           {action?.link && (
             <Link href={resolveLinkHref(action.link)} className="cta-banner__btn">
@@ -31,16 +31,16 @@ export function CTABanner({ accent = true, eyebrow, title, action, contacts }: P
           )}
         </div>
         {contacts && contacts.length > 0 && (
-          <div className="cta-banner__contacts">
+          <address className="cta-banner__contacts">
             {contacts.map((c, i) => (
               <span key={c.id || i} className="cta-banner__contact">
                 {c.icon && <Icon name={c.icon} size={13} />}
                 {c.value}
               </span>
             ))}
-          </div>
+          </address>
         )}
       </div>
-    </div>
+    </aside>
   )
 }

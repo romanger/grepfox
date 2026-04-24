@@ -15,11 +15,11 @@ export async function Header() {
   const cta = data?.cta as { link?: LinkValue } | undefined
 
   return (
-    <div className="top-nav">
-      <Link href="/" aria-label="Grepfox home" style={{ display: 'inline-flex', color: 'inherit', textDecoration: 'none' }}>
+    <header className="top-nav">
+      <Link href="/" aria-label="Grepfox home" className="top-nav__brand">
         <LogoLockup size={20} variant="badge" />
       </Link>
-      <div className="top-nav__links">
+      <nav className="top-nav__links" aria-label="Primary">
         {nav.map((item, i) =>
           item.link ? (
             <Link
@@ -33,13 +33,13 @@ export async function Header() {
             </Link>
           ) : null,
         )}
-      </div>
+      </nav>
       {cta?.link && (
         <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm">
           {cta.link.label}
           <Icon name="arrow-right" size={13} />
         </Link>
       )}
-    </div>
+    </header>
   )
 }

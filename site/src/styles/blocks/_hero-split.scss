@@ -14,9 +14,13 @@
     border-right: 1px solid var(--gf-rule);
   }
 
+  &__heading {
+    margin: 0;
+  }
+
   &__title {
     @include display(104px, 700, -0.05em, 0.88);
-    margin-top: 24px;
+    margin: 24px 0 0;
   }
 
   &__sub {
@@ -35,6 +39,21 @@
 
   &__btn {
     height: 56px;
+  }
+
+  &__crosshairs {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    @include mono(11px, 0.14em, var(--gf-bone));
+    background: var(--gf-void);
+    padding: 6px 10px;
   }
 
   &__image {

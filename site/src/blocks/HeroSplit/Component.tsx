@@ -22,16 +22,16 @@ type Props = {
 
 export function HeroSplit({ eyebrow, title, subtitle, actions, image, imageUrl, imageCaption }: Props) {
   return (
-    <div className="block-spacer">
+    <section className="block-spacer">
       <div className="hero-split">
         <div className="hero-split__content">
-          {eyebrow && <div className="mono-label mono-label--accent">{eyebrow}</div>}
-          <div>
-            <div className="hero-split__title">{title}</div>
-            {subtitle && <div className="hero-split__sub">{subtitle}</div>}
+          {eyebrow && <p className="mono-label mono-label--accent">{eyebrow}</p>}
+          <div className="hero-split__heading">
+            <h1 className="hero-split__title">{title}</h1>
+            {subtitle && <p className="hero-split__sub">{subtitle}</p>}
           </div>
           {actions && actions.length > 0 && (
-            <div className="hero-split__actions">
+            <div className="hero-split__actions" role="group" aria-label="Hero actions">
               {actions.map((a, i) => {
                 if (!a.link) return null
                 const icon: IconName | undefined = a.icon ?? (i === 0 ? 'arrow-right' : undefined)
@@ -52,33 +52,17 @@ export function HeroSplit({ eyebrow, title, subtitle, actions, image, imageUrl, 
             </div>
           )}
         </div>
-        <div className="hero-split__image">
+        <figure className="hero-split__image">
           <Media media={image} src={imageUrl} size="hero" filtered />
-          <div style={{ position: 'absolute', top: 24, right: 24 }}>
+          <div className="hero-split__crosshairs" aria-hidden="true">
             <div className="crosshair crosshair--tl" />
             <div className="crosshair crosshair--tr" />
             <div className="crosshair crosshair--bl" />
             <div className="crosshair crosshair--br" />
           </div>
-          {imageCaption && (
-            <div
-              style={{
-                position: 'absolute',
-                bottom: 24,
-                right: 24,
-                fontFamily: 'var(--ff-mono)',
-                fontSize: 11,
-                color: 'var(--gf-bone)',
-                letterSpacing: '0.14em',
-                background: 'var(--gf-void)',
-                padding: '6px 10px',
-              }}
-            >
-              {imageCaption}
-            </div>
-          )}
-        </div>
+          {imageCaption && <figcaption className="hero-split__caption">{imageCaption}</figcaption>}
+        </figure>
       </div>
-    </div>
+    </section>
   )
 }

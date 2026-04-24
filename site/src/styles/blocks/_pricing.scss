@@ -4,10 +4,17 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--gf-rule);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   &--2col { grid-template-columns: repeat(2, 1fr); }
   &--3col { grid-template-columns: repeat(3, 1fr); }
   &--4col { grid-template-columns: repeat(4, 1fr); }
+
+  &__item { display: flex; }
+
+  &__item:not(:last-child) { border-right: 1px solid var(--gf-rule); }
 
   @include md-down {
     grid-template-columns: 1fr;
@@ -15,14 +22,18 @@
     &--2col,
     &--3col,
     &--4col { grid-template-columns: 1fr; }
+
+    &__item:not(:last-child) {
+      border-right: none;
+      border-bottom: 1px solid var(--gf-rule);
+    }
   }
 }
 
 .pricing-card {
   padding: 32px;
   position: relative;
-
-  &:not(:last-child) { border-right: 1px solid var(--gf-rule); }
+  flex: 1;
 
   &--hot {
     background: var(--gf-surface2);
@@ -50,22 +61,27 @@
     font-size: 10px;
     letter-spacing: 0.18em;
     font-weight: 700;
+    margin: 0;
   }
+
+  &__name { margin: 0; }
 
   &__price {
     @include display(56px, 700, -0.035em, 1);
-    margin-top: 16px;
+    margin: 16px 0 0;
   }
 
   &__sub {
     @include mono(12px, 0.12em, var(--gf-dim));
-    margin-top: 6px;
+    margin: 6px 0 0;
   }
 
   &__features {
     border-top: 1px solid var(--gf-rule);
-    margin-top: 24px;
+    margin: 24px 0 0;
     padding-top: 20px;
+    padding-left: 0;
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -102,11 +118,6 @@
   }
 
   @include md-down {
-    &:not(:last-child) {
-      border-right: none;
-      border-bottom: 1px solid var(--gf-rule);
-    }
-
     &__price { font-size: 42px; }
   }
 }

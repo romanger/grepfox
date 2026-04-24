@@ -13,10 +13,18 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     &--4col { grid-template-columns: repeat(4, 1fr); }
     &--5col { grid-template-columns: repeat(5, 1fr); }
     &--6col { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  &__img {
+    max-height: 40px;
+    filter: grayscale(1) brightness(0.9);
   }
 
   &__item {
