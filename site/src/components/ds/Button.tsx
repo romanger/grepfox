@@ -31,8 +31,9 @@ export function Button(props: LinkProps | BtnProps) {
     icon,
     iconTrailing,
     children,
+    className,
     ...domRest
-  } = props as CommonProps & { [k: string]: unknown }
+  } = props as CommonProps & { className?: string; [k: string]: unknown }
 
   const content = (
     <>
@@ -42,7 +43,7 @@ export function Button(props: LinkProps | BtnProps) {
     </>
   )
 
-  const cls = classNames(appearance, size)
+  const cls = [classNames(appearance, size), className].filter(Boolean).join(' ')
 
   if ('href' in props && props.href) {
     const { href, newTab, ...rest } = domRest as LinkProps

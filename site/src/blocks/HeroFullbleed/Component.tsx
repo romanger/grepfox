@@ -25,36 +25,20 @@ export function HeroFullbleed({
   return (
     <div className="block-spacer">
       <div className="hero-fullbleed">
-        <Media
-          media={background}
-          src={backgroundUrl}
-          size="hero"
-          filtered
-          style={{ position: 'absolute', inset: 0, height: '100%' }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.8) 80%, var(--gf-void) 100%)',
-          }}
-        />
+        <Media media={background} src={backgroundUrl} size="hero" filtered />
+        <div className="hero-fullbleed__overlay" />
         <div className="hero-fullbleed__content">
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap' }}>
-            {eyebrow && <div className="mono-label" style={{ color: 'var(--gf-bone)' }}>{eyebrow}</div>}
-            {meta && <div className="mono-label" style={{ color: 'var(--gf-bone)' }}>{meta}</div>}
+          <div className="hero-fullbleed__meta">
+            {eyebrow && <div className="mono-label mono-label--light">{eyebrow}</div>}
+            {meta && <div className="mono-label mono-label--light">{meta}</div>}
           </div>
           <div>
             {statValue && <div className="hero-fullbleed__stat">{statValue}</div>}
             <div className="hero-fullbleed__desc">{description}</div>
             {tags && tags.length > 0 && (
-              <div style={{ display: 'flex', gap: 10, marginTop: 24, flexWrap: 'wrap' }}>
+              <div className="hero-fullbleed__tags">
                 {tags.map((t, i) => (
-                  <div
-                    key={t.id || i}
-                    className="tag"
-                    style={{ borderColor: 'var(--gf-bone)', color: 'var(--gf-bone)', padding: '6px 12px' }}
-                  >
+                  <div key={t.id || i} className="tag tag--light">
                     {t.icon && <Icon name={t.icon} size={12} />}
                     {t.label}
                   </div>

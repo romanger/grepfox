@@ -23,7 +23,7 @@
 
   &__title {
     @include display(88px, 700, -0.045em, 0.9);
-    margin-top: 16px;
+    margin-top: 18px;
   }
 
   &__btn {
@@ -37,6 +37,7 @@
     font-size: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
     flex-shrink: 0;
     display: inline-flex;

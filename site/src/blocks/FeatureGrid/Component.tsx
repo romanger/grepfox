@@ -37,13 +37,7 @@ export function FeatureGrid({ columns = '3', items }: Props) {
             <div className="feature-card">
               {hasImage && (
                 <div className="feature-card__img">
-                  <Media
-                    media={item.image}
-                    src={item.imageUrl}
-                    size="card"
-                    filtered
-                    style={{ position: 'absolute', inset: 0, height: '100%' }}
-                  />
+                  <Media media={item.image} src={item.imageUrl} size="card" filtered />
                 </div>
               )}
               <div className="feature-card__body">

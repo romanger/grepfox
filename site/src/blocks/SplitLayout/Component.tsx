@@ -16,13 +16,9 @@ type Props = {
 
 export function SplitLayout({ imageSide = 'right', eyebrow, title, content, action, image, imageUrl }: Props) {
   const imageEl = (
-    <Media
-      media={image}
-      src={imageUrl}
-      size="hero"
-      filtered
-      style={{ width: '100%', height: 420 }}
-    />
+    <div className="split-layout__image">
+      <Media media={image} src={imageUrl} size="hero" filtered />
+    </div>
   )
 
   const contentEl = (
@@ -47,7 +43,7 @@ export function SplitLayout({ imageSide = 'right', eyebrow, title, content, acti
           appearance={action.link.appearance || 'outline'}
           iconTrailing="arrow-right"
           newTab={action.link.newTab}
-          style={{ marginTop: 28, fontSize: 13 }}
+          className="split-layout__action"
         >
           {action.link.label}
         </Button>

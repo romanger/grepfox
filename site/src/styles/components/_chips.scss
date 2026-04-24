@@ -24,6 +24,12 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   line-height: 1;
+
+  &--light {
+    color: var(--gf-bone);
+    border-color: var(--gf-bone);
+    padding: 6px 12px;
+  }
 }
 
 .counter {

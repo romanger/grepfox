@@ -4,6 +4,12 @@
   position: relative;
   min-height: 540px;
 
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.8) 80%, var(--gf-void) 100%);
+  }
+
   &__content {
     position: absolute;
     inset: 0;
@@ -13,8 +19,16 @@
     justify-content: space-between;
   }
 
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
   &__stat {
     @include display(128px, 700, -0.055em, 0.82);
+    margin-top: 24px;
   }
 
   &__desc {
@@ -22,9 +36,16 @@
     font-size: 40px;
     font-weight: 500;
     letter-spacing: -0.02em;
-    margin-top: 8px;
+    margin-top: 28px;
     max-width: 720px;
     line-height: 1.15;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 32px;
+    flex-wrap: wrap;
   }
 
   @include md-down {

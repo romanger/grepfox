@@ -14,13 +14,13 @@ type Props = {
 
 export function CTABanner({ accent = true, eyebrow, title, action, contacts }: Props) {
   const wrapperClass = accent ? 'cta-banner' : 'cta-banner cta-banner--dark'
-  const eyebrowStyle = accent ? { color: 'var(--gf-void)' } : undefined
+  const eyebrowCls = accent ? 'mono-label mono-label--dark' : 'mono-label'
   return (
     <div className="block-spacer">
       <div className={wrapperClass}>
         <div className="cta-banner__inner">
           <div>
-            {eyebrow && <div className="mono-label" style={eyebrowStyle}>{eyebrow}</div>}
+            {eyebrow && <div className={eyebrowCls}>{eyebrow}</div>}
             <div className="cta-banner__title">{title}</div>
           </div>
           {action?.link && (

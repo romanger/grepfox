@@ -43,7 +43,7 @@ export function HeroSplit({ eyebrow, title, subtitle, actions, image, imageUrl, 
                     icon={a.iconLeading ? icon : undefined}
                     iconTrailing={a.iconLeading ? undefined : icon}
                     newTab={a.link.newTab}
-                    style={{ height: 56 }}
+                    className="hero-split__btn"
                   >
                     {a.link.label}
                   </Button>
@@ -53,13 +53,7 @@ export function HeroSplit({ eyebrow, title, subtitle, actions, image, imageUrl, 
           )}
         </div>
         <div className="hero-split__image">
-          <Media
-            media={image}
-            src={imageUrl}
-            size="hero"
-            filtered
-            style={{ position: 'absolute', inset: 0, height: '100%' }}
-          />
+          <Media media={image} src={imageUrl} size="hero" filtered />
           <div style={{ position: 'absolute', top: 24, right: 24 }}>
             <div className="crosshair crosshair--tl" />
             <div className="crosshair crosshair--tr" />

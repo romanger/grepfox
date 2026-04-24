@@ -14,7 +14,7 @@ export function AccentBlock({ eyebrow, title, description, footnote, image, imag
     <div className="block-spacer">
       <div className="accent-block">
         <div className="accent-block__content">
-          {eyebrow && <div className="mono-label" style={{ color: 'var(--gf-void)' }}>{eyebrow}</div>}
+          {eyebrow && <div className="mono-label mono-label--dark">{eyebrow}</div>}
           <div>
             <div className="accent-block__title">
               {title.split('\n').map((line, i, arr) => (
@@ -24,25 +24,13 @@ export function AccentBlock({ eyebrow, title, description, footnote, image, imag
                 </span>
               ))}
             </div>
-            {description && (
-              <p style={{ fontSize: 17, marginTop: 20, maxWidth: 420, lineHeight: 1.5 }}>
-                {description}
-              </p>
-            )}
+            {description && <p className="accent-block__desc">{description}</p>}
           </div>
-          {footnote && (
-            <div style={{ fontFamily: 'var(--ff-mono)', fontSize: 12, letterSpacing: '0.14em' }}>
-              {footnote}
-            </div>
-          )}
+          {footnote && <div className="accent-block__footnote">{footnote}</div>}
         </div>
-        <Media
-          media={image}
-          src={imageUrl}
-          size="hero"
-          filtered
-          style={{ width: '100%', height: '100%' }}
-        />
+        <div className="accent-block__image">
+          <Media media={image} src={imageUrl} size="hero" filtered />
+        </div>
       </div>
     </div>
   )

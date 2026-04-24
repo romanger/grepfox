@@ -14,8 +14,25 @@
     justify-content: space-between;
   }
 
+  &__image {
+    position: relative;
+  }
+
   &__title {
     @include display(96px, 700, -0.05em, 0.85);
+    margin-top: 20px;
+  }
+
+  &__desc {
+    font-size: 17px;
+    margin-top: 24px;
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  &__footnote {
+    @include mono(12px, 0.14em);
+    margin-top: 32px;
   }
 
   @include md-down {

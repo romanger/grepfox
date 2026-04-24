@@ -17,13 +17,9 @@ export function Testimonial({ eyebrow = 'TESTIMONIAL', quote, name, role, image,
     <div className="block-spacer block-pad">
       <div className={cls}>
         {hasImage && (
-          <Media
-            media={image}
-            src={imageUrl}
-            size="card"
-            filtered
-            style={{ width: '100%' }}
-          />
+          <div className="testimonial__image">
+            <Media media={image} src={imageUrl} size="card" filtered />
+          </div>
         )}
         <div className="testimonial__content">
           <MonoLabel accent>{eyebrow}</MonoLabel>
