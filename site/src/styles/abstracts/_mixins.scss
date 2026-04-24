@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+@mixin md-down { @media (max-width: $bp-md) { @content; } }
+@mixin sm-down { @media (max-width: $bp-sm) { @content; } }
+
+@mixin up($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media (min-width: map-get($breakpoints, $bp)) { @content; }
+  } @else {
+    @media (min-width: $bp) { @content; }
+  }
+}
+
+@mixin mono($size: 11px, $tracking: 0.18em, $color: var(--gf-dim)) {
+  font-family: var(--ff-mono);
+  font-size: $size;
+  letter-spacing: $tracking;
+  color: $color;
+}
+
+@mixin display($size, $weight: 700, $tracking: -0.04em, $line: 0.9) {
+  font-family: var(--ff-display);
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $tracking;
+  line-height: $line;
+}
+
+@mixin inline-flex-center($gap: 8px) {
+  display: inline-flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin bordered-grid($cols, $border: 1px solid var(--gf-rule)) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  border: $border;
+}

@@ -1,0 +1,99 @@
+@use '../abstracts' as *;
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__hint {
+    @include mono(11px, 0, var(--gf-dim));
+    margin-top: -2px;
+
+    &--error { color: var(--gf-accent); }
+  }
+}
+
+.input {
+  width: 100%;
+  background: var(--gf-surface);
+  border: 1px solid var(--gf-rule);
+  color: var(--gf-bone);
+  padding: 14px 16px;
+  font-family: var(--ff-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color var(--ease-cut);
+
+  &:focus { border-color: var(--gf-accent); }
+  &--error { border-color: var(--gf-accent); }
+}
+
+textarea.input {
+  resize: none;
+  min-height: 120px;
+}
+
+.select-wrap {
+  background: var(--gf-surface);
+  border: 1px solid var(--gf-rule);
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 46px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+
+  &--on { background: var(--gf-accent); }
+  &--off { background: var(--gf-rule); }
+
+  &__knob {
+    position: absolute;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &--on .toggle__knob { left: 26px; background: var(--gf-void); }
+  &--off .toggle__knob { left: 2px; background: var(--gf-bone); }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &__box {
+    width: 20px;
+    height: 20px;
+    background: var(--gf-accent);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+}
+
+.radio__dot {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--gf-bone);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.radio__dot-inner {
+  width: 10px;
+  height: 10px;
+  background: var(--gf-accent);
+  border-radius: 999px;
+}

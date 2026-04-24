@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.frame,
+.site-frame {
+  max-width: $frame-max;
+  margin: 0 auto;
+  background: var(--gf-void);
+  color: var(--gf-bone);
+  font-family: var(--ff-body);
+  position: relative;
+}
+
+.site-frame { min-height: 100vh; }

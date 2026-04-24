@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.alert {
+  border: 1px solid var(--gf-rule);
+  padding: 18px 22px;
+  background: var(--gf-surface);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: flex-start;
+
+  &__title {
+    @include mono(11px, 0.18em, currentColor);
+  }
+
+  &__msg {
+    font-size: 15px;
+    color: var(--gf-bone);
+    margin-top: 8px;
+  }
+}

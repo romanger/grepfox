@@ -1,0 +1,108 @@
+@use '../abstracts' as *;
+
+.process-timeline {
+  position: relative;
+
+  &__track {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gf-rule);
+  }
+
+  &__progress {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 62%;
+    height: 2px;
+    background: var(--gf-accent);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    position: relative;
+
+    &--3col { grid-template-columns: repeat(3, 1fr); }
+    &--4col { grid-template-columns: repeat(4, 1fr); }
+    &--5col { grid-template-columns: repeat(5, 1fr); }
+    &--6col { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  @include md-down {
+    &__grid {
+      &--3col,
+      &--4col,
+      &--5col,
+      &--6col { grid-template-columns: 1fr; }
+    }
+  }
+
+  @include sm-down {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    &__track,
+    &__progress { display: none; }
+  }
+}
+
+.process-step {
+  padding-top: 56px;
+  position: relative;
+
+  &__dot {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gf-dim);
+    background: var(--gf-surface);
+  }
+
+  &--done .process-step__dot {
+    border-color: var(--gf-accent);
+    background: var(--gf-accent);
+  }
+
+  &__title {
+    @include display(26px, 700, -0.02em, 1);
+    margin-top: 10px;
+  }
+
+  &__desc {
+    font-size: 13px;
+    color: var(--gf-subtle);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  @include sm-down {
+    padding-top: 0;
+    padding-left: 28px;
+    padding-bottom: 24px;
+    border-left: 2px solid var(--gf-rule);
+
+    &--done { border-left-color: var(--gf-accent); }
+
+    &__dot {
+      position: absolute;
+      top: 4px;
+      left: -9px;
+      width: 14px;
+      height: 14px;
+    }
+
+    &__title {
+      font-size: 20px;
+      margin-top: 6px;
+    }
+  }
+}

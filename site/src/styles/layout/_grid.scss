@@ -1,0 +1,57 @@
+@use '../abstracts' as *;
+
+.container,
+.container-fluid {
+  width: 100%;
+  padding: 0 $gutter;
+
+  @include md-down { padding: 0 $gutter-md; }
+  @include sm-down { padding: 0 $gutter-sm; }
+}
+
+.container {
+  max-width: $frame-max;
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat($grid-cols, 1fr);
+  gap: $grid-gap;
+}
+
+.col { grid-column: span $grid-cols; }
+
+@for $i from 1 through $grid-cols {
+  .col-#{$i} { grid-column: span #{$i}; }
+}
+
+@each $bp-name, $bp-value in $breakpoints {
+  @media (min-width: $bp-value) {
+    @for $i from 1 through $grid-cols {
+      .col-#{$bp-name}-#{$i} { grid-column: span #{$i}; }
+    }
+  }
+}
+
+.g-0 { gap: 0; }
+.g-1 { gap: 4px; }
+.g-2 { gap: 8px; }
+.g-3 { gap: 16px; }
+.g-4 { gap: 24px; }
+.g-5 { gap: 32px; }
+.g-6 { gap: 48px; }
+
+.gx-0 { column-gap: 0; }
+.gx-1 { column-gap: 4px; }
+.gx-2 { column-gap: 8px; }
+.gx-3 { column-gap: 16px; }
+.gx-4 { column-gap: 24px; }
+.gx-5 { column-gap: 32px; }
+
+.gy-0 { row-gap: 0; }
+.gy-1 { row-gap: 4px; }
+.gy-2 { row-gap: 8px; }
+.gy-3 { row-gap: 16px; }
+.gy-4 { row-gap: 24px; }
+.gy-5 { row-gap: 32px; }

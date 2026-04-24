@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.numbers-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--gf-rule);
+  border-bottom: 1px solid var(--gf-rule);
+
+  &--2col { grid-template-columns: repeat(2, 1fr); }
+  &--3col { grid-template-columns: repeat(3, 1fr); }
+  &--4col { grid-template-columns: repeat(4, 1fr); }
+
+  &__item {
+    padding: 48px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &:not(:last-child) { border-right: 1px solid var(--gf-rule); }
+  }
+
+  &__value {
+    @include display(88px, 700, -0.04em, 0.9);
+  }
+
+  &__label-sub {
+    @include mono(11px, 0, var(--gf-dim));
+    margin-top: 4px;
+  }
+
+  @include md-down {
+    grid-template-columns: repeat(2, 1fr);
+
+    &--3col,
+    &--4col { grid-template-columns: repeat(2, 1fr); }
+
+    &__value { font-size: 56px; }
+
+    &__item {
+      &:not(:last-child) { border-right: none; }
+      &:nth-child(odd) { border-right: 1px solid var(--gf-rule); }
+      &:nth-child(-n+2) { border-bottom: 1px solid var(--gf-rule); }
+    }
+  }
+
+  @include sm-down {
+    &__item { padding: 24px 16px; }
+    &__value { font-size: 44px; }
+  }
+}

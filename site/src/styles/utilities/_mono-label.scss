@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.mono-label {
+  @include mono(11px, 0.18em, var(--gf-dim));
+  text-transform: uppercase;
+
+  &--accent { color: var(--gf-accent); }
+}

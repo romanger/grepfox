@@ -1,0 +1,112 @@
+@use '../abstracts' as *;
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--gf-rule);
+
+  &--2col { grid-template-columns: repeat(2, 1fr); }
+  &--3col { grid-template-columns: repeat(3, 1fr); }
+  &--4col { grid-template-columns: repeat(4, 1fr); }
+
+  @include md-down {
+    grid-template-columns: 1fr;
+
+    &--2col,
+    &--3col,
+    &--4col { grid-template-columns: 1fr; }
+  }
+}
+
+.pricing-card {
+  padding: 32px;
+  position: relative;
+
+  &:not(:last-child) { border-right: 1px solid var(--gf-rule); }
+
+  &--hot {
+    background: var(--gf-surface2);
+
+    .pricing-card__cta {
+      background: var(--gf-accent);
+      color: var(--gf-void);
+    }
+  }
+
+  &:not(.pricing-card--hot) .pricing-card__cta {
+    background: transparent;
+    color: var(--gf-bone);
+    border: 1px solid var(--gf-bone);
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--gf-accent);
+    color: var(--gf-void);
+    padding: 6px 12px;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+  }
+
+  &__price {
+    @include display(56px, 700, -0.035em, 1);
+    margin-top: 16px;
+  }
+
+  &__sub {
+    @include mono(12px, 0.12em, var(--gf-dim));
+    margin-top: 6px;
+  }
+
+  &__features {
+    border-top: 1px solid var(--gf-rule);
+    margin-top: 24px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__feature {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+
+    svg {
+      color: var(--gf-accent);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__cta {
+    margin-top: 32px;
+    width: 100%;
+    height: 56px;
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  @include md-down {
+    &:not(:last-child) {
+      border-right: none;
+      border-bottom: 1px solid var(--gf-rule);
+    }
+
+    &__price { font-size: 42px; }
+  }
+}

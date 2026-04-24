@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.hero-type {
+  border: 1px solid var(--gf-rule);
+  padding: 48px;
+  position: relative;
+
+  &__headline {
+    @include display(200px, 700, -0.06em, 0.82);
+    margin-top: 20px;
+  }
+
+  &__stats {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--gf-rule);
+    padding-top: 24px;
+  }
+
+  &__stat-value {
+    @include display(48px, 700, -0.03em, 1);
+    margin-top: 6px;
+  }
+
+  @include md-down {
+    &__headline { font-size: 120px; }
+    &__stat-value { font-size: 36px; }
+  }
+
+  @include sm-down {
+    padding: 20px;
+
+    &__headline { font-size: 64px; }
+    &__stats { grid-template-columns: repeat(2, 1fr); }
+    &__stat-value { font-size: 28px; }
+  }
+}

@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.img-placeholder {
+  position: relative;
+  overflow: hidden;
+
+  &__label {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    @include mono(10px, 0.16em, var(--gf-bone));
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
+}

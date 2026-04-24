@@ -1,0 +1,107 @@
+@use '../abstracts' as *;
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--gf-rule);
+
+  &--2col { grid-template-columns: repeat(2, 1fr); }
+  &--3col { grid-template-columns: repeat(3, 1fr); }
+  &--4col { grid-template-columns: repeat(4, 1fr); }
+
+  @include md-down {
+    grid-template-columns: repeat(2, 1fr);
+
+    &--2col,
+    &--3col,
+    &--4col { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @include sm-down {
+    grid-template-columns: 1fr;
+
+    &--2col,
+    &--3col,
+    &--4col { grid-template-columns: 1fr; }
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:nth-child(3n)) { border-right: 1px solid var(--gf-rule); }
+  &:nth-child(-n+3) { border-bottom: 1px solid var(--gf-rule); }
+
+  &__img {
+    height: 180px;
+    position: relative;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    background: var(--gf-void);
+    color: var(--gf-accent);
+    padding: 6px 10px;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover { background: var(--gf-surface); }
+  }
+
+  &__body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-height: 220px;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  &__title {
+    @include display(30px, 700, -0.02em, 1);
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: var(--gf-subtle);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  @include md-down {
+    &:not(:nth-child(3n)) { border-right: none; }
+    &:nth-child(-n+3) { border-bottom: none; }
+    &:nth-child(odd):not(:nth-last-child(-n+1)) { border-right: 1px solid var(--gf-rule); }
+    &:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--gf-rule); }
+  }
+
+  @include sm-down {
+    &:nth-child(odd) { border-right: none !important; }
+    &:not(:last-child) { border-bottom: 1px solid var(--gf-rule) !important; }
+  }
+}

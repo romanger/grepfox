@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 1px solid var(--gf-rule);
+
+  @include md-down {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @include sm-down {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.icon-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gf-bone);
+  position: relative;
+
+  &:not(:nth-child(8n)) { border-right: 1px solid var(--gf-rule); }
+  &:nth-child(-n+32) { border-bottom: 1px solid var(--gf-rule); }
+
+  &__name {
+    @include mono(10px, 0.08em, var(--gf-dim));
+  }
+
+  @include md-down {
+    &:not(:nth-child(8n)) { border-right: none; }
+    &:nth-child(-n+32) { border-bottom: none; }
+    &:not(:nth-child(5n)) { border-right: 1px solid var(--gf-rule); }
+    &:not(:nth-last-child(-n+5)) { border-bottom: 1px solid var(--gf-rule); }
+  }
+
+  @include sm-down {
+    &:not(:nth-child(5n)) { border-right: none; }
+    &:not(:nth-last-child(-n+5)) { border-bottom: none; }
+    &:not(:nth-child(4n)) { border-right: 1px solid var(--gf-rule); }
+    &:not(:nth-last-child(-n+4)) { border-bottom: 1px solid var(--gf-rule); }
+  }
+}
+
+.icon-spec-bar {
+  margin-top: 20px;
+  border: 1px solid var(--gf-rule);
+  padding: 20px 24px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include sm-down { gap: 20px; }
+}
+
+.icon-size-sample {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gf-bone);
+
+  &__label {
+    @include mono(11px, 0, var(--gf-dim));
+  }
+}

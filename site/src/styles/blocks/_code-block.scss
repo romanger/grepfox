@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.code-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--gf-rule);
+
+  &__editor {
+    padding: 40px;
+    background: var(--gf-surface);
+  }
+
+  &__dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+  }
+
+  &__pre {
+    font-family: var(--ff-mono);
+    font-size: 14px;
+    color: var(--gf-bone);
+    line-height: 1.8;
+    margin: 0;
+    white-space: pre;
+  }
+
+  @include md-down {
+    grid-template-columns: 1fr;
+  }
+}

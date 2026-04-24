@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.type-specimen {
+  border-top: 1px solid var(--gf-rule);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 200px 1fr 160px;
+  gap: 24px;
+  align-items: baseline;
+
+  &__meta {
+    @include mono(11px, 0, var(--gf-dim));
+    text-align: right;
+  }
+
+  @include sm-down {
+    grid-template-columns: 1fr;
+
+    &__meta { text-align: left; }
+  }
+}
+
+.type-ladder-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 120px;
+  border-bottom: 1px solid var(--gf-rule-soft);
+  padding: 14px 0;
+  align-items: baseline;
+  gap: 20px;
+
+  @include sm-down {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.type-ladder-label {
+  @include mono(10px, 0.18em, var(--gf-dim));
+}
+
+.type-ladder-sample {
+  font-family: var(--ff-display);
+  line-height: 1;
+
+  @include sm-down {
+    font-size: clamp(16px, 5vw, 180px) !important;
+    overflow: hidden;
+  }
+}
+
+.type-ladder-spec {
+  @include mono(11px, 0, var(--gf-dim));
+  text-align: right;
+}

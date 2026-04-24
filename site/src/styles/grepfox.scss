@@ -1,0 +1,62 @@
+// Grepfox Design System — Sass framework entry
+// Based on ds/index.html + ds/css/*.css. All original classes preserved.
+
+// ── Abstracts (no CSS output) ────────────────────────────────
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+
+// ── Tokens & base ────────────────────────────────────────────
+@use 'abstracts/tokens';
+@use 'base/reset';
+
+// ── Layout ───────────────────────────────────────────────────
+@use 'layout/frame';
+@use 'layout/grid';
+@use 'layout/headers';
+@use 'layout/sidebar';
+
+// ── Utilities ────────────────────────────────────────────────
+@use 'utilities/mono-label';
+@use 'utilities/hazard';
+@use 'utilities/wordmark';
+@use 'utilities/site-helpers';
+
+// ── Showcase (DS docs) ───────────────────────────────────────
+@use 'showcase/color';
+@use 'showcase/type';
+@use 'showcase/grid-demo';
+@use 'showcase/icons';
+@use 'showcase/motion';
+
+// ── Components ───────────────────────────────────────────────
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/chips';
+@use 'components/tabs';
+@use 'components/accordion';
+@use 'components/table';
+@use 'components/alerts';
+@use 'components/nav';
+@use 'components/footer';
+
+// ── Blocks (layouts / sections) ──────────────────────────────
+@use 'blocks/hero-split';
+@use 'blocks/hero-fullbleed';
+@use 'blocks/hero-type';
+@use 'blocks/feature-grid';
+@use 'blocks/numbers';
+@use 'blocks/process-timeline';
+@use 'blocks/pricing';
+@use 'blocks/testimonial';
+@use 'blocks/logo-wall';
+@use 'blocks/cta-banner';
+@use 'blocks/split-layout';
+@use 'blocks/mosaic';
+@use 'blocks/accent-block';
+@use 'blocks/code-block';
+@use 'blocks/marquee';
+
+// ── Imagery ──────────────────────────────────────────────────
+@use 'imagery/img-placeholder';
+@use 'imagery/img-filtered';
+@use 'imagery/crosshair';

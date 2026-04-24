@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+
+.site-footer {
+  background: var(--gf-void);
+  border: 1px solid var(--gf-rule);
+  padding: 40px 32px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    border-bottom: 1px solid var(--gf-rule);
+    padding-bottom: 32px;
+  }
+
+  &__col-title {
+    @include mono(11px, 0.18em, var(--gf-accent));
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: var(--gf-bone);
+    padding: 4px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-decoration: none;
+    transition: color var(--ease-cut);
+
+    &:hover { color: var(--gf-accent); }
+
+    svg { color: var(--gf-dim); }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--gf-dim);
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a {
+      color: var(--gf-dim);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      &:hover { color: var(--gf-bone); }
+    }
+  }
+
+  @include md-down {
+    &__grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @include sm-down {
+    padding: 24px 20px;
+
+    &__grid { grid-template-columns: 1fr; }
+  }
+}

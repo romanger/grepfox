@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+}
+
+body {
+  background: var(--gf-void);
+  color: var(--gf-bone);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100%;
+}
+
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font: inherit; }
+input, textarea, select { font: inherit; }

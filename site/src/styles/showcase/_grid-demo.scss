@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  height: 80px;
+  border: 1px solid var(--gf-rule);
+  padding: 4px;
+
+  &__col {
+    display: grid;
+    place-items: center;
+    @include mono(11px, 0, var(--gf-dim));
+
+    &:nth-child(odd) { background: var(--gf-surface2); }
+    &:nth-child(even) { background: var(--gf-surface); }
+  }
+
+  @include sm-down {
+    grid-template-columns: repeat(6, 1fr);
+    height: 60px;
+
+    &__col:nth-child(n+7) { display: none; }
+  }
+}
+
+.spacing-demo {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+
+  &__item { text-align: center; }
+  &__bar { background: var(--gf-accent); width: 100%; }
+  &__label {
+    @include mono(11px, 0, var(--gf-dim));
+    margin-top: 8px;
+  }
+
+  @include sm-down {
+    grid-template-columns: repeat(4, 1fr);
+
+    &__item:nth-child(n+5) { display: none; }
+  }
+}

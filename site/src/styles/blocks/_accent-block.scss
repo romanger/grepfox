@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.accent-block {
+  background: var(--gf-accent);
+  color: var(--gf-void);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 440px;
+
+  &__content {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include display(96px, 700, -0.05em, 0.85);
+  }
+
+  @include md-down {
+    grid-template-columns: 1fr;
+
+    &__title { font-size: 56px; }
+  }
+}

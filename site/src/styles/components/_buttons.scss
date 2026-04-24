@@ -1,0 +1,73 @@
+@use '../abstracts' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  padding: 16px 26px;
+  cursor: pointer;
+  transition: opacity var(--ease-cut);
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover { opacity: 0.85; }
+
+  &--primary { background: var(--gf-accent); color: var(--gf-void); }
+  &--secondary { background: var(--gf-bone); color: var(--gf-void); }
+
+  &--outline {
+    background: transparent;
+    color: var(--gf-bone);
+    border: 1px solid var(--gf-bone);
+    padding: 15px 25px;
+  }
+
+  &--outline-accent {
+    background: transparent;
+    color: var(--gf-accent);
+    border: 1px solid var(--gf-accent);
+    padding: 15px 25px;
+  }
+
+  &--ghost {
+    background: var(--gf-surface);
+    color: var(--gf-bone);
+    border: 1px solid var(--gf-rule);
+    padding: 15px 25px;
+    font-weight: 600;
+  }
+
+  &--disabled {
+    background: transparent;
+    color: var(--gf-dim);
+    border: 1px dashed var(--gf-dim);
+    padding: 15px 25px;
+    cursor: not-allowed;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    font-weight: 400;
+
+    &:hover { opacity: 1; }
+  }
+
+  &--lg { padding: 22px 36px; font-size: 18px; gap: 12px; }
+  &--sm { padding: 11px 18px; font-size: 12px; gap: 8px; }
+
+  &--icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+
+    &.btn--primary { background: var(--gf-accent); color: var(--gf-void); border: none; }
+    &.btn--ghost { background: var(--gf-surface); color: var(--gf-bone); }
+    &.btn--outline { background: transparent; color: var(--gf-bone); }
+  }
+}

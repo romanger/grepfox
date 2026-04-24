@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+
+  &__text {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--gf-bone);
+    line-height: 0.9;
+  }
+
+  &__tagline {
+    @include mono(11px, 0.14em, var(--gf-dim));
+    text-transform: uppercase;
+  }
+}

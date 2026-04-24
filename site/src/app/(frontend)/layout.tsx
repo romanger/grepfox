@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Header } from '@/components/site/Header'
 import { Footer } from '@/components/site/Footer'
-import './globals.css'
+import '@/styles/grepfox.scss'
 
 export const metadata: Metadata = {
   title: { default: 'Grepfox — Technical Maintenance', template: '%s · Grepfox' },

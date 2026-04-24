@@ -1,0 +1,25 @@
+.img-filtered {
+  position: relative;
+  overflow: hidden;
+
+  &__photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: var(--photo-filter);
+  }
+
+  &__tone {
+    position: absolute;
+    inset: 0;
+    background: var(--photo-tone);
+    mix-blend-mode: multiply;
+  }
+
+  &__veil {
+    position: absolute;
+    inset: 0;
+    background: var(--photo-veil);
+  }
+}

@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.marquee {
+  border-top: 1px solid var(--gf-rule);
+  border-bottom: 1px solid var(--gf-rule);
+  padding: 28px 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &__text {
+    font-family: var(--ff-display);
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    animation: marquee-scroll 20s linear infinite;
+    display: inline-block;
+  }
+
+  @include md-down {
+    &__text { font-size: 48px; }
+  }
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

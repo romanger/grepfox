@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gf-bone);
+  border: 1px solid var(--gf-rule);
+  padding: 8px 14px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.counter {
+  padding: 3px 8px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+  }
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--gf-void);
+}

@@ -25,7 +25,14 @@ const classNames = (appearance: Appearance, size: Size) => {
 }
 
 export function Button(props: LinkProps | BtnProps) {
-  const { appearance = 'primary', size = 'md', icon, iconTrailing, children } = props
+  const {
+    appearance = 'primary',
+    size = 'md',
+    icon,
+    iconTrailing,
+    children,
+    ...domRest
+  } = props as CommonProps & { [k: string]: unknown }
 
   const content = (
     <>
@@ -38,7 +45,7 @@ export function Button(props: LinkProps | BtnProps) {
   const cls = classNames(appearance, size)
 
   if ('href' in props && props.href) {
-    const { href, newTab, ...rest } = props as LinkProps
+    const { href, newTab, ...rest } = domRest as LinkProps
     const external = /^https?:\/\//.test(href)
     if (external || newTab) {
       return (
@@ -60,9 +67,11 @@ export function Button(props: LinkProps | BtnProps) {
     )
   }
 
-  const { ...rest } = props as BtnProps
   return (
-    <button className={cls} {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}>
+    <button
+      className={cls}
+      {...(domRest as ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
       {content}
     </button>
   )

@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--gf-rule);
+
+  @include sm-down { overflow-x: auto; }
+}
+
+.tab {
+  padding: 14px 24px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--gf-dim);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: color var(--ease-cut), border-color var(--ease-cut);
+
+  &:hover { color: var(--gf-bone); }
+
+  &--active {
+    color: var(--gf-bone);
+    border-bottom-color: var(--gf-accent);
+  }
+
+  @include sm-down {
+    padding: 12px 16px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+.segments {
+  display: flex;
+
+  @include sm-down { flex-wrap: wrap; }
+}
+
+.segment {
+  padding: 12px 20px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  background: transparent;
+  color: var(--gf-bone);
+  border: 1px solid var(--gf-rule);
+  margin-left: -1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--ease-cut), color var(--ease-cut);
+
+  &:first-child { margin-left: 0; }
+
+  &--active {
+    background: var(--gf-accent);
+    color: var(--gf-void);
+    border-color: var(--gf-accent);
+  }
+}

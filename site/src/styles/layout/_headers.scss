@@ -1,0 +1,120 @@
+@use '../abstracts' as *;
+
+.page-header {
+  padding: 48px 56px 36px;
+  border-bottom: 1px solid var(--gf-rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+
+  &__title {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 0.82;
+    margin-top: 16px;
+  }
+
+  &__meta {
+    @include mono(11px, 0, var(--gf-dim));
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  @include md-down { padding: 32px; }
+
+  @include sm-down {
+    padding: 24px 20px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    &__title { font-size: 72px; }
+    &__meta { text-align: left; }
+  }
+}
+
+.part-header {
+  padding: 48px 56px 32px;
+  border-bottom: 1px solid var(--gf-rule);
+
+  &__title {
+    @include display(160px, 700, -0.055em, 0.85);
+    margin-top: 16px;
+  }
+
+  &__sub {
+    font-size: 16px;
+    color: var(--gf-subtle);
+    margin-top: 16px;
+    max-width: 720px;
+  }
+
+  @include md-down {
+    padding: 32px;
+    &__title { font-size: 100px; }
+  }
+
+  @include sm-down {
+    padding: 24px 20px;
+    &__title { font-size: 64px; }
+  }
+}
+
+.part-divider {
+  height: 16px;
+  margin: 64px 56px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--gf-accent) 0 10px,
+    var(--gf-void) 10px 20px
+  );
+
+  @include md-down { margin: 48px 32px; }
+  @include sm-down { margin: 32px 20px; }
+}
+
+.section-head {
+  padding: 40px 56px 20px;
+  border-top: 1px solid var(--gf-rule);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: baseline;
+
+  &__n {
+    @include mono(12px, 0.18em, var(--gf-accent));
+  }
+
+  &__title {
+    @include display(64px, 700, -0.04em, 0.95);
+  }
+
+  &__sub {
+    font-size: 15px;
+    color: var(--gf-subtle);
+    margin-top: 8px;
+  }
+
+  @include md-down {
+    padding: 32px 32px 16px;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+
+    &__title { font-size: 48px; }
+  }
+
+  @include sm-down {
+    padding: 24px 20px 12px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    &__title { font-size: 36px; }
+  }
+}
+
+.section-body {
+  padding: 16px 56px 40px;
+
+  @include md-down { padding: 16px 32px 32px; }
+  @include sm-down { padding: 12px 20px 24px; }
+}

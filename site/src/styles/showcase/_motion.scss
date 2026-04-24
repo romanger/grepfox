@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include sm-down { grid-template-columns: 1fr; }
+}
+
+.motion-card {
+  border: 1px solid var(--gf-rule);
+  padding: 24px;
+
+  &__bar {
+    height: 4px;
+    background: var(--gf-rule);
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    background: var(--gf-accent);
+    transform-origin: left;
+    animation: gf-ease var(--dur) ease-out infinite;
+  }
+}
+
+@keyframes gf-ease {
+  0%   { transform: scaleX(0); }
+  50%  { transform: scaleX(1); }
+  100% { transform: scaleX(1); opacity: 0; }
+}
