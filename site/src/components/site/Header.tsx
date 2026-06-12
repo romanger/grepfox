@@ -4,6 +4,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { LogoLockup } from '@/components/ds/LogoMark'
 import { Icon, type IconName } from '@/components/ds/Icon'
+import { NavLinks, type NavItem } from '@/components/site/NavLinks'
 import { resolveLinkHref, type LinkValue } from '@/fields/link'
 
 export async function Header() {
@@ -14,26 +15,21 @@ export async function Header() {
   const nav = (data?.nav as { link?: LinkValue; icon?: IconName }[]) || []
   const cta = data?.cta as { link?: LinkValue } | undefined
 
+  const navItems: NavItem[] = nav
+    .filter((item) => item.link)
+    .map((item) => ({
+      href: resolveLinkHref(item.link!),
+      label: item.link!.label || '',
+      icon: item.icon,
+      newTab: item.link!.newTab || undefined,
+    }))
+
   return (
     <header className="top-nav">
       <Link href="/" aria-label="Grepfox home" className="top-nav__brand">
         <LogoLockup size={20} variant="badge" />
       </Link>
-      <nav className="top-nav__links" aria-label="Primary">
-        {nav.map((item, i) =>
-          item.link ? (
-            <Link
-              key={i}
-              href={resolveLinkHref(item.link)}
-              className="top-nav__link"
-              target={item.link.newTab ? '_blank' : undefined}
-            >
-              {item.icon && <Icon name={item.icon} size={13} />}
-              {item.link.label}
-            </Link>
-          ) : null,
-        )}
-      </nav>
+      <NavLinks items={navItems} />
       {cta?.link && (
         <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm">
           {cta.link.label}
