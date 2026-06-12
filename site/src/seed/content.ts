@@ -1168,7 +1168,7 @@ export const pages = [
         title: "Let's figure out what to ship first.",
         action: link('Start a conversation', '/contact', 'secondary'),
         contacts: [
-          { icon: 'mail', value: 'HELLO@GREPFOX.IO' },
+          { icon: 'mail', value: 'HELLO@GREPFOX.COM' },
           { icon: 'phone', value: '+1 (415) 555 0123' },
           { icon: 'map-pin', value: 'TEL AVIV · NYC' },
           { icon: 'clock', value: '< 1 BUSINESS DAY · NO BOTS' },
@@ -1539,7 +1539,7 @@ export const pages = [
         subtitle:
           'A 30-minute discovery call, no slides. We map your systems, pick an entry point, and send a scoped pilot proposal within a week.',
         actions: [
-          link('Email us', 'mailto:hello@grepfox.io', 'primary'),
+          link('Email us', 'mailto:hello@grepfox.com', 'primary'),
           link('Book a call', 'https://cal.com/', 'outline', true),
         ],
         image: 'contact-hero',
@@ -1550,9 +1550,9 @@ export const pages = [
         accent: true,
         eyebrow: 'DIRECT LINES',
         title: "Drop us a line. We read everything.",
-        action: link('hello@grepfox.io', 'mailto:hello@grepfox.io', 'secondary'),
+        action: link('hello@grepfox.com', 'mailto:hello@grepfox.com', 'secondary'),
         contacts: [
-          { icon: 'mail', label: 'EMAIL', value: 'hello@grepfox.io' },
+          { icon: 'mail', label: 'EMAIL', value: 'hello@grepfox.com' },
           { icon: 'clock', label: 'RESPONSE', value: '< 1 business day' },
           { icon: 'calendar', label: 'DISCOVERY CALL', value: '30 minutes, no slides' },
         ],
@@ -1594,6 +1594,49 @@ export const pages = [
         subtitle: 'Last updated: June 12, 2026',
       },
       {
+        blockType: 'numbers',
+        items: [
+          { value: '0', label: 'AD TRACKERS', sublabel: 'no pixels, no ad networks' },
+          { value: '0', label: 'DATA SOLD', sublabel: 'ever, to anyone' },
+          { value: '<1 d', label: 'REPLY', sublabel: 'to any data request' },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'THE SHORT VERSION.',
+        subtitle: 'Plain language first. The full policy follows below.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'mail',
+            title: 'What we collect',
+            description:
+              'What you send us when you write or book a call, plus minimal, aggregate site analytics. Nothing more.',
+          },
+          {
+            icon: 'lock',
+            title: 'What we never do',
+            description:
+              'Sell your data, run third-party ad tracking, or use your inquiry for anything except answering it.',
+          },
+          {
+            icon: 'check',
+            title: 'Your controls',
+            description:
+              'Ask what we hold, fix it, or have it deleted — one email to hello@grepfox.com, answered within a business day.',
+          },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'THE FULL POLICY.',
+      },
+      {
         blockType: 'richText',
         content: doc(
           h('h2', 'Who we are'),
@@ -1627,11 +1670,17 @@ export const pages = [
           ),
           h('h2', 'Your rights'),
           p(
-            'You may request access to, correction of, or deletion of your personal data at any time. Write to hello@grepfox.io and we will respond within one business day.',
+            'You may request access to, correction of, or deletion of your personal data at any time. Write to hello@grepfox.com and we will respond within one business day.',
           ),
           h('h2', 'Contact'),
-          p('Questions about this policy: hello@grepfox.io.'),
+          p('Questions about this policy: hello@grepfox.com.'),
         ),
+      },
+      {
+        blockType: 'ctaBanner',
+        accent: false,
+        title: 'Questions about your data?',
+        action: link('Write to us', 'mailto:hello@grepfox.com', 'primary'),
       },
     ],
   },
@@ -1648,6 +1697,41 @@ export const pages = [
         number: 'LEGAL / 02',
         title: 'TERMS OF SERVICE.',
         subtitle: 'Last updated: June 12, 2026',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'IN PLAIN WORDS.',
+        subtitle: 'Three things to know. The full terms follow below.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'file-text',
+            title: 'The site is not a contract',
+            description:
+              'Engagements are governed by signed agreements. Nothing here is a binding offer or a guaranteed service level.',
+          },
+          {
+            icon: 'bar-chart',
+            title: 'Results are examples',
+            description:
+              'Metrics and timelines describe past work. Your project gets its own scope, numbers and SLA — on paper.',
+          },
+          {
+            icon: 'shield',
+            title: 'Play fair',
+            description:
+              'Browse and share freely. No scraping for republication or model training, no breaking things on purpose.',
+          },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'THE FULL TERMS.',
       },
       {
         blockType: 'richText',
@@ -1679,8 +1763,14 @@ export const pages = [
             'We may update these terms from time to time. The date above reflects the latest revision; continued use of the site after a change constitutes acceptance.',
           ),
           h('h2', 'Contact'),
-          p('Questions about these terms: hello@grepfox.io.'),
+          p('Questions about these terms: hello@grepfox.com.'),
         ),
+      },
+      {
+        blockType: 'ctaBanner',
+        accent: false,
+        title: 'Questions about these terms?',
+        action: link('Write to us', 'mailto:hello@grepfox.com', 'primary'),
       },
     ],
   },
@@ -1726,7 +1816,7 @@ export const footer = {
     {
       title: 'CONTACT',
       links: [
-        { icon: 'mail', link: { type: 'external', url: 'mailto:hello@grepfox.io', label: 'hello@grepfox.io' } },
+        { icon: 'mail', link: { type: 'external', url: 'mailto:hello@grepfox.com', label: 'hello@grepfox.com' } },
         { icon: 'phone', link: { type: 'external', url: 'tel:+14155550123', label: '+1 (415) 555 0123' } },
         { icon: 'map-pin', link: { type: 'external', url: '/about', label: 'Tel Aviv · NYC' } },
       ],
