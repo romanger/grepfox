@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 
 const REVEAL_SELECTOR = [
   '.hero-split__content > *',
@@ -50,14 +49,8 @@ function animateValue(el: HTMLElement) {
 }
 
 export function MotionRuntime() {
-  const pathname = usePathname()
-
   useEffect(() => {
     if (document.documentElement.dataset.motion !== 'on') return
-
-    const targets = Array.from(document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)).filter(
-      (el) => !el.classList.contains('is-in'),
-    )
 
     const io = new IntersectionObserver(
       (entries, observer) => {
@@ -81,7 +74,29 @@ export function MotionRuntime() {
       },
       { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
     )
-    targets.forEach((el) => io.observe(el))
+
+    const matches = (node: Node): HTMLElement[] => {
+      if (!(node instanceof Element)) return []
+      const found = node.matches(REVEAL_SELECTOR) ? [node as HTMLElement] : []
+      return found.concat(Array.from(node.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)))
+    }
+
+    const observe = (node: Node) =>
+      matches(node).forEach((el) => {
+        if (!el.classList.contains('is-in')) io.observe(el)
+      })
+
+    observe(document.body)
+
+    // Soft navigations that only change query params (e.g. /blog?category=…)
+    // swap DOM without a pathname change; watch for the new nodes directly.
+    const mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        m.addedNodes.forEach(observe)
+        m.removedNodes.forEach((node) => matches(node).forEach((el) => io.unobserve(el)))
+      }
+    })
+    mo.observe(document.body, { childList: true, subtree: true })
 
     const nav = document.querySelector<HTMLElement>('.top-nav')
     const onScroll = () => nav?.classList.toggle('top-nav--scrolled', window.scrollY > 4)
@@ -89,10 +104,11 @@ export function MotionRuntime() {
     window.addEventListener('scroll', onScroll, { passive: true })
 
     return () => {
+      mo.disconnect()
       io.disconnect()
       window.removeEventListener('scroll', onScroll)
     }
-  }, [pathname])
+  }, [])
 
   return null
 }
