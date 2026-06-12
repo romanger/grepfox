@@ -13,9 +13,9 @@ const U = (id: string) => `https://images.unsplash.com/photo-${id}?w=1920&q=80&f
 export const images: ImageManifest[] = [
   {
     key: 'home-hero',
-    url: U('1605379399642-870262d3d051'),
+    url: U('1607799279861-4dd421887fb3'),
     filename: 'home-hero-server-room.jpg',
-    alt: 'Dual monitors with code in a dark workspace, warm orange glow',
+    alt: 'Code editor close-up on a dark screen, violet ambient light',
     credit: 'Unsplash',
   },
   {
