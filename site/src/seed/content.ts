@@ -1171,7 +1171,7 @@ export const pages = [
           { icon: 'mail', value: 'HELLO@GREPFOX.COM' },
           { icon: 'phone', value: '+1 (415) 555 0123' },
           { icon: 'map-pin', value: 'REMOTE · WORLDWIDE' },
-          { icon: 'clock', value: '< 1 BUSINESS DAY · NO BOTS' },
+          { icon: 'clock', value: '< 1 BUSINESS DAY · HUMANS + AGENTS' },
         ],
       },
     ],
