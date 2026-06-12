@@ -41,6 +41,8 @@
     .pricing-card__cta {
       background: var(--gf-accent);
       color: var(--gf-void);
+
+      &:hover { background: var(--gf-bone); }
     }
   }
 
@@ -48,6 +50,11 @@
     background: transparent;
     color: var(--gf-bone);
     border: 1px solid var(--gf-bone);
+
+    &:hover {
+      background: var(--gf-bone);
+      color: var(--gf-void);
+    }
   }
 
   &__badge {

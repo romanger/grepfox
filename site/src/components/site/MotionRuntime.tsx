@@ -18,7 +18,7 @@ const REVEAL_SELECTOR = [
   '.testimonial',
   '.pricing-grid__item',
   '.logo-wall__item',
-  '.accordion-item',
+  '.accordion',
   '.cta-banner__inner > *',
 ].join(', ')
 

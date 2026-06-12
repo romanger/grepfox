@@ -1,7 +1,11 @@
 @use '../abstracts' as *;
 
+// Grid lines: every cell draws its own right/bottom border; the wall clips
+// the outer 1px via negative margins, so the rules stay correct for any
+// column count (4/5/6) and any item count.
 .logo-wall {
   border: 1px solid var(--gf-rule);
+  overflow: hidden;
 
   &__header {
     padding: 20px 32px;
@@ -15,7 +19,7 @@
     grid-template-columns: repeat(5, 1fr);
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 -1px -1px 0;
 
     &--4col { grid-template-columns: repeat(4, 1fr); }
     &--5col { grid-template-columns: repeat(5, 1fr); }
@@ -36,9 +40,11 @@
     font-size: 18px;
     letter-spacing: 0.05em;
     color: var(--gf-subtle);
+    border-right: 1px solid var(--gf-rule);
+    border-bottom: 1px solid var(--gf-rule);
+    transition: color var(--ease-cut);
 
-    &:not(:nth-child(5n)) { border-right: 1px solid var(--gf-rule); }
-    &:nth-child(-n+5) { border-bottom: 1px solid var(--gf-rule); }
+    &:hover { color: var(--gf-bone); }
   }
 
   @include md-down {
@@ -48,13 +54,6 @@
       &--4col,
       &--5col,
       &--6col { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    &__item {
-      &:not(:nth-child(5n)) { border-right: none; }
-      &:nth-child(-n+5) { border-bottom: none; }
-      &:not(:nth-child(3n)) { border-right: 1px solid var(--gf-rule); }
-      &:not(:nth-last-child(-n+3)) { border-bottom: 1px solid var(--gf-rule); }
     }
   }
 
@@ -67,11 +66,6 @@
       &--6col { grid-template-columns: repeat(2, 1fr); }
     }
 
-    &__item {
-      &:not(:nth-child(3n)) { border-right: none; }
-      &:not(:nth-last-child(-n+3)) { border-bottom: none; }
-      &:nth-child(odd) { border-right: 1px solid var(--gf-rule); }
-      &:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--gf-rule); }
-    }
+    &__item { padding: 20px 16px; font-size: 15px; }
   }
 }

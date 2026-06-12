@@ -43,6 +43,16 @@
     display: inline-flex;
     align-items: center;
     gap: 14px;
+    transition: background var(--ease-cut), color var(--ease-cut);
+
+    svg { transition: transform var(--ease-cut); }
+
+    &:hover {
+      background: var(--gf-bone);
+      color: var(--gf-void);
+
+      svg { transform: translateX(2px); }
+    }
   }
 
   &__contacts {

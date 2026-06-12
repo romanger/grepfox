@@ -94,8 +94,31 @@
     display: grid;
     place-items: center;
 
-    &.btn--primary { background: var(--gf-accent); color: var(--gf-void); border: none; }
-    &.btn--ghost { background: var(--gf-surface); color: var(--gf-bone); }
-    &.btn--outline { background: transparent; color: var(--gf-bone); }
+    &:hover svg { transform: none; }
+
+    &.btn--primary {
+      background: var(--gf-accent);
+      color: var(--gf-void);
+      border: none;
+
+      &:hover { background: var(--gf-bone); }
+    }
+
+    &.btn--ghost {
+      background: var(--gf-surface);
+      color: var(--gf-bone);
+
+      &:hover { border-color: var(--gf-subtle); }
+    }
+
+    &.btn--outline {
+      background: transparent;
+      color: var(--gf-bone);
+
+      &:hover {
+        background: var(--gf-bone);
+        color: var(--gf-void);
+      }
+    }
   }
 }
