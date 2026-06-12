@@ -44,9 +44,16 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!post) return {}
   const cover = typeof post.cover === 'object' && post.cover ? post.cover : null
   return {
-    title: `${post.title} — Grepfox Blog`,
+    title: post.title,
     description: post.excerpt || undefined,
-    openGraph: cover?.url ? { images: [{ url: cover.url }] } : undefined,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || undefined,
+      type: 'article',
+      publishedTime: post.publishedAt || undefined,
+      images: cover?.url ? [{ url: cover.url }] : undefined,
+    },
   }
 }
 
@@ -147,7 +154,7 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
             <div className="post-rail__row">
               <span className="post-rail__label">FILED UNDER</span>
               <span className="post-rail__value">
-                <Link href={`/blog?category=${category.slug}`}>{category.title}</Link>
+                <Link href={`/blog/category/${category.slug}`}>{category.title}</Link>
               </span>
             </div>
           )}
