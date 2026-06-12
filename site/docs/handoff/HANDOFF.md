@@ -67,3 +67,66 @@
 Прочитай docs/handoff/HANDOFF.md (последняя запись) и site/README.md. Проект: маркетинговый сайт Grepfox на Payload 3 + Next.js 15, рабочая директория site/. Контент сидится из src/seed/content.ts (npm run seed, upsert). Дизайн-рефреш завершён и смержен в main. Открытые хвосты: вымышленные отзывы, телефон-заглушка, предположительные соцссылки, юр. ревью privacy/terms, рассинхрон ds/css/tokens.css с site-токенами. Спроси пользователя: «Продолжаем с хвостов (отзывы/контакты/соцссылки) или новая задача?»
 
 ---
+
+## Handoff: 2026-06-12 18:03:59 +0400
+
+### Current Task State
+Блог полностью построен, отполирован и смержен в main (рабочая ветка feature/blog удалена). Полный цикл: спека → план → subagent-driven исполнение (8 задач) → пользовательская итерация (баг фильтров, дизайн-пасс, рассылка, path-URL категорий, SEO, sitemap/robots). Все проверки зелёные: tsc, production build (35 страниц), e2e в реальном браузере через playwright-skill. Последний коммит 8dec3c3, дерево чистое, dev-сервер на :3000.
+
+### Key Decisions
+- Категории постов: отдельная коллекция; авторы — текстовое поле («Grepfox Team» в сиде, без вымышленных людей); тело поста — один богатый lexical richText, не блоки.
+- Фильтр категорий — path-URL `/blog/category/[slug]` (SSG + generateMetadata), старые `?category=` получают permanentRedirect; листинг вынесен в общий серверный компонент BlogListing.
+- Баг «фильтры не работают»: MotionRuntime гонял reveal по usePathname, query-навигация не меняет pathname → новые карточки оставались opacity:0. Исправлено НЕ через useSearchParams (потребовал бы Suspense в layout), а через постоянный IntersectionObserver + MutationObserver на body — самовосстанавливается при любой замене DOM.
+- `_status: published` фильтр обязателен во ВСЕХ публичных запросах постов (листинг, slug-lookup, generateStaticParams, generateMetadata, sitemap) — эмпирически доказано, что без него черновики утекают; `draft: false` не нужен (дефолт local API).
+- Рассылка — настоящая, через CMS: коллекция Subscribers + server action subscribe() (пре-чек дубликата, lowercase). Писем не шлёт — только сбор адресов.
+- SEO: metadataBase в корневом layout (NEXT_PUBLIC_SERVER_URL || grepfox.com) — все canonical/og:image абсолютные; metaTitle страниц в сиде БЕЗ бренда (шаблон layout сам добавляет «· Grepfox»); title постов без суффикса «Blog».
+- Reveal-классы только на статичных контейнерах (className не пересобирается клиентским React) — .post-card безопасен, .post-rail НЕ добавлять (transform ломает position:sticky).
+- Индексы в Posts: category и publishedAt (пути запросов листинга).
+
+### Modified Files
+- site/src/collections/: Categories.ts, Posts.ts, Subscribers.ts (новые) + payload.config.ts
+- site/src/app/(frontend)/blog/: page.tsx, [slug]/page.tsx, category/[category]/page.tsx, actions.ts (новые)
+- site/src/app/: sitemap.ts, robots.ts (новые); (frontend)/layout.tsx (metadataBase), page.tsx и [slug]/page.tsx и services/[slug]/page.tsx (generateMetadata расширены)
+- site/src/components/site/: PostCard.tsx, BlogListing.tsx, NewsletterBand.tsx, NewsletterForm.tsx (новые), MotionRuntime.tsx (переписан observer)
+- site/src/utils/: readingTime.ts, formatPostDate.ts (новые)
+- site/src/styles/: components/_blog.scss (новый), _tabs.scss (text-decoration), utilities/_reveal.scss, grepfox.scss
+- site/src/seed/: lexical.ts (+ol/quote/rich/Seg), content.ts (categories+posts+nav+metaTitle), images.ts (8 обложек), index.ts (upsert categories/posts)
+- site/docs/superpowers/: specs/2026-06-12-blog-design.md, plans/2026-06-12-blog.md
+
+### Blockers / Open Questions
+- Прежние хвосты живы: вымышленные отзывы (FTC-риск), телефон-заглушка +1 415, предположительные соцссылки (linkedin/x/instagram /grepfox), юр. ревью privacy/terms, рассинхрон ds/css/tokens.css.
+- Подписка собирает адреса в CMS, но отправки писем нет (нет email-адаптера Payload).
+- На subscribe-action нет rate-limiting/honeypot — при выходе в прод стоит добавить.
+- При деплое ОБЯЗАТЕЛЬНО задать NEXT_PUBLIC_SERVER_URL — иначе canonical/og/sitemap уйдут на фолбэк grepfox.com.
+
+### Next Steps
+1. Заменить вымышленные отзывы, телефон и соцссылки реальными данными.
+2. Прогнать privacy/terms через юриста.
+3. Решить судьбу ds/ исходников (tokens рассинхрон).
+4. Опционально: email-адаптер Payload + отправка писем подписчикам; rate-limit на subscribe.
+5. При деплое: NEXT_PUBLIC_SERVER_URL, проверить canonical/sitemap на реальном домене.
+
+### Critical Context
+- Playwright-skill РАБОТАЕТ на этой машине (бандл-Chromium): скрипты в /tmp/playwright-test-*.js, запуск `cd ~/.claude/plugins/cache/playwright-skill/playwright-skill/4.1.0/skills/playwright-skill && node run.js <script>`. Заблокирован политикой macOS только Playwright MCP (CDP к системному Chrome).
+- НЕ собирать build при работающем dev-сервере — оба пишут в .next, build падает «Cannot find module './NNNN.js'»; лечится pkill next + rm -rf .next.
+- `npx payload run script.ts`: класть скрипт в src/, использовать top-level await (без него процесс умирает до резолва промисов), вывод писать в файл — stdout глотается.
+- Сид: npm run seed (upsert по slug); посты получают _status:'published' в seed/index.ts — без этого роуты их не покажут.
+- Слаги постов: shipping-ai-agents-to-production, evals-before-vibes, boring-automation-pays-for-itself, internal-tools-teams-actually-use, case-reporting-pipeline-days-to-minutes, choosing-an-llm-stack, onboarding-teams-to-agent-workflows, why-we-stay-a-small-crew. Категории: ai-agents, engineering, automation, case-studies, company.
+- Подписчики: таблица subscribers в site/grepfox.db; тестовая запись e2e-test-101214375@example.com — можно удалить.
+- ensureMedia ищет по alt — alt существующих картинок не менять без sqlite UPDATE (дубликаты -1.jpg).
+- Лексикал-хелперы сида: doc/p/h/ul/ol/quote/rich (rich принимает сегменты {t, bold, em, code}).
+
+### Model Summary
+- Блог на Payload 3 + Next 15: коллекции Categories/Posts/Subscribers, роуты /blog (+пагинация ?page=), /blog/category/[slug] (SSG), /blog/[slug] (SSG, related, share X/LinkedIn).
+- Дизайн: featured-карточка, моноиндексы, стрелки, теги на обложках, счётчики в табах; статья — sticky-рейка метаданных + типографика (нумерованные h2 «01 /», цитаты с оранжевой планкой, ol/ul с акцент-маркерами, лид-абзац).
+- MotionRuntime переписан: MutationObserver вместо pathname-эффекта — фильтры работают при client-side навигации.
+- Рассылка: NewsletterBand на листинге и статьях, server action → CMS, e2e-проверены успех и дубликат.
+- SEO: title/description/canonical/OG на всех 12 типах страниц, metadataBase, og:type article у постов, sitemap.xml (28 URL из CMS, revalidate 1h), robots.txt.
+- Проверки: e2e-батареи 29/30, 17/17, 12/12; production build 35 страниц; черновики не утекают (доказано на реальной БД).
+- 15 коммитов за сессию, всё в main, remote нет — не пушилось.
+- Subagent-driven execution использовался для первичной сборки; после фидбэка пользователя — всё руками без агентов (по его требованию).
+
+### Handoff Context (paste into next session)
+Прочитай docs/handoff/HANDOFF.md (последняя запись). Проект: сайт Grepfox, Payload 3 + Next.js 15, рабочая директория site/. Блог готов и в main: /blog, /blog/category/[slug], /blog/[slug], рассылка в CMS (Subscribers), SEO полный (metadataBase, canonical, OG, sitemap.xml, robots.txt). Сид: npm run seed. Для браузерных проверок используй playwright-skill (НЕ Playwright MCP — тот заблокирован macOS). Не собирай build при живом dev-сервере (.next конфликт). Открытые хвосты: вымышленные отзывы, телефон, соцссылки, юр. ревью, ds/tokens, отправка писем подписчикам. Спроси: «Продолжаем с хвостов или новая задача?»
+
+---
