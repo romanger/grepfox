@@ -1113,7 +1113,7 @@ export const pages = [
         title: 'From a 5-person marketing team\nto a 500-person enterprise.',
         description:
           'We replace the fractional CTO you never hired. Flexible enough for startups, rigorous enough for enterprise procurement.',
-        footnote: '— EST. 2025 · US + IL',
+        footnote: '— EST. 2025 · REMOTE-FIRST',
         image: 'about-hero',
       },
       {
@@ -1170,7 +1170,7 @@ export const pages = [
         contacts: [
           { icon: 'mail', value: 'HELLO@GREPFOX.COM' },
           { icon: 'phone', value: '+1 (415) 555 0123' },
-          { icon: 'map-pin', value: 'TEL AVIV · NYC' },
+          { icon: 'map-pin', value: 'REMOTE · WORLDWIDE' },
           { icon: 'clock', value: '< 1 BUSINESS DAY · NO BOTS' },
         ],
       },
@@ -1473,7 +1473,7 @@ export const pages = [
           { value: '4', label: 'ENGINEERS', sublabel: 'senior, dedicated' },
           { value: '14 yrs', label: 'AVG EXPERIENCE', sublabel: 'in web, data and AI' },
           { value: '50+', label: 'PROJECTS', sublabel: 'shipped to production' },
-          { value: '2', label: 'CONTINENTS', sublabel: 'always-on coverage' },
+          { value: 'Global', label: 'TEAM', sublabel: 'distributed, always-on' },
         ],
       },
       {
@@ -1513,7 +1513,7 @@ export const pages = [
         quote:
           'They behave like an in-house team that just happens to work remotely. We stopped looking for a CTO after the first quarter.',
         name: 'DANIEL ROTH',
-        role: 'CEO · D2C BRAND · TEL AVIV',
+        role: 'CEO · D2C BRAND',
         image: 'about-hero',
       },
       {
@@ -1662,7 +1662,7 @@ export const pages = [
           ),
           h('h2', 'Third parties'),
           p(
-            'We rely on a small set of processors to run our business — hosting, email and scheduling providers. Each processes data only on our instructions. Data may be processed in the United States, Israel and the European Union.',
+            'We rely on a small set of processors to run our business — hosting, email and scheduling providers. Each processes data only on our instructions. As a distributed company we may process data across regions; the same safeguards apply everywhere.',
           ),
           h('h2', 'Retention'),
           p(
@@ -1791,7 +1791,7 @@ export const header = {
 export const footer = {
   brandTag: 'TECH PARTNER · AI · AUTOMATION',
   tagline:
-    'Small crew, serious output. Based in the US & Israel. Book a scoping call and get a straight answer within one business day.',
+    'Small crew, serious output. Remote-first, working across time zones. Book a scoping call and get a straight answer within one business day.',
   columns: [
     {
       title: 'SERVICES',
@@ -1818,7 +1818,7 @@ export const footer = {
       links: [
         { icon: 'mail', link: { type: 'external', url: 'mailto:hello@grepfox.com', label: 'hello@grepfox.com' } },
         { icon: 'phone', link: { type: 'external', url: 'tel:+14155550123', label: '+1 (415) 555 0123' } },
-        { icon: 'map-pin', link: { type: 'external', url: '/about', label: 'Tel Aviv · NYC' } },
+        { icon: 'map-pin', link: { type: 'external', url: '/about', label: 'Remote · Worldwide' } },
       ],
     },
   ],
