@@ -8,6 +8,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Services } from './collections/Services'
+import { Subscribers } from './collections/Subscribers'
 import { Categories } from './collections/Categories'
 import { Posts } from './collections/Posts'
 import { Header } from './globals/Header'
@@ -24,7 +25,7 @@ export default buildConfig({
     },
   },
   editor: lexicalEditor({}),
-  collections: [Users, Media, Pages, Services, Categories, Posts],
+  collections: [Users, Media, Pages, Services, Categories, Posts, Subscribers],
   globals: [Header, Footer],
   secret: process.env.PAYLOAD_SECRET || 'dev-only-secret-change-me',
   typescript: {
