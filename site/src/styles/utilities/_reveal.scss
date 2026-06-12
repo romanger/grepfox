@@ -1,0 +1,48 @@
+// Scroll-reveal layer. Activated only when the inline head script sets
+// html[data-motion='on'] (skipped under prefers-reduced-motion).
+// MotionRuntime.tsx observes the same selector list and adds .is-in.
+
+$reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+$reveal-targets: (
+  '.hero-split__content > *',
+  '.hero-split__image',
+  '.hero-fullbleed__content > *',
+  '.section-head',
+  '.feature-grid__item',
+  '.numbers-block__item',
+  '.process-timeline',
+  '.process-step',
+  '.split-layout > *',
+  '.accent-block__body > *',
+  '.accent-block__image',
+  '.testimonial',
+  '.pricing-grid__item',
+  '.logo-wall__item',
+  '.accordion-item',
+  '.cta-banner__inner > *'
+);
+
+html[data-motion='on'] {
+  @each $target in $reveal-targets {
+    #{$target} {
+      transition:
+        opacity 640ms $reveal-ease,
+        transform 640ms $reveal-ease;
+
+      &:not(.is-in) {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+    }
+  }
+
+  .process-timeline__progress {
+    transform-origin: left;
+    transition: transform 1100ms 300ms $reveal-ease;
+  }
+
+  .process-timeline:not(.is-in) .process-timeline__progress {
+    transform: scaleX(0);
+  }
+}

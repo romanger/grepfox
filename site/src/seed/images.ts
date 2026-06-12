@@ -20,10 +20,10 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'ai-layer',
-    url: U('1620712943543-bcc4688e7485'),
+    url: U('1545987796-200677ee1011'),
     filename: 'ai-abstract-glow.jpg',
-    alt: 'Abstract AI visualization — glowing neural patterns',
-    credit: 'Jonathan Kemper · Unsplash',
+    alt: 'Network mesh structure — nodes and connections, wireframe',
+    credit: 'Alina Grubnyak · Unsplash',
   },
   {
     key: 'services-hero',
@@ -77,10 +77,10 @@ export const images: ImageManifest[] = [
   // Feature-grid cards on home page
   {
     key: 'card-ai-agents',
-    url: U('1677442136019-21780ecad995'),
+    url: U('1485827404703-89b55fcc595e'),
     filename: 'card-ai-agents.jpg',
-    alt: 'Abstract AI mesh visualization',
-    credit: 'Google DeepMind · Unsplash',
+    alt: 'Humanoid assistant robot, warm interior light',
+    credit: 'Alex Knight · Unsplash',
   },
   {
     key: 'card-automation',
@@ -120,10 +120,10 @@ export const images: ImageManifest[] = [
   // Service detail hero images
   {
     key: 'svc-ai-agents',
-    url: U('1677442136019-21780ecad995'),
+    url: U('1485827404703-89b55fcc595e'),
     filename: 'svc-ai-agents.jpg',
-    alt: 'AI neural network visualization',
-    credit: 'Google DeepMind · Unsplash',
+    alt: 'Humanoid assistant robot, warm interior light',
+    credit: 'Alex Knight · Unsplash',
   },
   {
     key: 'svc-automation',

@@ -17,6 +17,12 @@
     margin: 0;
   }
 
+  &:hover &__text { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__text { animation: none; }
+  }
+
   @include md-down {
     &__text { font-size: 48px; }
   }

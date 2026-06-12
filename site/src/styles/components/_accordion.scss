@@ -53,6 +53,20 @@
   }
 
   &__a {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition:
+      grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s 280ms;
+  }
+
+  &__a-clip {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  &__a-body {
     font-size: 15px;
     color: var(--gf-subtle);
     line-height: 1.55;
@@ -72,6 +86,14 @@
   &--open {
     .accordion-item__n { color: var(--gf-accent); }
     .accordion-item__icon { color: var(--gf-accent); }
+
+    .accordion-item__a {
+      grid-template-rows: 1fr;
+      visibility: visible;
+      transition:
+        grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0s;
+    }
   }
 
   @include sm-down {
@@ -81,6 +103,6 @@
     }
 
     &__q { font-size: 18px; }
-    &__a { padding: 0 20px 16px calc(20px + 40px + 16px); }
+    &__a-body { padding: 0 20px 16px calc(20px + 40px + 16px); }
   }
 }

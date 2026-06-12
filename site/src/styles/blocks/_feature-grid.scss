@@ -48,8 +48,16 @@
     margin: 0;
   }
 
-  &__arrow { color: var(--gf-bone); }
+  &__arrow {
+    color: var(--gf-bone);
+    transition: transform var(--ease-slide), color var(--ease-cut);
+  }
+
   &__icon { color: var(--gf-accent); display: inline-flex; }
+
+  &__img .img-filtered__photo {
+    transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
   &__badge {
     position: absolute;
@@ -70,8 +78,18 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    transition: background var(--ease-cut);
 
-    &:hover { background: var(--gf-surface); }
+    &:hover {
+      background: var(--gf-surface);
+
+      .img-filtered__photo { transform: scale(1.05); }
+
+      .feature-card__arrow {
+        transform: translate(3px, -3px);
+        color: var(--gf-accent);
+      }
+    }
   }
 
   &__body {

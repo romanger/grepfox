@@ -26,6 +26,7 @@
     @include display(88px, 700, -0.04em, 0.9);
     color: var(--gf-bone);
     margin: 0;
+    font-variant-numeric: tabular-nums;
 
     &--accent { color: var(--gf-accent); }
   }

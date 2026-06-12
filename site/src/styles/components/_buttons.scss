@@ -12,20 +12,41 @@
   border: none;
   padding: 16px 26px;
   cursor: pointer;
-  transition: opacity var(--ease-cut);
+  transition:
+    background var(--ease-cut),
+    color var(--ease-cut),
+    border-color var(--ease-cut);
   line-height: 1;
   text-decoration: none;
 
-  &:hover { opacity: 0.85; }
+  svg { transition: transform var(--ease-cut); }
 
-  &--primary { background: var(--gf-accent); color: var(--gf-void); }
-  &--secondary { background: var(--gf-bone); color: var(--gf-void); }
+  &:hover svg { transform: translateX(2px); }
+
+  &--primary {
+    background: var(--gf-accent);
+    color: var(--gf-void);
+
+    &:hover { background: var(--gf-bone); }
+  }
+
+  &--secondary {
+    background: var(--gf-bone);
+    color: var(--gf-void);
+
+    &:hover { background: var(--gf-accent); }
+  }
 
   &--outline {
     background: transparent;
     color: var(--gf-bone);
     border: 1px solid var(--gf-bone);
     padding: 15px 25px;
+
+    &:hover {
+      background: var(--gf-bone);
+      color: var(--gf-void);
+    }
   }
 
   &--outline-accent {
@@ -33,6 +54,11 @@
     color: var(--gf-accent);
     border: 1px solid var(--gf-accent);
     padding: 15px 25px;
+
+    &:hover {
+      background: var(--gf-accent);
+      color: var(--gf-void);
+    }
   }
 
   &--ghost {
@@ -41,6 +67,8 @@
     border: 1px solid var(--gf-rule);
     padding: 15px 25px;
     font-weight: 600;
+
+    &:hover { border-color: var(--gf-subtle); }
   }
 
   &--disabled {
@@ -53,7 +81,7 @@
     font-size: 12px;
     font-weight: 400;
 
-    &:hover { opacity: 1; }
+    &:hover svg { transform: none; }
   }
 
   &--lg { padding: 22px 36px; font-size: 18px; gap: 12px; }

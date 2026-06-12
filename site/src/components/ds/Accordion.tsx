@@ -51,10 +51,12 @@ export function Accordion({ items, defaultOpenIndex = 1, className }: Props) {
               id={panelId}
               role="region"
               aria-labelledby={headerId}
-              hidden={!open}
+              aria-hidden={!open}
               className="accordion-item__a"
             >
-              {item.answer}
+              <div className="accordion-item__a-clip">
+                <div className="accordion-item__a-body">{item.answer}</div>
+              </div>
             </div>
           </li>
         )
