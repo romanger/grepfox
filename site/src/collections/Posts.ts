@@ -19,9 +19,9 @@ export const Posts: CollectionConfig = {
     { name: 'excerpt', type: 'textarea', admin: { description: 'Shown in cards and used as meta description.' } },
     { name: 'cover', type: 'upload', relationTo: 'media' },
     { name: 'coverUrl', type: 'text', admin: { description: 'External cover image URL.' } },
-    { name: 'category', type: 'relationship', relationTo: 'categories' },
+    { name: 'category', type: 'relationship', relationTo: 'categories', index: true },
     { name: 'author', type: 'text' },
-    { name: 'publishedAt', type: 'date', admin: { date: { pickerAppearance: 'dayOnly' } } },
+    { name: 'publishedAt', type: 'date', index: true, admin: { date: { pickerAppearance: 'dayOnly' } } },
     {
       name: 'body',
       type: 'richText',
