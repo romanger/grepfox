@@ -1460,52 +1460,92 @@ export const pages = [
       {
         blockType: 'heroSplit',
         eyebrow: 'ABOUT',
-        title: 'A compact team of engineers. Built to move fast.',
+        title: 'Small by design. Senior by default.',
         subtitle:
-          'Grepfox is a small, senior team of builders. We were the fractional CTOs for a decade, then decided to be that — on purpose.',
-        actions: [link('Work with us', '/contact', 'primary')],
+          'Four senior engineers who spent a decade being everyone\'s fractional CTO — and then made it the whole job. Grepfox is that partner, on retainer.',
+        actions: [link('Work with us', '/contact', 'primary'), link('How we work', '/approach', 'outline')],
         image: 'about-hero',
-        imageCaption: 'TEAM · MISSION · STORY',
+        imageCaption: 'TEAM · MISSION · METHOD',
       },
       {
         blockType: 'numbers',
         items: [
           { value: '4', label: 'ENGINEERS', sublabel: 'senior, dedicated' },
           { value: '14 yrs', label: 'AVG EXPERIENCE', sublabel: 'in web, data and AI' },
-          { value: '50+', label: 'PROJECTS', sublabel: 'shipped to production' },
+          { value: '50+', label: 'PROJECTS', sublabel: 'shipped across our careers' },
           { value: 'Global', label: 'TEAM', sublabel: 'distributed, always-on' },
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
+        blockType: 'accentBlock',
         eyebrow: 'MISSION',
-        title: 'Be the technical partner we wish we had.',
+        title: 'Be the technical partner\nwe wish we had.',
+        description:
+          'Every founder and marketing leader hits the same wall: the stack gets too complex to run alone, but a full engineering team is overkill. That gap is where we live.',
+        footnote: '— ONE TEAM · ONE RETAINER · ONE POINT OF ACCOUNTABILITY',
         image: 'about-mission',
-        content: doc(
-          p(
-            'Every founder and marketing leader eventually hits the same wall: the stack gets too complex to run without dedicated engineering help, but they are not ready to hire a full team. That gap is where we live.',
-          ),
-          p(
-            'We replace the fractional CTO, the contractor roulette and the Fiverr-grade work that ends up in production. One compact team. One retainer. One point of accountability.',
-          ),
-        ),
       },
       {
-        blockType: 'richText',
-        content: doc(
-          h('h2', 'How we are different'),
-          p(
-            'We are builders who run what we ship. Most agencies hand off and vanish. Most consultancies never touch code. We do both, on purpose, because AI systems cannot be built the first way or operated the second.',
-          ),
-          h('h2', 'What we do not do'),
-          ul([
-            'Resell white-label tools we did not build',
-            'Take percentages of vendor API spend',
-            'Ship prototypes and call them products',
-            'Staff with juniors on their first project',
-          ]),
-        ),
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'HOW WE ARE DIFFERENT.',
+        subtitle: 'Builders who run what they ship.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'terminal',
+            title: 'Build and operate',
+            description:
+              'Agencies hand off and vanish; consultancies never touch code. AI systems demand both, so we do both.',
+          },
+          {
+            icon: 'star',
+            title: 'Senior only',
+            description:
+              'Every project is staffed by engineers with a decade-plus of production work behind them.',
+          },
+          {
+            icon: 'file-text',
+            title: 'Everything written down',
+            description:
+              'Decisions, trade-offs, runbooks. Your team can understand — and inherit — every line we ship.',
+          },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'WHAT WE DO NOT DO.',
+        subtitle: 'It is easier to trust a team that names its limits.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '4',
+        items: [
+          {
+            icon: 'x',
+            title: 'White-label resale',
+            description: 'We do not resell tools we did not build.',
+          },
+          {
+            icon: 'x',
+            title: 'API spend cuts',
+            description: 'We do not take percentages of vendor spend.',
+          },
+          {
+            icon: 'x',
+            title: 'Prototype theater',
+            description: 'We do not ship demos and call them products.',
+          },
+          {
+            icon: 'x',
+            title: 'Lock-in',
+            description: 'Everything lives in your accounts. Leaving is administrative.',
+          },
+        ],
       },
       {
         blockType: 'testimonial',
@@ -1514,11 +1554,10 @@ export const pages = [
           'They behave like an in-house team that just happens to work remotely. We stopped looking for a CTO after the first quarter.',
         name: 'DANIEL ROTH',
         role: 'CEO · D2C BRAND',
-        image: 'about-hero',
       },
       {
         blockType: 'ctaBanner',
-        accent: true,
+        accent: false,
         title: 'Want to see if we fit?',
         action: link('Say hello', '/contact', 'secondary'),
       },
