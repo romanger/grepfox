@@ -1579,6 +1579,111 @@ export const pages = [
       },
     ],
   },
+
+  // ---------- PRIVACY ----------
+  {
+    title: 'Privacy Policy',
+    slug: 'privacy',
+    metaTitle: 'Privacy Policy — Grepfox',
+    metaDescription: 'How Grepfox collects, uses and protects your data.',
+    layout: [
+      {
+        blockType: 'sectionHead',
+        number: 'LEGAL / 01',
+        title: 'PRIVACY POLICY.',
+        subtitle: 'Last updated: June 12, 2026',
+      },
+      {
+        blockType: 'richText',
+        content: doc(
+          h('h2', 'Who we are'),
+          p(
+            'Grepfox ("we", "us") provides AI, automation, web and maintenance services for businesses. This policy describes how we handle personal data collected through this website. It does not cover data we process on behalf of clients under a service agreement — that is governed by the data processing terms of each engagement.',
+          ),
+          h('h2', 'What we collect'),
+          ul([
+            'Contact details you send us — name, email, company and anything you include in a message or scoping call request',
+            'Basic usage data — pages visited, referrer and approximate region, collected through privacy-respecting analytics',
+            'Technical data required to serve the site — IP address, browser type, device class',
+          ]),
+          h('h2', 'How we use it'),
+          ul([
+            'To reply to your inquiry and prepare a proposal',
+            'To understand which pages are useful and improve the site',
+            'To meet legal and accounting obligations where they apply',
+          ]),
+          p('We do not sell personal data, and we do not use it for third-party advertising.'),
+          h('h2', 'Cookies and analytics'),
+          p(
+            'We keep cookies to the minimum needed for the site to function and for aggregate analytics. No cross-site tracking pixels, no ad networks.',
+          ),
+          h('h2', 'Third parties'),
+          p(
+            'We rely on a small set of processors to run our business — hosting, email and scheduling providers. Each processes data only on our instructions. Data may be processed in the United States, Israel and the European Union.',
+          ),
+          h('h2', 'Retention'),
+          p(
+            'Inquiry correspondence is kept for as long as a business relationship is active or being discussed, then deleted on a periodic review. Analytics data is aggregated and contains no direct identifiers.',
+          ),
+          h('h2', 'Your rights'),
+          p(
+            'You may request access to, correction of, or deletion of your personal data at any time. Write to hello@grepfox.io and we will respond within one business day.',
+          ),
+          h('h2', 'Contact'),
+          p('Questions about this policy: hello@grepfox.io.'),
+        ),
+      },
+    ],
+  },
+
+  // ---------- TERMS ----------
+  {
+    title: 'Terms of Service',
+    slug: 'terms',
+    metaTitle: 'Terms of Service — Grepfox',
+    metaDescription: 'Terms governing the use of the Grepfox website.',
+    layout: [
+      {
+        blockType: 'sectionHead',
+        number: 'LEGAL / 02',
+        title: 'TERMS OF SERVICE.',
+        subtitle: 'Last updated: June 12, 2026',
+      },
+      {
+        blockType: 'richText',
+        content: doc(
+          h('h2', 'Scope'),
+          p(
+            'These terms govern your use of this website. Consulting, development and retainer engagements are governed by separate written agreements; nothing on this site forms a contract for services or a binding offer.',
+          ),
+          h('h2', 'Content'),
+          p(
+            'Site content — including case results, timelines and metrics — describes past work and typical engagements. It is provided for general information and does not guarantee a specific outcome for your project. Service levels, response times and deliverables are defined only in a signed agreement.',
+          ),
+          h('h2', 'Intellectual property'),
+          p(
+            'The Grepfox name, logo, design system and site content belong to us or our licensors. You may not reproduce them beyond normal browsing and sharing without permission. Client logos and testimonials are used with consent.',
+          ),
+          h('h2', 'Acceptable use'),
+          ul([
+            'Do not attempt to disrupt, probe or overload the site',
+            'Do not scrape content for republication or model training without permission',
+            'Do not misrepresent an affiliation with Grepfox',
+          ]),
+          h('h2', 'Disclaimers'),
+          p(
+            'The site is provided "as is". We work to keep it accurate and available but make no warranty that it will be uninterrupted or error-free. To the maximum extent permitted by law, we are not liable for indirect or consequential damages arising from use of the site.',
+          ),
+          h('h2', 'Changes'),
+          p(
+            'We may update these terms from time to time. The date above reflects the latest revision; continued use of the site after a change constitutes acceptance.',
+          ),
+          h('h2', 'Contact'),
+          p('Questions about these terms: hello@grepfox.io.'),
+        ),
+      },
+    ],
+  },
 ]
 
 // ---------- GLOBALS ----------
