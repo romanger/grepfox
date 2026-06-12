@@ -44,6 +44,77 @@ export const services = [
         ],
       },
       {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'WHAT WE BUILD.',
+        subtitle: 'Agents that ship real work — not demos.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'message',
+            title: 'Support agents',
+            description:
+              'Grounded in your knowledge base. Escalate to humans with full context when confidence drops.',
+            tag: 'FLAGSHIP',
+          },
+          {
+            icon: 'search',
+            title: 'Internal assistants',
+            description:
+              'One answer box over scattered docs, tickets and CRM. Permission-aware by design.',
+          },
+          {
+            icon: 'bot',
+            title: 'Workflow agents',
+            description:
+              'Research, outreach, triage, QA. Autonomous where safe, supervised where it matters.',
+          },
+          {
+            icon: 'sparkles',
+            title: 'Content generators',
+            description:
+              'Drafts tuned to your brand voice, with review gates before anything ships.',
+          },
+          {
+            icon: 'database',
+            title: 'RAG pipelines',
+            description:
+              'Retrieval that stays fresh: ingestion, chunking, embeddings and re-ranking as a service.',
+          },
+          {
+            icon: 'shield',
+            title: 'Evals & guardrails',
+            description:
+              'Every agent ships with regression evals, output filters and a kill switch.',
+          },
+        ],
+      },
+      {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'WHY IT WORKS',
+        title: 'Grounded in your data. Guarded by evals.',
+        image: 'ai-layer',
+        content: doc(
+          p(
+            'Most agent projects die between the demo and production. Ours survive because we treat agents as software: versioned prompts, automated evals on every change, monitoring on every conversation.',
+          ),
+          p(
+            'You see what the agent did, why it did it, and how often it was right — in numbers, not anecdotes.',
+          ),
+        ),
+        action: link('See how a pilot runs', '/approach', 'outline-accent'),
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'HOW A PILOT RUNS.',
+        subtitle: 'From discovery call to production agent in weeks.',
+      },
+      {
         blockType: 'processTimeline',
         steps: [
           { title: 'Discovery', description: 'Define the task, data sources and success metrics.' },
@@ -51,6 +122,64 @@ export const services = [
           { title: 'Harden', description: 'Evals, guardrails, logging, retries, observability.' },
           { title: 'Ship', description: 'Deploy, integrate with existing tools, train the team.' },
           { title: 'Operate', description: 'Ongoing tuning, model upgrades, monitoring.' },
+        ],
+      },
+      {
+        blockType: 'logoWall',
+        heading: 'STACK',
+        logos: [
+          { name: 'OpenAI' },
+          { name: 'Claude' },
+          { name: 'LangChain' },
+          { name: 'LlamaIndex' },
+          { name: 'vLLM' },
+          { name: 'Ollama' },
+          { name: 'Pinecone' },
+          { name: 'pgvector' },
+          { name: 'Langfuse' },
+          { name: 'Vercel AI SDK' },
+          { name: 'BigQuery' },
+          { name: 'Supabase' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 012',
+        quote:
+          'The agent answered 40% of tier-one tickets in month one. By month three our CSAT was up, not down — that was the part nobody believed.',
+        name: 'DANA KOROL',
+        role: 'HEAD OF SUPPORT · NORTHBEAM RETAIL',
+        image: 'card-assistants',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'What buyers ask before starting an AI pilot.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'What about hallucinations?',
+            answer:
+              'We constrain agents to retrieved context, score answers against evals, and route low-confidence cases to humans. You define the risk threshold; the system enforces it.',
+          },
+          {
+            question: "Will our data train someone else's model?",
+            answer:
+              'No. We use zero-retention API tiers or self-hosted models. Data processing terms are part of every engagement.',
+          },
+          {
+            question: 'Which model will you choose?',
+            answer:
+              'The cheapest one that passes your evals. We benchmark OpenAI, Claude and open-source per task — and swap models without rebuilding when the market moves.',
+          },
+          {
+            question: 'What does a pilot cost?',
+            answer:
+              'Fixed fee, scoped in the discovery call. You get a working agent on your data, an eval report, and a production plan — not a slide deck.',
+          },
         ],
       },
       {
@@ -84,6 +213,93 @@ export const services = [
     ),
     layout: [
       {
+        blockType: 'numbers',
+        items: [
+          { value: '99.9%', label: 'FLOW UPTIME', sublabel: 'monitored, with retries' },
+          { value: '<5 min', label: 'ALERT LATENCY', sublabel: 'when something breaks' },
+          { value: '40 h+', label: 'SAVED MONTHLY', sublabel: 'typical ops team' },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'TYPICAL WORK.',
+        subtitle: 'The flows we get asked to build, again and again.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'git-branch',
+            title: 'Lead routing',
+            description:
+              'Score, enrich and route leads across HubSpot, Salesforce and outbound tools — in seconds, not Mondays.',
+          },
+          {
+            icon: 'trending-up',
+            title: 'Revenue pipelines',
+            description:
+              'Ad spend, CRM and billing flowing into one warehouse model your reports can trust.',
+          },
+          {
+            icon: 'bell',
+            title: 'Incident alerts',
+            description:
+              'Failures land in Slack with full context and a runbook link — not in a log nobody reads.',
+          },
+          {
+            icon: 'refresh',
+            title: 'Lifecycle automations',
+            description:
+              'Onboarding, renewal and win-back journeys synced across email, CRM and product events.',
+          },
+          {
+            icon: 'plug',
+            title: 'Data sync',
+            description:
+              'Two-way sync between systems that were never meant to talk. Idempotent, logged, reversible.',
+          },
+          {
+            icon: 'settings',
+            title: 'Back-office ops',
+            description:
+              'Invoicing, approvals, reporting chores — the manual work nobody should still be doing.',
+          },
+        ],
+      },
+      {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'RELIABILITY FIRST',
+        title: 'Automations are production software.',
+        image: 'card-automation',
+        content: doc(
+          p(
+            'A flow that silently fails is worse than no flow at all. Every automation we ship has monitoring, error alerts, retries and a named owner — plus a runbook your team can actually follow.',
+          ),
+          p(
+            'Make, Zapier, n8n or custom code: we pick per job, and we tell you why. No tool religion.',
+          ),
+        ),
+        action: link('How we harden flows', '/approach', 'outline-accent'),
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'FROM AUDIT TO AUTOPILOT.',
+      },
+      {
+        blockType: 'processTimeline',
+        steps: [
+          { title: 'Audit', description: 'Map every manual handoff and brittle spreadsheet.' },
+          { title: 'Design', description: 'Pick the right tool per flow. Price the build.' },
+          { title: 'Build', description: 'Ship flows weekly, starting with the biggest time sink.' },
+          { title: 'Monitor', description: 'Alerts, retries and dashboards on every flow.' },
+          { title: 'Iterate', description: 'Expand coverage as your stack grows.' },
+        ],
+      },
+      {
         blockType: 'logoWall',
         heading: 'TOOLS WE CONNECT',
         logos: [
@@ -93,6 +309,52 @@ export const services = [
           { name: 'Zapier' },
           { name: 'Make' },
           { name: 'n8n' },
+          { name: 'Slack' },
+          { name: 'Stripe' },
+          { name: 'Airtable' },
+          { name: 'Google Ads' },
+          { name: 'Meta Ads' },
+          { name: 'BigQuery' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 008',
+        quote:
+          'We deleted eleven spreadsheets in the first quarter. Lead response time went from four hours to forty seconds, and nobody had to be hired to do it.',
+        name: 'OMER SHANI',
+        role: 'REVOPS LEAD · LATTICEWORK',
+        image: 'about-mission',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'Before you wire anything together.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'Zapier, Make, n8n — or custom code?',
+            answer:
+              'Whichever survives your volume and your compliance needs. Low-code for speed where it is safe, custom code where flows are core to revenue. We document the trade-off per flow.',
+          },
+          {
+            question: 'What happens when a flow breaks?',
+            answer:
+              'You and we get alerted within minutes, with context. Most flows retry themselves; the rest follow a runbook. Retainer clients get response SLAs.',
+          },
+          {
+            question: 'Who owns the automations?',
+            answer:
+              'You do. Everything lives in your accounts, documented, with admin access in your hands. Leaving us never means losing your flows.',
+          },
+          {
+            question: 'Can you document what we already have?',
+            answer:
+              'Yes — that is usually step one of the audit. Most teams have automation sprawl nobody fully remembers. We inventory it before we add anything.',
+          },
         ],
       },
       {
@@ -134,6 +396,143 @@ export const services = [
         ],
       },
       {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'WHAT WE SHIP.',
+        subtitle: 'Marketing surfaces that hold up under growth.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'layout',
+            title: 'Marketing sites',
+            description:
+              'Next.js or headless WordPress. Fast, SEO-ready, integrated with your analytics and CRM.',
+          },
+          {
+            icon: 'users',
+            title: 'Customer portals',
+            description:
+              'Gated content, account areas and self-service flows on the same stack as your site.',
+          },
+          {
+            icon: 'file-text',
+            title: 'Headless WordPress',
+            description:
+              'Keep the editorial workflow your team knows; swap the front-end for one that is fast.',
+          },
+          {
+            icon: 'target',
+            title: 'Landing systems',
+            description:
+              'Campaign pages your marketers assemble from blocks — no developer in the loop.',
+          },
+          {
+            icon: 'grid',
+            title: 'Design systems',
+            description:
+              'Tokens, components and docs so every new page looks intentional, not improvised.',
+          },
+          {
+            icon: 'bar-chart',
+            title: 'Analytics wiring',
+            description:
+              'GA4, Mixpanel, HubSpot and consent management installed correctly the first time.',
+          },
+        ],
+      },
+      {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'BUILT TO BE RUN',
+        title: 'Fast for visitors. Obvious for editors.',
+        image: 'card-web',
+        content: doc(
+          p(
+            'Performance is a budget, not an accident: we enforce it in CI, so the site is still fast a year after launch. And the CMS is set up for the team that actually publishes — previews, blocks, no developer bottleneck.',
+          ),
+          p(
+            'Launch is the start. Most clients keep us on retainer to grow the site, not just to keep it alive.',
+          ),
+        ),
+        action: link('Our stack choices', '/approach', 'outline-accent'),
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'LAUNCH IN SIX WEEKS.',
+      },
+      {
+        blockType: 'processTimeline',
+        steps: [
+          { title: 'Scope', description: 'Sitemap, content model, performance budget.' },
+          { title: 'Design', description: 'Design system first, pages second.' },
+          { title: 'Build', description: 'Weekly previews on a live staging URL.' },
+          { title: 'Launch', description: 'SEO migration, redirects, analytics verified.' },
+          { title: 'Grow', description: 'Landing pages, experiments, CRO on retainer.' },
+        ],
+      },
+      {
+        blockType: 'logoWall',
+        heading: 'STACK',
+        logos: [
+          { name: 'Next.js' },
+          { name: 'TypeScript' },
+          { name: 'WordPress' },
+          { name: 'Payload' },
+          { name: 'Sanity' },
+          { name: 'Contentful' },
+          { name: 'Vercel' },
+          { name: 'Cloudflare' },
+          { name: 'GA4' },
+          { name: 'Mixpanel' },
+          { name: 'HubSpot' },
+          { name: 'Storybook' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 015',
+        quote:
+          'Six weeks from kickoff to launch, and organic traffic was up 30% by the end of the quarter. The marketing team publishes everything themselves now.',
+        name: 'IRIS BAUM',
+        role: 'VP MARKETING · HELIOTROPE',
+        image: 'services-hero',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'The usual ones before a rebuild.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'Next.js or WordPress?',
+            answer:
+              'Depends on who publishes and what they publish. Editorial-heavy teams often keep WordPress as a headless CMS; product-led teams usually go Next.js with Payload or Sanity. We recommend per case, with reasons in writing.',
+          },
+          {
+            question: 'Do you do design too?',
+            answer:
+              'Yes — design system, page design and UX copy. If you have a brand team, we build inside their guidelines instead.',
+          },
+          {
+            question: 'Will we lose SEO in the migration?',
+            answer:
+              'No. Redirect maps, structured data, and a crawl comparison before and after launch are part of every migration. Rankings are tracked through the cutover.',
+          },
+          {
+            question: 'Can our team edit everything?',
+            answer:
+              'That is the goal. Pages are assembled from blocks with live preview. If your marketers still need a developer for a landing page, we consider the project unfinished.',
+          },
+        ],
+      },
+      {
         blockType: 'ctaBanner',
         accent: true,
         title: 'Launching a marketing site? Let us build the one that scales.',
@@ -163,6 +562,152 @@ export const services = [
       ]),
     ),
     layout: [
+      {
+        blockType: 'numbers',
+        items: [
+          { value: '1', label: 'DASHBOARD', sublabel: 'instead of ten' },
+          { value: '7 d', label: 'TO FIRST CUT', sublabel: 'data model included' },
+          { value: '100%', label: 'METRIC LINEAGE', sublabel: 'every number traceable' },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'WHAT YOU GET.',
+        subtitle: 'One place to look — and a story behind every number.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'pie-chart',
+            title: 'Executive dashboard',
+            description:
+              'The five numbers leadership actually checks, on one screen, updated continuously.',
+          },
+          {
+            icon: 'database',
+            title: 'Unified data model',
+            description:
+              'CRM, ad platforms, billing and product events joined in one documented model.',
+          },
+          {
+            icon: 'sparkles',
+            title: 'AI narrative reports',
+            description:
+              'Weekly summaries drafted by AI, reviewed by us: what moved, why, what to do.',
+            tag: 'NEW',
+          },
+          {
+            icon: 'bell',
+            title: 'Anomaly alerts',
+            description:
+              'When a metric breaks pattern, Slack knows before the Monday meeting does.',
+          },
+          {
+            icon: 'compass',
+            title: 'Attribution sanity',
+            description:
+              'Not a magic model — an honest one. You see what each channel really contributes.',
+          },
+          {
+            icon: 'file-text',
+            title: 'Metric dictionary',
+            description:
+              'Every KPI defined once, in writing. No more three versions of "conversion rate".',
+          },
+        ],
+      },
+      {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'NARRATED, NOT JUST CHARTED',
+        title: 'Numbers that explain themselves.',
+        image: 'card-analytics',
+        content: doc(
+          p(
+            'Dashboards answer "what". The expensive question is "why". Our reports ship with an AI-drafted narrative: what changed this week, what likely caused it, and what deserves a decision.',
+          ),
+          p(
+            'Leadership reads a story. Analysts keep the drill-down. Both look at the same numbers.',
+          ),
+        ),
+        action: link('Talk to us about your stack', '/contact', 'outline-accent'),
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'FROM CHAOS TO ONE VIEW.',
+      },
+      {
+        blockType: 'processTimeline',
+        steps: [
+          { title: 'Audit', description: 'Inventory every source, metric and report in use.' },
+          { title: 'Model', description: 'One warehouse model, documented and tested.' },
+          { title: 'Build', description: 'Dashboards per audience — exec, marketing, ops.' },
+          { title: 'Narrate', description: 'AI summaries and anomaly alerts go live.' },
+          { title: 'Operate', description: 'We keep it true as tools and teams change.' },
+        ],
+      },
+      {
+        blockType: 'logoWall',
+        heading: 'SOURCES & TOOLS',
+        logos: [
+          { name: 'GA4' },
+          { name: 'BigQuery' },
+          { name: 'Looker Studio' },
+          { name: 'Metabase' },
+          { name: 'dbt' },
+          { name: 'HubSpot' },
+          { name: 'Salesforce' },
+          { name: 'Stripe' },
+          { name: 'Google Ads' },
+          { name: 'Meta Ads' },
+          { name: 'Mixpanel' },
+          { name: 'Airtable' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 009',
+        quote:
+          'Monday reporting went from half a day of copy-paste to a fifteen-minute read. The first anomaly alert paid for the whole project — a broken pixel we would have found a month later.',
+        name: 'TOM REISS',
+        role: 'COO · FERNWEH TRAVEL',
+        image: 'approach-split',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'Asked in every analytics discovery call.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'Looker Studio, Metabase or custom?',
+            answer:
+              'Looker Studio when your data lives in Google-land and budgets are tight. Metabase when you want self-serve exploration. Custom when dashboards are customer-facing. We run all three.',
+          },
+          {
+            question: 'Do we need a data warehouse?',
+            answer:
+              'Above a couple of sources, yes — usually BigQuery, modeled with dbt. Below that, we can wire dashboards straight to the sources and tell you when you have outgrown it.',
+          },
+          {
+            question: 'Our GA4 setup is a mess. Can you fix it?',
+            answer:
+              'Very common, very fixable. We re-do the measurement plan, repair events and consent mode, and document what each event means — so the data is trustworthy going forward.',
+          },
+          {
+            question: 'What about attribution?',
+            answer:
+              'We are honest about it: no model sees everything. We combine platform data, first-party touchpoints and holdout common sense — and label uncertainty instead of hiding it.',
+          },
+        ],
+      },
       {
         blockType: 'ctaBanner',
         accent: false,
@@ -199,6 +744,143 @@ export const services = [
           { value: '24/7', label: 'COVERAGE', sublabel: 'on-call rotation' },
           { value: '<15 min', label: 'RESPONSE', sublabel: 'for P1 incidents' },
           { value: '20–100h', label: 'RETAINER', sublabel: 'monthly envelope' },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'INSIDE THE RETAINER.',
+        subtitle: 'Everything a fractional CTO would own — with an SLA.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'eye',
+            title: 'Monitoring & alerting',
+            description:
+              'Uptime, performance and error tracking across web, CRM and automation layers.',
+          },
+          {
+            icon: 'lock',
+            title: 'Security updates',
+            description:
+              'Dependency upgrades, vulnerability scanning and patching on a fixed cadence.',
+          },
+          {
+            icon: 'trending-up',
+            title: 'Performance reviews',
+            description:
+              'Quarterly architecture and speed audits, with a prioritized fix list.',
+          },
+          {
+            icon: 'user',
+            title: 'Dedicated engineer',
+            description:
+              'A named owner who knows your stack, with a named backup. No ticket roulette.',
+          },
+          {
+            icon: 'file-text',
+            title: 'Monthly reports',
+            description:
+              'What shipped, what broke, what is next — in plain language, every month.',
+          },
+          {
+            icon: 'alert',
+            title: 'Emergency response',
+            description:
+              'P1 incidents answered in fifteen minutes, around the clock, with a post-mortem after.',
+          },
+        ],
+      },
+      {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'THE QUIET WORK',
+        title: 'The boring work that compounds.',
+        image: 'card-maintenance',
+        content: doc(
+          p(
+            'Nobody celebrates a dependency upgrade. But unpatched plugins, silent backup failures and slow decay are how marketing stacks die. We own that layer: updates applied, backups verified by restore drills, regressions caught before your users see them.',
+          ),
+          p(
+            'You get the calm. We keep the receipts: every action logged in the monthly report.',
+          ),
+        ),
+        action: link('What a retainer covers', '/contact', 'outline-accent'),
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'HOW ONBOARDING WORKS.',
+      },
+      {
+        blockType: 'processTimeline',
+        steps: [
+          { title: 'Onboard', description: 'Access, inventory, risk map. Usually one week.' },
+          { title: 'Baseline', description: 'Monitoring live, backups verified by restore.' },
+          { title: 'Harden', description: 'Patch debt paid down, known vulnerabilities closed.' },
+          { title: 'Operate', description: 'On-call, updates, monthly reporting begin.' },
+          { title: 'Review', description: 'Quarterly architecture session with your team.' },
+        ],
+      },
+      {
+        blockType: 'logoWall',
+        heading: 'WHAT WE WATCH',
+        logos: [
+          { name: 'WordPress' },
+          { name: 'Next.js' },
+          { name: 'Vercel' },
+          { name: 'Cloudflare' },
+          { name: 'AWS' },
+          { name: 'Supabase' },
+          { name: 'MySQL' },
+          { name: 'Postgres' },
+          { name: 'Redis' },
+          { name: 'GitHub' },
+          { name: 'Sentry' },
+          { name: 'UptimeRobot' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 004',
+        quote:
+          'Two years on retainer, zero unplanned downtime. The quarterly reviews alone are worth it — they catch problems while they are still cheap.',
+        name: 'NOA FELD',
+        role: 'IT DIRECTOR · CASCADE GROUP',
+        image: 'about-hero',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'The fine print, answered up front.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'What counts as a P1 incident?',
+            answer:
+              'Site down, checkout broken, data loss in progress, or a security breach. P1s get a fifteen-minute response around the clock; everything else follows business-hours SLAs defined in the contract.',
+          },
+          {
+            question: 'Do unused hours roll over?',
+            answer:
+              'Partially — up to 25% of the monthly envelope rolls into the next month. Retainers are sized after the first quarter, so most clients land within 10% of their envelope.',
+          },
+          {
+            question: "Can you take over code someone else wrote?",
+            answer:
+              'That is most of what we do. Onboarding includes a code and infrastructure audit, so we know what we are signing up to keep alive — and you get the audit report either way.',
+          },
+          {
+            question: 'How do we exit?',
+            answer:
+              'Thirty days notice, full handover included: credentials, documentation, runbooks. Everything already lives in your accounts, so exit is administrative, not technical.',
+          },
         ],
       },
       {
