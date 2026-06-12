@@ -20,6 +20,7 @@ const REVEAL_SELECTOR = [
   '.logo-wall__item',
   '.accordion',
   '.cta-banner__inner > *',
+  '.post-card',
 ].join(', ')
 
 const STAGGER_MS = 70

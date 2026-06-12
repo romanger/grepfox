@@ -20,7 +20,8 @@ $reveal-targets: (
   '.pricing-grid__item',
   '.logo-wall__item',
   '.accordion',
-  '.cta-banner__inner > *'
+  '.cta-banner__inner > *',
+  '.post-card'
 );
 
 html[data-motion='on'] {
