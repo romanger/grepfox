@@ -1449,7 +1449,7 @@ export const pages = [
   {
     title: 'Services',
     slug: 'services',
-    metaTitle: 'Services — Grepfox',
+    metaTitle: 'Services',
     metaDescription: 'Six practices: AI agents, automation, web platforms, analytics, maintenance and team training.',
     layout: [
       {
@@ -1503,7 +1503,7 @@ export const pages = [
   {
     title: 'AI Solutions',
     slug: 'ai-solutions',
-    metaTitle: 'AI Solutions — Grepfox',
+    metaTitle: 'AI Solutions',
     metaDescription: 'Production AI agents, assistants and automations — built on OpenAI, Claude and LangChain.',
     layout: [
       {
@@ -1639,7 +1639,7 @@ export const pages = [
   {
     title: 'Approach',
     slug: 'approach',
-    metaTitle: 'Approach — Grepfox',
+    metaTitle: 'Approach',
     metaDescription: 'How we work: pilot fast, harden carefully, operate long.',
     layout: [
       {
@@ -1722,7 +1722,7 @@ export const pages = [
   {
     title: 'About',
     slug: 'about',
-    metaTitle: 'About — Grepfox',
+    metaTitle: 'About',
     metaDescription: 'A compact team of engineers and integrators. Your technical partner for AI and automation.',
     layout: [
       {
@@ -1836,7 +1836,7 @@ export const pages = [
   {
     title: 'Contact',
     slug: 'contact',
-    metaTitle: 'Contact — Grepfox',
+    metaTitle: 'Contact',
     metaDescription: 'Start a conversation. We reply within one business day.',
     layout: [
       {
@@ -1891,7 +1891,7 @@ export const pages = [
   {
     title: 'Privacy Policy',
     slug: 'privacy',
-    metaTitle: 'Privacy Policy — Grepfox',
+    metaTitle: 'Privacy Policy',
     metaDescription: 'How Grepfox collects, uses and protects your data.',
     layout: [
       {
@@ -1996,7 +1996,7 @@ export const pages = [
   {
     title: 'Terms of Service',
     slug: 'terms',
-    metaTitle: 'Terms of Service — Grepfox',
+    metaTitle: 'Terms of Service',
     metaDescription: 'Terms governing the use of the Grepfox website.',
     layout: [
       {
