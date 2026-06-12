@@ -5,6 +5,7 @@ import config from '@payload-config'
 import { LogoLockup } from '@/components/ds/LogoMark'
 import { Icon, type IconName } from '@/components/ds/Icon'
 import { NavLinks, type NavItem } from '@/components/site/NavLinks'
+import { MobileMenu } from '@/components/site/MobileMenu'
 import { resolveLinkHref, type LinkValue } from '@/fields/link'
 
 export async function Header() {
@@ -30,12 +31,22 @@ export async function Header() {
         <LogoLockup size={20} variant="badge" />
       </Link>
       <NavLinks items={navItems} />
-      {cta?.link && (
-        <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm">
-          {cta.link.label}
-          <Icon name="arrow-right" size={13} />
-        </Link>
-      )}
+      <div className="top-nav__actions">
+        {cta?.link && (
+          <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm">
+            {cta.link.label}
+            <Icon name="arrow-right" size={13} />
+          </Link>
+        )}
+        <MobileMenu
+          items={navItems}
+          cta={
+            cta?.link
+              ? { href: resolveLinkHref(cta.link), label: cta.link.label || '' }
+              : undefined
+          }
+        />
+      </div>
     </header>
   )
 }

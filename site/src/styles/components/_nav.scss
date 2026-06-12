@@ -43,6 +43,28 @@
     &--active { color: var(--gf-accent); }
   }
 
+  &__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    background: transparent;
+    border: 1px solid var(--gf-rule);
+    color: var(--gf-bone);
+    cursor: pointer;
+    transition: border-color var(--ease-cut), color var(--ease-cut);
+
+    &:hover { border-color: var(--gf-subtle); }
+
+    &[aria-expanded='true'] { color: var(--gf-accent); }
+  }
+
   @include md-down {
     flex-wrap: wrap;
     gap: 12px;
@@ -52,6 +74,68 @@
     padding: 14px 20px;
 
     &__links { display: none; }
+    &__burger { display: grid; }
+  }
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--gf-void);
+  border-bottom: 1px solid var(--gf-rule);
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s 280ms;
+
+  &--open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition:
+      grid-template-rows 280ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s;
+  }
+
+  &__clip {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 20px 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    font-family: var(--ff-display);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--gf-bone);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gf-rule-soft);
+    transition: color var(--ease-cut);
+
+    &:hover,
+    &--active { color: var(--gf-accent); }
+  }
+
+  &__cta {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  @include sm-down {
+    display: grid;
   }
 }
 
