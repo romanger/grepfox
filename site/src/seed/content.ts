@@ -1865,7 +1865,7 @@ export const footer = {
   legal: [
     { icon: 'linkedin', link: { type: 'external', url: 'https://www.linkedin.com/company/grepfox', label: 'LINKEDIN', newTab: true } },
     { icon: 'x-social', link: { type: 'external', url: 'https://x.com/grepfox', label: 'X', newTab: true } },
-    { icon: 'youtube', link: { type: 'external', url: 'https://www.youtube.com/@grepfox', label: 'YOUTUBE', newTab: true } },
+    { icon: 'instagram', link: { type: 'external', url: 'https://www.instagram.com/grepfox', label: 'INSTAGRAM', newTab: true } },
     { link: { type: 'external', url: '/privacy', label: 'PRIVACY' } },
     { link: { type: 'external', url: '/terms', label: 'TERMS' } },
   ],
