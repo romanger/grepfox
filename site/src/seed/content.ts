@@ -1,4 +1,4 @@
-import { doc, h, p, ul } from './lexical'
+import { doc, h, ol, p, quote, rich, ul } from './lexical'
 
 const link = (label: string, url: string, appearance?: string, newTab = false) => ({
   link: {
@@ -993,6 +993,7 @@ export const posts = [
       p(
         'Every agent demo looks the same: a clean prompt, a happy path, applause. Production looks different. The same agent meets ambiguous requests, malformed data, third-party outages and users who type in three languages at once.',
       ),
+      quote('Production is the only benchmark that matters.'),
       h('h2', 'The three things that break first'),
       ul([
         'Tool calls against real APIs — timeouts and partial failures the demo never saw.',
@@ -1006,8 +1007,15 @@ export const posts = [
       p(
         'We ship a pilot in 2–4 weeks, but the pilot includes the boring parts: monitoring, evals and guardrails from day one. An agent without observability is a liability with a chat interface.',
       ),
-      p(
-        'If you are planning a deployment, start with the failure modes. The happy path will take care of itself.',
+      h('h3', 'The pre-launch checklist'),
+      ol([
+        'Instrument every tool call before adding new capabilities.',
+        'Replay the worst week of traffic against every prompt change.',
+        'Define the escalation path to a human before the first user sees the agent.',
+      ]),
+      rich(
+        { t: 'Start with the failure modes.', bold: true },
+        ' The happy path will take care of itself.',
       ),
     ),
   },
@@ -1024,14 +1032,21 @@ export const posts = [
       p(
         'Teams iterate on prompts the way gamblers iterate on lucky socks: change something, squint at three outputs, declare victory. Then a model update lands and last month\'s "fix" quietly breaks.',
       ),
+      quote('If you cannot replay yesterday\'s failures, you are not testing — you are gambling.'),
       h('h2', 'A minimal eval suite'),
-      ul([
-        'A frozen set of real (anonymised) inputs — fifty is enough to start.',
-        'Expected behaviours written as assertions, not vibes: "must cite the source", "must refuse out-of-scope requests".',
-        'A scoring run on every prompt or model change, tracked over time.',
+      ol([
+        'Freeze a set of real (anonymised) inputs — fifty is enough to start.',
+        'Write expected behaviours as assertions, not vibes: "must cite the source", "must refuse out-of-scope requests".',
+        'Score every prompt or model change against the set, and track the curve over time.',
       ]),
       p(
         'The point is not academic rigour. The point is that regressions become visible the day they happen, while the change that caused them is still on the table.',
+      ),
+      h('h3', 'Start smaller than feels respectable'),
+      rich(
+        'Fifty cases and a ',
+        { t: 'pass/fail', code: true },
+        ' column in a spreadsheet beat a sophisticated benchmark you never run.',
       ),
       h('h2', 'Where LLM-as-judge fits'),
       p(
@@ -1061,10 +1076,17 @@ export const posts = [
       p(
         'Each one costs twenty minutes here, an hour there. Multiply by a team and a year, and you are looking at a part-time salary spent on copy-paste.',
       ),
+      quote('The best automation is the one nobody notices until it is switched off.'),
       h('h2', 'How we scope it'),
       p(
         'We start with a one-week audit: where does time actually go? Then we automate the top three flows — usually with plain integrations, occasionally with an agent in the loop. Measured impact first, ambition later.',
       ),
+      h('h3', 'A typical first month'),
+      ol([
+        'Week one: shadow the team and log where the hours actually go.',
+        'Weeks two and three: automate the top three flows end to end.',
+        'Week four: measure, compare, and decide what earns a second iteration.',
+      ]),
     ),
   },
   {
@@ -1086,6 +1108,8 @@ export const posts = [
         'One screen, one job. Tools that do everything get used for nothing.',
         'Put it where people already work — Slack, the CRM, the editor — instead of one more browser tab.',
       ]),
+      quote('A tool nobody opens is a backlog item that shipped.'),
+      h('h3', 'The week after launch'),
       p(
         'The build is the easy half. The hard half is the week after launch: watching real usage, deleting what nobody touches, and doubling down on the one feature that stuck.',
       ),
@@ -1110,13 +1134,17 @@ export const posts = [
         'A reconciliation layer that flags mismatches instead of hiding them.',
         'A generated report — same template the team already used, now assembled in minutes.',
       ]),
+      h('h2', 'How the five weeks went'),
+      ol([
+        'Weeks one and two: scoped pilot on a single report, real data, kill switch included.',
+        'Weeks three and four: reconciliation layer, scheduling and alerting.',
+        'Week five: handover, documentation and a run-it-yourself session with the team.',
+      ]),
       h('h2', 'What changed'),
       p(
         'The cycle went from days to minutes, but the more interesting effect was trust: when numbers are fresh and reproducible, people stop debating the data and start debating the decision. The team now runs the report weekly — something that was unthinkable when it cost three days.',
       ),
-      p(
-        'Pilot to production took five weeks end to end, with the scoped pilot delivered in the first two.',
-      ),
+      quote('Fresh numbers ended the debate about the data — and started the one about the decision.'),
     ),
   },
   {
@@ -1141,8 +1169,17 @@ export const posts = [
       ]),
       h('h2', 'Our default answer'),
       p(
-        'We build provider-agnostic by default — OpenAI, Claude or self-host behind one interface — so the model is a config value, not an architecture. The stack that wins is the one you can swap out.',
+        'We build provider-agnostic by default — OpenAI, Claude or self-host behind one interface — so the model is a config value, not an architecture.',
       ),
+      h('h3', 'What that looks like in practice'),
+      rich(
+        'Treat the model id as configuration: swapping ',
+        { t: 'provider: openai', code: true },
+        ' for ',
+        { t: 'provider: claude', code: true },
+        ' should be a one-line change, not a migration project.',
+      ),
+      quote('The stack that wins is the one you can swap out.'),
     ),
   },
   {
@@ -1159,15 +1196,16 @@ export const posts = [
         'The kickoff demo goes great. Two weeks later, usage has dropped to the two enthusiasts who would have adopted anything. Sound familiar? Tooling is never the bottleneck — habit formation is.',
       ),
       h('h2', 'What moves the needle'),
-      ul([
+      ol([
         'Train on real work, not toy examples: bring the team\'s actual tickets to the session.',
         'Name an internal champion with time officially allocated — not as a side quest.',
         'Define three concrete workflows where the agent is the default path, not an option.',
         'Review usage after two weeks and kill what did not stick.',
       ]),
       p(
-        'This is why our training engagements pair workshops with two weeks of embedded support. The workshop starts the habit; the follow-through makes it stick.',
+        'This is why our training engagements pair workshops with two weeks of embedded support.',
       ),
+      quote('The workshop starts the habit; the follow-through makes it stick.'),
     ),
   },
   {
@@ -1183,12 +1221,14 @@ export const posts = [
       p(
         'Every agency pitch deck brags about headcount. We went the other way: a small crew, senior only, with automation and agents doing the work that elsewhere needs a department.',
       ),
+      quote('Headcount is a cost, not a metric.'),
       h('h2', 'What small buys us'),
       ul([
         'No handoff tax — the person who scopes your project builds it.',
         'Decisions in hours, not steering committees.',
         'Overhead that does not quietly migrate into your invoice.',
       ]),
+      h('h3', 'The same systems we sell'),
       p(
         'Small does not mean slow. It means we automate our own operations with the same systems we sell — humans plus agents, which is exactly what it says on the homepage.',
       ),
