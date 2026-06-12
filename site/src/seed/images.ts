@@ -34,10 +34,10 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'ai-solutions-hero',
-    url: U('1591453089816-0fbb971b454c'),
+    url: U('1639762681485-074b7f938ba0'),
     filename: 'ai-solutions-hero-circuit.jpg',
-    alt: 'Circuit board macro — AI infrastructure',
-    credit: 'Michael Dziedzic · Unsplash',
+    alt: 'Modular 3D blocks assembling into a system',
+    credit: 'Unsplash',
   },
   {
     key: 'approach-split',
@@ -84,10 +84,10 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'card-automation',
-    url: U('1518770660439-4636190af475'),
+    url: U('1639322537228-f710d846310a'),
     filename: 'card-automation-circuit.jpg',
-    alt: 'Circuit board automation macro',
-    credit: 'Alexandre Debiève · Unsplash',
+    alt: 'Wireframe nodes connected into a network',
+    credit: 'Unsplash',
   },
   {
     key: 'card-assistants',
@@ -112,10 +112,10 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'card-maintenance',
-    url: U('1527689368864-3a821dbccc34'),
+    url: U('1629654297299-c8506221ca97'),
     filename: 'card-maintenance-server.jpg',
-    alt: 'Engineer inspecting server hardware',
-    credit: 'Taylor Vick · Unsplash',
+    alt: 'Terminal prompt with sudo command, macro',
+    credit: 'Gabriel Heinzer · Unsplash',
   },
   // Service detail hero images
   {
@@ -127,10 +127,10 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'svc-automation',
-    url: U('1518770660439-4636190af475'),
+    url: U('1639322537228-f710d846310a'),
     filename: 'svc-automation.jpg',
-    alt: 'Automation circuitry',
-    credit: 'Alexandre Debiève · Unsplash',
+    alt: 'Wireframe nodes connected into a network',
+    credit: 'Unsplash',
   },
   {
     key: 'svc-web',
@@ -148,9 +148,9 @@ export const images: ImageManifest[] = [
   },
   {
     key: 'svc-maintenance',
-    url: U('1573164713714-d95e436ab8d6'),
+    url: U('1629654297299-c8506221ca97'),
     filename: 'svc-maintenance.jpg',
-    alt: 'Server diagnostics',
+    alt: 'Terminal prompt with sudo command, macro',
     credit: 'Unsplash',
   },
 ]

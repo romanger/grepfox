@@ -19,18 +19,8 @@ export const services = [
     summary:
       'Production-grade chatbots, knowledge assistants and autonomous agents built on OpenAI, Claude and LangChain.',
     body: doc(
-      p('We design, build and operate LLM-powered agents that ship real work — not demos.'),
-      h('h2', 'What we build'),
-      ul([
-        'Customer support bots grounded in your knowledge base',
-        'Internal assistants that answer questions from scattered docs',
-        'Autonomous workflow agents (research, outreach, triage)',
-        'Content generators tuned to your brand voice',
-        'AI search across CRM, wikis and help centers',
-      ]),
-      h('h2', 'How we work'),
       p(
-        'Pilot first. We ship a scoped prototype in 2–4 weeks, measure impact with you, then harden it into a production service with monitoring, evals and guardrails.',
+        'We design, build and operate LLM-powered agents that ship real work — not demos. Pilot first: a scoped prototype in 2–4 weeks, measured impact, then a production service with monitoring, evals and guardrails.',
       ),
     ),
     heroImage: 'svc-ai-agents',
@@ -93,20 +83,13 @@ export const services = [
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
-        eyebrow: 'WHY IT WORKS',
-        title: 'Grounded in your data. Guarded by evals.',
+        blockType: 'accentBlock',
+        eyebrow: 'WHY IT WORKS / 01',
+        title: 'Grounded in your data.\nGuarded by evals.',
+        description:
+          'We treat agents as software: versioned prompts, automated evals on every change, monitoring on every conversation. You see how often the agent was right — in numbers, not anecdotes.',
+        footnote: '— EVALS · GUARDRAILS · OBSERVABILITY',
         image: 'ai-layer',
-        content: doc(
-          p(
-            'Most agent projects die between the demo and production. Ours survive because we treat agents as software: versioned prompts, automated evals on every change, monitoring on every conversation.',
-          ),
-          p(
-            'You see what the agent did, why it did it, and how often it was right — in numbers, not anecdotes.',
-          ),
-        ),
-        action: link('See how a pilot runs', '/approach', 'outline-accent'),
       },
       {
         blockType: 'sectionHead',
@@ -149,7 +132,6 @@ export const services = [
           'The agent answered 40% of tier-one tickets in month one. By month three our CSAT was up, not down — that was the part nobody believed.',
         name: 'DANA KOROL',
         role: 'HEAD OF SUPPORT · NORTHBEAM RETAIL',
-        image: 'card-assistants',
       },
       {
         blockType: 'sectionHead',
@@ -184,7 +166,7 @@ export const services = [
       },
       {
         blockType: 'ctaBanner',
-        accent: true,
+        accent: false,
         title: 'Have a repetitive task? We can automate it with AI.',
         action: link('Start a pilot', '/contact', 'secondary'),
       },
@@ -202,14 +184,6 @@ export const services = [
       p(
         'We build resilient automations on Make, Zapier, n8n and custom code — whichever fits the job. Every flow ships with monitoring, error alerts and a clear owner.',
       ),
-      h('h2', 'Typical work'),
-      ul([
-        'Lead routing across HubSpot, Salesforce and outbound tools',
-        'Revenue reporting pipelines from ad platforms into your warehouse',
-        'Incident alerts into Slack with full context',
-        'Customer lifecycle automations across email, CRM and product',
-        'Data sync between systems that were never meant to talk',
-      ]),
     ),
     layout: [
       {
@@ -269,20 +243,13 @@ export const services = [
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
-        eyebrow: 'RELIABILITY FIRST',
-        title: 'Automations are production software.',
+        blockType: 'accentBlock',
+        eyebrow: 'RELIABILITY FIRST / 02',
+        title: 'Automations are\nproduction software.',
+        description:
+          'A flow that silently fails is worse than no flow at all. Every automation ships with monitoring, alerts, retries and a named owner — plus a runbook your team can actually follow.',
+        footnote: '— MONITORED · OWNED · DOCUMENTED',
         image: 'card-automation',
-        content: doc(
-          p(
-            'A flow that silently fails is worse than no flow at all. Every automation we ship has monitoring, error alerts, retries and a named owner — plus a runbook your team can actually follow.',
-          ),
-          p(
-            'Make, Zapier, n8n or custom code: we pick per job, and we tell you why. No tool religion.',
-          ),
-        ),
-        action: link('How we harden flows', '/approach', 'outline-accent'),
       },
       {
         blockType: 'sectionHead',
@@ -324,7 +291,6 @@ export const services = [
           'We deleted eleven spreadsheets in the first quarter. Lead response time went from four hours to forty seconds, and nobody had to be hired to do it.',
         name: 'OMER SHANI',
         role: 'REVOPS LEAD · LATTICEWORK',
-        image: 'about-mission',
       },
       {
         blockType: 'sectionHead',
@@ -377,14 +343,6 @@ export const services = [
       p(
         'We build the marketing surface your growth team deserves: fast, measurable, editable, and integrated with the rest of your stack.',
       ),
-      h('h2', 'Stack'),
-      ul([
-        'Next.js + TypeScript for product-led sites and portals',
-        'Headless WordPress where the editorial team is already fluent',
-        'Payload, Sanity or Contentful for custom content models',
-        'Vercel + Cloudflare for edge performance',
-        'Deep integration with GA4, Mixpanel, HubSpot, Wistia',
-      ]),
     ),
     layout: [
       {
@@ -444,20 +402,13 @@ export const services = [
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
-        eyebrow: 'BUILT TO BE RUN',
-        title: 'Fast for visitors. Obvious for editors.',
+        blockType: 'accentBlock',
+        eyebrow: 'BUILT TO BE RUN / 03',
+        title: 'Fast for visitors.\nObvious for editors.',
+        description:
+          'Performance is a budget enforced in CI, so the site is still fast a year after launch. And the CMS is set up for the team that actually publishes — previews, blocks, no developer bottleneck.',
+        footnote: '— PERFORMANCE BUDGETS · LIVE PREVIEW',
         image: 'card-web',
-        content: doc(
-          p(
-            'Performance is a budget, not an accident: we enforce it in CI, so the site is still fast a year after launch. And the CMS is set up for the team that actually publishes — previews, blocks, no developer bottleneck.',
-          ),
-          p(
-            'Launch is the start. Most clients keep us on retainer to grow the site, not just to keep it alive.',
-          ),
-        ),
-        action: link('Our stack choices', '/approach', 'outline-accent'),
       },
       {
         blockType: 'sectionHead',
@@ -499,7 +450,6 @@ export const services = [
           'Six weeks from kickoff to launch, and organic traffic was up 30% by the end of the quarter. The marketing team publishes everything themselves now.',
         name: 'IRIS BAUM',
         role: 'VP MARKETING · HELIOTROPE',
-        image: 'services-hero',
       },
       {
         blockType: 'sectionHead',
@@ -534,7 +484,7 @@ export const services = [
       },
       {
         blockType: 'ctaBanner',
-        accent: true,
+        accent: false,
         title: 'Launching a marketing site? Let us build the one that scales.',
         action: link('Start a project', '/contact', 'secondary'),
       },
@@ -552,14 +502,6 @@ export const services = [
       p(
         'Marketing data is everywhere and nowhere. We unify it, clean it, and give leadership one place to look — with automated narrative summaries so the numbers tell a story.',
       ),
-      h('h2', 'What you get'),
-      ul([
-        'One executive dashboard, not ten',
-        'CRM + ad platforms + product events in one model',
-        'Automated weekly narrative reports, AI-drafted',
-        'Anomaly alerts in Slack when something breaks',
-        'Full audit trail of how every number is calculated',
-      ]),
     ),
     layout: [
       {
@@ -620,20 +562,13 @@ export const services = [
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
+        blockType: 'accentBlock',
         eyebrow: 'NARRATED, NOT JUST CHARTED',
-        title: 'Numbers that explain themselves.',
+        title: 'Numbers that\nexplain themselves.',
+        description:
+          'Dashboards answer "what". The expensive question is "why". Our reports ship with an AI-drafted narrative: what changed, what likely caused it, and what deserves a decision.',
+        footnote: '— WEEKLY NARRATIVES · ANOMALY ALERTS',
         image: 'card-analytics',
-        content: doc(
-          p(
-            'Dashboards answer "what". The expensive question is "why". Our reports ship with an AI-drafted narrative: what changed this week, what likely caused it, and what deserves a decision.',
-          ),
-          p(
-            'Leadership reads a story. Analysts keep the drill-down. Both look at the same numbers.',
-          ),
-        ),
-        action: link('Talk to us about your stack', '/contact', 'outline-accent'),
       },
       {
         blockType: 'sectionHead',
@@ -675,7 +610,6 @@ export const services = [
           'Monday reporting went from half a day of copy-paste to a fifteen-minute read. The first anomaly alert paid for the whole project — a broken pixel we would have found a month later.',
         name: 'TOM REISS',
         role: 'COO · FERNWEH TRAVEL',
-        image: 'approach-split',
       },
       {
         blockType: 'sectionHead',
@@ -728,14 +662,6 @@ export const services = [
       p(
         'A retainer with Grepfox replaces the fractional CTO you never hired. We own the uptime, the updates, the on-call, and the boring-but-critical work that keeps your marketing stack compounding.',
       ),
-      h('h2', 'Included'),
-      ul([
-        'Monitoring and alerting across your web, CRM and automation layers',
-        'Security updates, dependency upgrades, vulnerability scanning',
-        'Quarterly performance and architecture reviews',
-        'Dedicated engineer with named backup',
-        'Monthly report with what shipped, what broke, what is next',
-      ]),
     ),
     layout: [
       {
@@ -795,20 +721,13 @@ export const services = [
         ],
       },
       {
-        blockType: 'splitLayout',
-        imageSide: 'right',
+        blockType: 'accentBlock',
         eyebrow: 'THE QUIET WORK',
-        title: 'The boring work that compounds.',
+        title: 'The boring work\nthat compounds.',
+        description:
+          'Unpatched plugins, silent backup failures and slow decay are how marketing stacks die. We own that layer: updates applied, backups verified by restore drills, every action logged in the monthly report.',
+        footnote: '— SLA-BACKED · 24/7 ON-CALL',
         image: 'card-maintenance',
-        content: doc(
-          p(
-            'Nobody celebrates a dependency upgrade. But unpatched plugins, silent backup failures and slow decay are how marketing stacks die. We own that layer: updates applied, backups verified by restore drills, regressions caught before your users see them.',
-          ),
-          p(
-            'You get the calm. We keep the receipts: every action logged in the monthly report.',
-          ),
-        ),
-        action: link('What a retainer covers', '/contact', 'outline-accent'),
       },
       {
         blockType: 'sectionHead',
@@ -850,7 +769,6 @@ export const services = [
           'Two years on retainer, zero unplanned downtime. The quarterly reviews alone are worth it — they catch problems while they are still cheap.',
         name: 'NOA FELD',
         role: 'IT DIRECTOR · CASCADE GROUP',
-        image: 'about-hero',
       },
       {
         blockType: 'sectionHead',
@@ -885,7 +803,7 @@ export const services = [
       },
       {
         blockType: 'ctaBanner',
-        accent: true,
+        accent: false,
         title: 'Keep what you built compounding.',
         action: link('Discuss a retainer', '/contact', 'secondary'),
       },
