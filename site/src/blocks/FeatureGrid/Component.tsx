@@ -22,7 +22,8 @@ type Props = {
 export function FeatureGrid({ columns = '3', items }: Props) {
   return (
     <section className="block-spacer block-pad">
-      <ul className={`feature-grid feature-grid--${columns}col`} role="list">
+      <div className="feature-grid-frame">
+        <ul className={`feature-grid feature-grid--${columns}col`} role="list">
         {items.map((item, i) => {
           const serviceSlug =
             typeof item.linkedService === 'object' && item.linkedService
@@ -76,7 +77,8 @@ export function FeatureGrid({ columns = '3', items }: Props) {
             </li>
           )
         })}
-      </ul>
+        </ul>
+      </div>
     </section>
   )
 }

@@ -1,16 +1,25 @@
 @use '../abstracts' as *;
 
+// Grid lines: every cell draws its own right/bottom border; the frame clips
+// the outer 1px via negative margins, so the rules stay correct for any
+// column count (2/3/4) and any item count, at every breakpoint.
+.feature-grid-frame {
+  border: 1px solid var(--gf-rule);
+  overflow: hidden;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--gf-rule);
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 -1px -1px 0;
 
   &__item {
     display: flex;
     flex-direction: column;
+    border-right: 1px solid var(--gf-rule);
+    border-bottom: 1px solid var(--gf-rule);
   }
 
   &--2col { grid-template-columns: repeat(2, 1fr); }
@@ -33,9 +42,6 @@
     &--4col { grid-template-columns: 1fr; }
   }
 }
-
-.feature-grid__item:not(:nth-child(3n)) { border-right: 1px solid var(--gf-rule); }
-.feature-grid__item:nth-child(-n+3) { border-bottom: 1px solid var(--gf-rule); }
 
 .feature-card {
   display: flex;
@@ -126,14 +132,3 @@
   }
 }
 
-@include md-down {
-  .feature-grid__item:not(:nth-child(3n)) { border-right: none; }
-  .feature-grid__item:nth-child(-n+3) { border-bottom: none; }
-  .feature-grid__item:nth-child(odd):not(:nth-last-child(-n+1)) { border-right: 1px solid var(--gf-rule); }
-  .feature-grid__item:not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--gf-rule); }
-}
-
-@include sm-down {
-  .feature-grid__item:nth-child(odd) { border-right: none !important; }
-  .feature-grid__item:not(:last-child) { border-bottom: 1px solid var(--gf-rule) !important; }
-}
