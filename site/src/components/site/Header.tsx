@@ -33,7 +33,7 @@ export async function Header() {
       <NavLinks items={navItems} />
       <div className="top-nav__actions">
         {cta?.link && (
-          <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm">
+          <Link href={resolveLinkHref(cta.link)} className="btn btn--primary btn--sm top-nav__cta">
             {cta.link.label}
             <Icon name="arrow-right" size={13} />
           </Link>
