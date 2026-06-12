@@ -971,6 +971,234 @@ export const services = [
   },
 ]
 
+export const categories = [
+  { title: 'AI & Agents', slug: 'ai-agents' },
+  { title: 'Engineering', slug: 'engineering' },
+  { title: 'Automation', slug: 'automation' },
+  { title: 'Case Studies', slug: 'case-studies' },
+  { title: 'Company', slug: 'company' },
+]
+
+export const posts = [
+  {
+    title: 'Shipping AI agents to production: what actually breaks',
+    slug: 'shipping-ai-agents-to-production',
+    excerpt:
+      'Demos are easy; production is where agents meet ambiguity, rate limits and angry edge cases. A field checklist from the last year of deployments.',
+    cover: 'blog-agents-prod',
+    category: 'ai-agents',
+    author: 'Grepfox Team',
+    publishedAt: '2026-06-02',
+    body: doc(
+      p(
+        'Every agent demo looks the same: a clean prompt, a happy path, applause. Production looks different. The same agent meets ambiguous requests, malformed data, third-party outages and users who type in three languages at once.',
+      ),
+      h('h2', 'The three things that break first'),
+      ul([
+        'Tool calls against real APIs — timeouts and partial failures the demo never saw.',
+        'Context discipline — conversations that outgrow the window and silently lose the one fact that mattered.',
+        'Confidence calibration — agents that act when they should escalate to a human.',
+      ]),
+      p(
+        'None of these are model problems. They are systems problems, and they have systems answers: retries with budgets, explicit context contracts, and escalation paths designed before launch — not after the first incident.',
+      ),
+      h('h2', 'What we do differently now'),
+      p(
+        'We ship a pilot in 2–4 weeks, but the pilot includes the boring parts: monitoring, evals and guardrails from day one. An agent without observability is a liability with a chat interface.',
+      ),
+      p(
+        'If you are planning a deployment, start with the failure modes. The happy path will take care of itself.',
+      ),
+    ),
+  },
+  {
+    title: 'Evals before vibes: measuring agent quality',
+    slug: 'evals-before-vibes',
+    excerpt:
+      'You cannot improve what you do not measure, and "it feels smarter" is not a metric. How we build eval suites that catch regressions before users do.',
+    cover: 'blog-evals',
+    category: 'ai-agents',
+    author: 'Grepfox Team',
+    publishedAt: '2026-05-18',
+    body: doc(
+      p(
+        'Teams iterate on prompts the way gamblers iterate on lucky socks: change something, squint at three outputs, declare victory. Then a model update lands and last month\'s "fix" quietly breaks.',
+      ),
+      h('h2', 'A minimal eval suite'),
+      ul([
+        'A frozen set of real (anonymised) inputs — fifty is enough to start.',
+        'Expected behaviours written as assertions, not vibes: "must cite the source", "must refuse out-of-scope requests".',
+        'A scoring run on every prompt or model change, tracked over time.',
+      ]),
+      p(
+        'The point is not academic rigour. The point is that regressions become visible the day they happen, while the change that caused them is still on the table.',
+      ),
+      h('h2', 'Where LLM-as-judge fits'),
+      p(
+        'Judge models are useful for fuzzy criteria — tone, completeness — but anchor them with exact-match and rule-based checks. A judge with no ground truth drifts together with the system it judges.',
+      ),
+    ),
+  },
+  {
+    title: 'The boring automation that pays for itself',
+    slug: 'boring-automation-pays-for-itself',
+    excerpt:
+      'The highest-ROI automation we ship is rarely glamorous: report generation, data syncs, handoffs between tools. Boring is a feature.',
+    cover: 'blog-automation-roi',
+    category: 'automation',
+    author: 'Grepfox Team',
+    publishedAt: '2026-05-05',
+    body: doc(
+      p(
+        'Nobody writes conference talks about syncing a CRM to a spreadsheet. Yet across our client base, the automations with the fastest payback are exactly these: small, boring, relentless time-savers.',
+      ),
+      h('h2', 'Where the hours hide'),
+      ul([
+        'Weekly reports assembled by hand from three systems.',
+        'Data re-typed between tools that "almost" integrate.',
+        'Approvals that wait a day because the request lives in someone\'s inbox.',
+      ]),
+      p(
+        'Each one costs twenty minutes here, an hour there. Multiply by a team and a year, and you are looking at a part-time salary spent on copy-paste.',
+      ),
+      h('h2', 'How we scope it'),
+      p(
+        'We start with a one-week audit: where does time actually go? Then we automate the top three flows — usually with plain integrations, occasionally with an agent in the loop. Measured impact first, ambition later.',
+      ),
+    ),
+  },
+  {
+    title: 'Internal tools your team will actually use',
+    slug: 'internal-tools-teams-actually-use',
+    excerpt:
+      'Most internal tools die of neglect, not bad code. The difference between a dashboard nobody opens and a tool the team fights to keep.',
+    cover: 'blog-internal-tools',
+    category: 'engineering',
+    author: 'Grepfox Team',
+    publishedAt: '2026-04-21',
+    body: doc(
+      p(
+        'Every company has a graveyard of internal tools: the dashboard from 2023, the admin panel with one user, the wiki nobody trusts. The pattern is consistent — tools built around what data exists, not around what decisions people make.',
+      ),
+      h('h2', 'Three rules we build by'),
+      ul([
+        'Start from a decision, not a dataset: what will someone do differently after opening this?',
+        'One screen, one job. Tools that do everything get used for nothing.',
+        'Put it where people already work — Slack, the CRM, the editor — instead of one more browser tab.',
+      ]),
+      p(
+        'The build is the easy half. The hard half is the week after launch: watching real usage, deleting what nobody touches, and doubling down on the one feature that stuck.',
+      ),
+    ),
+  },
+  {
+    title: 'Case study: a reporting pipeline, from days to minutes',
+    slug: 'case-reporting-pipeline-days-to-minutes',
+    excerpt:
+      'How a mid-size operations team replaced a three-day manual reporting cycle with an automated pipeline — and what it changed downstream.',
+    cover: 'blog-case-pipeline',
+    category: 'case-studies',
+    author: 'Grepfox Team',
+    publishedAt: '2026-04-07',
+    body: doc(
+      p(
+        'The setup will sound familiar: every month, three people spent the better part of a week pulling exports, reconciling mismatched columns and pasting charts into a deck. By the time leadership saw the numbers, they were two weeks old.',
+      ),
+      h('h2', 'What we built'),
+      ul([
+        'Automated extracts from the three source systems, on a schedule.',
+        'A reconciliation layer that flags mismatches instead of hiding them.',
+        'A generated report — same template the team already used, now assembled in minutes.',
+      ]),
+      h('h2', 'What changed'),
+      p(
+        'The cycle went from days to minutes, but the more interesting effect was trust: when numbers are fresh and reproducible, people stop debating the data and start debating the decision. The team now runs the report weekly — something that was unthinkable when it cost three days.',
+      ),
+      p(
+        'Pilot to production took five weeks end to end, with the scoped pilot delivered in the first two.',
+      ),
+    ),
+  },
+  {
+    title: 'Choosing an LLM stack: OpenAI, Claude or self-host',
+    slug: 'choosing-an-llm-stack',
+    excerpt:
+      'Provider choice is an engineering decision, not a brand preference. The trade-offs that actually matter when picking a model stack.',
+    cover: 'blog-llm-stack',
+    category: 'ai-agents',
+    author: 'Grepfox Team',
+    publishedAt: '2026-03-24',
+    body: doc(
+      p(
+        'Clients rarely ask "which model is best?" anymore. They ask which stack they can build on for two years without regret. Different question, better question.',
+      ),
+      h('h2', 'The dimensions that matter'),
+      ul([
+        'Task fit: long-context reasoning, tool use, multilingual support — benchmark on YOUR tasks, not leaderboards.',
+        'Data boundaries: what may leave your infrastructure, and under which agreement.',
+        'Cost shape: per-token pricing vs fixed GPU spend, and how your traffic actually looks.',
+        'Operational maturity: evals, fallbacks and rate-limit behaviour under load.',
+      ]),
+      h('h2', 'Our default answer'),
+      p(
+        'We build provider-agnostic by default — OpenAI, Claude or self-host behind one interface — so the model is a config value, not an architecture. The stack that wins is the one you can swap out.',
+      ),
+    ),
+  },
+  {
+    title: 'Onboarding a team to agent-assisted workflows',
+    slug: 'onboarding-teams-to-agent-workflows',
+    excerpt:
+      'Tools change faster than habits. What actually works when you introduce AI agents into a team\'s daily workflow — beyond the kickoff demo.',
+    cover: 'blog-onboarding',
+    category: 'engineering',
+    author: 'Grepfox Team',
+    publishedAt: '2026-03-10',
+    body: doc(
+      p(
+        'The kickoff demo goes great. Two weeks later, usage has dropped to the two enthusiasts who would have adopted anything. Sound familiar? Tooling is never the bottleneck — habit formation is.',
+      ),
+      h('h2', 'What moves the needle'),
+      ul([
+        'Train on real work, not toy examples: bring the team\'s actual tickets to the session.',
+        'Name an internal champion with time officially allocated — not as a side quest.',
+        'Define three concrete workflows where the agent is the default path, not an option.',
+        'Review usage after two weeks and kill what did not stick.',
+      ]),
+      p(
+        'This is why our training engagements pair workshops with two weeks of embedded support. The workshop starts the habit; the follow-through makes it stick.',
+      ),
+    ),
+  },
+  {
+    title: 'Why we stay a small crew',
+    slug: 'why-we-stay-a-small-crew',
+    excerpt:
+      'Headcount is a cost, not a metric. On staying deliberately small while shipping like a bigger team — with systems doing the heavy lifting.',
+    cover: 'blog-small-crew',
+    category: 'company',
+    author: 'Grepfox Team',
+    publishedAt: '2026-02-24',
+    body: doc(
+      p(
+        'Every agency pitch deck brags about headcount. We went the other way: a small crew, senior only, with automation and agents doing the work that elsewhere needs a department.',
+      ),
+      h('h2', 'What small buys us'),
+      ul([
+        'No handoff tax — the person who scopes your project builds it.',
+        'Decisions in hours, not steering committees.',
+        'Overhead that does not quietly migrate into your invoice.',
+      ]),
+      p(
+        'Small does not mean slow. It means we automate our own operations with the same systems we sell — humans plus agents, which is exactly what it says on the homepage.',
+      ),
+      p(
+        'If that sounds like the kind of partner you want, book a scoping call. You will get a straight answer within one business day.',
+      ),
+    ),
+  },
+]
+
 // ---------- PAGES ----------
 
 export const pages = [
@@ -1823,6 +2051,7 @@ export const header = {
     { icon: 'sparkles', link: { type: 'external', url: '/ai-solutions', label: 'AI SOLUTIONS' } },
     { icon: 'compass', link: { type: 'external', url: '/approach', label: 'APPROACH' } },
     { icon: 'users', link: { type: 'external', url: '/about', label: 'ABOUT' } },
+    { icon: 'file-text', link: { type: 'external', url: '/blog', label: 'BLOG' } },
   ],
   cta: { link: { type: 'external', url: '/contact', label: 'START', appearance: 'primary' } },
 }
@@ -1848,6 +2077,7 @@ export const footer = {
       links: [
         { icon: 'users', link: { type: 'external', url: '/about', label: 'About' } },
         { icon: 'compass', link: { type: 'external', url: '/approach', label: 'Approach' } },
+        { icon: 'file-text', link: { type: 'external', url: '/blog', label: 'Blog' } },
         { icon: 'sparkles', link: { type: 'external', url: '/ai-solutions', label: 'AI Solutions' } },
         { icon: 'message', link: { type: 'external', url: '/contact', label: 'Contact' } },
       ],

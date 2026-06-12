@@ -1,6 +1,6 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
-import { pages, services, header, footer } from './content'
+import { pages, services, header, footer, categories, posts } from './content'
 import { ensureMedia } from './uploadMedia'
 
 const IMG_FIELD_BY_BLOCK: Record<string, string> = {
@@ -35,7 +35,7 @@ const resolveImageKeys = (
 
 const upsert = async <T extends { slug: string }>(
   payload: Awaited<ReturnType<typeof getPayload>>,
-  collection: 'pages' | 'services',
+  collection: 'pages' | 'services' | 'categories' | 'posts',
   items: T[],
 ) => {
   for (const item of items) {
@@ -100,6 +100,25 @@ const run = async () => {
 
   console.log('\n▸ Pages')
   await upsert(payload, 'pages', resolvedPages)
+
+  console.log('\n▸ Categories')
+  await upsert(payload, 'categories', categories)
+
+  const allCategories = await payload.find({ collection: 'categories', limit: 50 })
+  const categoryBySlug = new Map(allCategories.docs.map((c: any) => [c.slug, c.id]))
+
+  const resolvedPosts = posts.map((post: any) => ({
+    ...post,
+    _status: 'published',
+    cover:
+      typeof post.cover === 'string' && mediaMap.has(post.cover)
+        ? mediaMap.get(post.cover)
+        : post.cover,
+    category: categoryBySlug.get(post.category) ?? null,
+  }))
+
+  console.log('\n▸ Posts')
+  await upsert(payload, 'posts', resolvedPosts)
 
   console.log('\n▸ Globals')
   await payload.updateGlobal({ slug: 'header', data: header as any })
