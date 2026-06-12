@@ -809,6 +809,166 @@ export const services = [
       },
     ],
   },
+  {
+    title: 'Team Training & Enablement',
+    slug: 'team-training',
+    icon: 'users',
+    tier: 'core',
+    heroImage: 'svc-training',
+    summary:
+      'Hands-on workshops and enablement programs that teach your team to use, supervise and extend AI agents.',
+    body: doc(
+      p(
+        'Tools do not change how a company works; habits do. We train marketing and ops teams to work with the agents we build — so the system keeps compounding after we step back.',
+      ),
+    ),
+    layout: [
+      {
+        blockType: 'numbers',
+        items: [
+          { value: '1–2 d', label: 'WORKSHOP', sublabel: 'hands-on, on your stack' },
+          { value: '4–6 wk', label: 'ENABLEMENT', sublabel: 'from first session to habit' },
+          { value: '100%', label: 'ON YOUR TOOLS', sublabel: 'no demo sandboxes' },
+        ],
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 01',
+        title: 'WHAT WE TEACH.',
+        subtitle: 'Practical sessions built around your stack — not generic AI literacy.',
+      },
+      {
+        blockType: 'featureGrid',
+        columns: '3',
+        items: [
+          {
+            icon: 'play',
+            title: 'Agent onboarding',
+            description:
+              'Hands-on sessions for the teams that will use the agents: what to trust, what to check, what to escalate.',
+            tag: 'START HERE',
+          },
+          {
+            icon: 'message',
+            title: 'Prompting that works',
+            description:
+              'Practical prompting for marketing and ops: reusable patterns for real tasks, not party tricks.',
+          },
+          {
+            icon: 'eye',
+            title: 'Supervision & QA',
+            description:
+              'How to read agent logs, review outputs and catch drift before customers do.',
+          },
+          {
+            icon: 'settings',
+            title: 'Tool fluency',
+            description:
+              'Make, Zapier, n8n and your CMS: your team learns to adjust flows without waiting for us.',
+          },
+          {
+            icon: 'shield',
+            title: 'Safe-use policies',
+            description:
+              'Data boundaries, approval gates and escalation rules your compliance team will sign off on.',
+          },
+          {
+            icon: 'refresh',
+            title: 'Train the trainer',
+            description:
+              'We coach an internal champion so the knowledge stays when new people join.',
+          },
+        ],
+      },
+      {
+        blockType: 'accentBlock',
+        eyebrow: 'WHY IT STICKS',
+        title: 'Tools do not change teams.\nHabits do.',
+        description:
+          'Most AI training is a slideshow about prompts. Ours is a working session on your real stack: your data, your agents, your workflows — and homework that ships something.',
+        footnote: '— ON YOUR STACK · NO SLIDES',
+        image: 'card-assistants',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 02',
+        title: 'HOW A PROGRAM RUNS.',
+      },
+      {
+        blockType: 'processTimeline',
+        steps: [
+          { title: 'Assess', description: 'Map skills, tools and blockers in one session.' },
+          { title: 'Design', description: 'Curriculum built on your real workflows.' },
+          { title: 'Train', description: 'Small-group workshops, hands-on, on your stack.' },
+          { title: 'Embed', description: 'Cheat sheets, runbooks and office hours.' },
+          { title: 'Refresh', description: 'Quarterly sessions as models and tools change.' },
+        ],
+      },
+      {
+        blockType: 'logoWall',
+        heading: 'WHAT TEAMS LEARN',
+        logos: [
+          { name: 'ChatGPT' },
+          { name: 'Claude' },
+          { name: 'Copilot' },
+          { name: 'Gemini' },
+          { name: 'Make' },
+          { name: 'Zapier' },
+          { name: 'n8n' },
+          { name: 'Notion AI' },
+          { name: 'HubSpot' },
+          { name: 'Cursor' },
+          { name: 'Perplexity' },
+          { name: 'Slack AI' },
+        ],
+      },
+      {
+        blockType: 'testimonial',
+        eyebrow: 'TESTIMONIAL / 011',
+        quote:
+          'After two workshops the team stopped asking us to fix prompts and started shipping their own automations. The office-hours channel went quiet — in a good way.',
+        name: 'LENA VARGA',
+        role: 'MARKETING OPS LEAD · QUARRYSTONE',
+      },
+      {
+        blockType: 'sectionHead',
+        number: 'SECTION 03',
+        title: 'QUESTIONS.',
+        subtitle: 'What teams ask before booking a program.',
+      },
+      {
+        blockType: 'accordionFaq',
+        items: [
+          {
+            question: 'Is this generic AI training?',
+            answer:
+              'No — every session runs on your stack and your data. If we did not build your agents, we start with a short audit so the examples are real.',
+          },
+          {
+            question: 'Who is it for?',
+            answer:
+              'Marketing, ops and support teams who work with agents daily, the leads who supervise them, and one internal champion we coach to keep it going.',
+          },
+          {
+            question: 'How big can groups be?',
+            answer:
+              'Workshops run best at 4–8 people. Larger teams split into tracks by role; leadership gets its own short briefing.',
+          },
+          {
+            question: 'Do you train teams on agents you did not build?',
+            answer:
+              'Yes. We audit the setup first, then teach around it — and we will tell you honestly if something should be fixed before training people on it.',
+          },
+        ],
+      },
+      {
+        blockType: 'ctaBanner',
+        accent: false,
+        title: 'Want a team that runs its own agents?',
+        action: link('Book a training program', '/contact', 'primary'),
+      },
+    ],
+  },
 ]
 
 // ---------- PAGES ----------
@@ -839,6 +999,7 @@ export const pages = [
           { text: 'WEB PLATFORMS' },
           { text: 'ANALYTICS' },
           { text: 'MAINTENANCE' },
+          { text: 'TRAINING' },
           { text: 'RELIABILITY' },
         ],
       },
@@ -847,7 +1008,7 @@ export const pages = [
         number: 'SECTION 01',
         title: 'WHAT WE DO.',
         subtitle:
-          'Five practices. One team. We ship — and then we keep it running.',
+          'Six practices. One team. We ship — and then we keep it running.',
       },
       {
         blockType: 'featureGrid',
@@ -893,6 +1054,15 @@ export const pages = [
             description:
               'SLA-backed retainers. Monitoring, updates, on-call and quarterly reviews for the stack you already run.',
             linkedService: 'technical-maintenance',
+          },
+          {
+            icon: 'users',
+            image: 'svc-training',
+            title: 'Training',
+            description:
+              'Workshops and enablement that make your team agent-fluent: prompting, supervision, safe use.',
+            tag: 'NEW',
+            linkedService: 'team-training',
           },
         ],
       },
@@ -1012,14 +1182,14 @@ export const pages = [
     title: 'Services',
     slug: 'services',
     metaTitle: 'Services — Grepfox',
-    metaDescription: 'Five practices: AI agents, automation, web platforms, analytics and technical maintenance.',
+    metaDescription: 'Six practices: AI agents, automation, web platforms, analytics, maintenance and team training.',
     layout: [
       {
         blockType: 'heroSplit',
         eyebrow: 'SERVICES',
-        title: 'Five practices. One team.',
+        title: 'Six practices. One team.',
         subtitle:
-          'Every engagement is custom, but the work falls into five patterns. Pick your entry point — we often run several in parallel.',
+          'Every engagement is custom, but the work falls into six patterns. Pick your entry point — we often run several in parallel.',
         actions: [link('Talk to us', '/contact', 'primary')],
         image: 'services-hero',
         imageCaption: 'PRACTICES · OVERVIEW',
@@ -1033,6 +1203,7 @@ export const pages = [
           { icon: 'layout', image: 'svc-web', title: 'Web Platforms', description: 'Next.js and headless WordPress.', linkedService: 'web-platforms' },
           { icon: 'bar-chart', image: 'svc-analytics', title: 'Analytics', description: 'Dashboards with AI-drafted reports.', linkedService: 'analytics-reporting' },
           { icon: 'shield', image: 'svc-maintenance', title: 'Maintenance', description: 'SLA-backed retainers.', linkedService: 'technical-maintenance' },
+          { icon: 'users', image: 'svc-training', title: 'Training', description: 'Workshops that make teams agent-fluent.', linkedService: 'team-training' },
         ],
       },
       {
@@ -1418,6 +1589,7 @@ export const footer = {
         { icon: 'layout', link: { type: 'external', url: '/services/web-platforms', label: 'Web Platforms' } },
         { icon: 'bar-chart', link: { type: 'external', url: '/services/analytics-reporting', label: 'Analytics' } },
         { icon: 'shield', link: { type: 'external', url: '/services/technical-maintenance', label: 'Maintenance' } },
+        { icon: 'users', link: { type: 'external', url: '/services/team-training', label: 'Training' } },
       ],
     },
     {

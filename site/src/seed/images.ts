@@ -153,4 +153,11 @@ export const images: ImageManifest[] = [
     alt: 'Terminal prompt with sudo command, macro',
     credit: 'Unsplash',
   },
+  {
+    key: 'svc-training',
+    url: U('1635070041078-e363dbe005cb'),
+    filename: 'svc-training-chalkboard.jpg',
+    alt: 'Formulas and diagrams chalked on a dark blackboard',
+    credit: 'Unsplash',
+  },
 ]
