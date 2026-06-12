@@ -1,0 +1,131 @@
+@use '../abstracts' as *;
+
+// ── Post grid (cell-border pattern, same as .feature-grid) ──
+.post-grid-frame {
+  border: 1px solid var(--gf-rule);
+  overflow: hidden;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 -1px -1px 0;
+
+  @include md-down { grid-template-columns: repeat(2, 1fr); }
+  @include sm-down { grid-template-columns: 1fr; }
+}
+
+// ── Card ─────────────────────────────────────────────────────
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--gf-rule);
+  border-bottom: 1px solid var(--gf-rule);
+  text-decoration: none;
+  color: var(--gf-bone);
+  transition: background var(--ease-cut);
+
+  &:hover { background: var(--gf-surface); }
+  &:hover .post-card__title { color: var(--gf-accent); }
+
+  &__media {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    padding: 24px;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__category { color: var(--gf-accent); }
+
+  &__title {
+    font-family: var(--ff-display);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+    transition: color var(--ease-cut);
+  }
+
+  &__excerpt {
+    color: var(--gf-bone-dim);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  // Featured: standalone framed card, media + text side by side
+  &--featured {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    border: 1px solid var(--gf-rule);
+
+    .post-card__media { height: 360px; }
+    .post-card__body { padding: 32px; justify-content: flex-end; }
+    .post-card__title {
+      @include display(44px, 700, -0.03em, 1);
+    }
+
+    @include md-down {
+      grid-template-columns: 1fr;
+      .post-card__media { height: 240px; }
+    }
+  }
+}
+
+// ── Pagination ───────────────────────────────────────────────
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+
+  &__link {
+    color: var(--gf-dim);
+    text-decoration: none;
+    padding: 10px 14px;
+    border: 1px solid var(--gf-rule);
+    transition: color var(--ease-cut), border-color var(--ease-cut);
+
+    &:hover { color: var(--gf-bone); }
+
+    &--active {
+      color: var(--gf-accent);
+      border-color: var(--gf-accent);
+    }
+  }
+}
+
+// ── Article typography (extends .richtext) ──────────────────
+.richtext--article {
+  p, li {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  h2 { margin-top: 48px; }
+  h3 { margin-top: 32px; }
+
+  blockquote {
+    margin: 32px 0;
+    padding-left: 24px;
+    border-left: 2px solid var(--gf-accent);
+    color: var(--gf-bone);
+    font-style: italic;
+  }
+}
