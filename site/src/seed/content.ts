@@ -30,7 +30,7 @@ export const services = [
         items: [
           { value: '2–4 wk', label: 'PILOT', sublabel: 'first working agent' },
           { value: '24/7', label: 'UPTIME', sublabel: 'monitored in production' },
-          { value: '3', label: 'LLM PROVIDERS', sublabel: 'OpenAI · Anthropic · self-host' },
+          { value: '3', label: 'LLM PROVIDERS', sublabel: 'OpenAI · Claude · self-host' },
         ],
       },
       {
@@ -129,7 +129,7 @@ export const services = [
         blockType: 'testimonial',
         eyebrow: 'TESTIMONIAL / 012',
         quote:
-          'The agent answered 40% of tier-one tickets in month one. By month three our CSAT was up, not down — that was the part nobody believed.',
+          'The agent took over half of our routine inquiries in month one. By month three our CSAT was up, not down — that was the part nobody believed.',
         name: 'DANA KOROL',
         role: 'HEAD OF SUPPORT · NORTHBEAM RETAIL',
       },
@@ -189,7 +189,7 @@ export const services = [
       {
         blockType: 'numbers',
         items: [
-          { value: '99.9%', label: 'FLOW UPTIME', sublabel: 'monitored, with retries' },
+          { value: '24/7', label: 'FLOW MONITORING', sublabel: 'alerts and automatic retries' },
           { value: '<5 min', label: 'ALERT LATENCY', sublabel: 'when something breaks' },
           { value: '40 h+', label: 'SAVED MONTHLY', sublabel: 'typical ops team' },
         ],
@@ -413,7 +413,7 @@ export const services = [
       {
         blockType: 'sectionHead',
         number: 'SECTION 02',
-        title: 'LAUNCH IN SIX WEEKS.',
+        title: 'FROM SCOPE TO LAUNCH.',
       },
       {
         blockType: 'processTimeline',
@@ -473,7 +473,7 @@ export const services = [
           {
             question: 'Will we lose SEO in the migration?',
             answer:
-              'No. Redirect maps, structured data, and a crawl comparison before and after launch are part of every migration. Rankings are tracked through the cutover.',
+              'Protecting it is part of the migration plan: redirect maps, structured data, and a crawl comparison before and after launch. Rankings are tracked through the cutover.',
           },
           {
             question: 'Can our team edit everything?',
@@ -668,7 +668,7 @@ export const services = [
         blockType: 'numbers',
         items: [
           { value: '24/7', label: 'COVERAGE', sublabel: 'on-call rotation' },
-          { value: '<15 min', label: 'RESPONSE', sublabel: 'for P1 incidents' },
+          { value: '15 min', label: 'P1 RESPONSE', sublabel: 'target, backed by contract SLA' },
           { value: '20–100h', label: 'RETAINER', sublabel: 'monthly envelope' },
         ],
       },
@@ -716,7 +716,7 @@ export const services = [
             icon: 'alert',
             title: 'Emergency response',
             description:
-              'P1 incidents answered in fifteen minutes, around the clock, with a post-mortem after.',
+              'P1 incidents answered in minutes, around the clock, with a post-mortem after. Exact targets live in your SLA.',
           },
         ],
       },
@@ -782,12 +782,12 @@ export const services = [
           {
             question: 'What counts as a P1 incident?',
             answer:
-              'Site down, checkout broken, data loss in progress, or a security breach. P1s get a fifteen-minute response around the clock; everything else follows business-hours SLAs defined in the contract.',
+              'Site down, checkout broken, data loss in progress, or a security breach. P1s get our fastest response target around the clock; response times for every severity are defined in the contract.',
           },
           {
             question: 'Do unused hours roll over?',
             answer:
-              'Partially — up to 25% of the monthly envelope rolls into the next month. Retainers are sized after the first quarter, so most clients land within 10% of their envelope.',
+              'Partially — rollover terms are defined in the contract. Retainers are re-sized after the first quarter, so the envelope tracks how you actually use it.',
           },
           {
             question: "Can you take over code someone else wrote?",
@@ -797,7 +797,7 @@ export const services = [
           {
             question: 'How do we exit?',
             answer:
-              'Thirty days notice, full handover included: credentials, documentation, runbooks. Everything already lives in your accounts, so exit is administrative, not technical.',
+              'A short notice period defined in the contract, full handover included: credentials, documentation, runbooks. Everything already lives in your accounts, so exit is administrative, not technical.',
           },
         ],
       },
@@ -858,8 +858,9 @@ export const pages = [
             image: 'card-ai-agents',
             title: 'AI Agents',
             description:
-              'Chatbots, knowledge assistants and autonomous workflow agents. Built on OpenAI, Claude and LangChain.',
+              'Chatbots, internal assistants and autonomous workflow agents. Built on OpenAI, Claude and LangChain.',
             tag: 'FLAGSHIP',
+            linkedService: 'ai-agents',
           },
           {
             icon: 'zap',
@@ -867,14 +868,7 @@ export const pages = [
             title: 'Automation',
             description:
               'Make, Zapier, n8n and custom code. CRMs, ad platforms and analytics wired together with monitoring.',
-          },
-          {
-            icon: 'sparkles',
-            image: 'card-assistants',
-            title: 'AI Assistants',
-            description:
-              'Internal copilots and search agents grounded in your docs, tickets and CRM. Secure by default.',
-            tag: 'NEW',
+            linkedService: 'automation-integrations',
           },
           {
             icon: 'layout',
@@ -882,6 +876,7 @@ export const pages = [
             title: 'Web Platforms',
             description:
               'Next.js and headless WordPress. Fast, SEO-ready, fully integrated with the marketing stack.',
+            linkedService: 'web-platforms',
           },
           {
             icon: 'bar-chart',
@@ -889,13 +884,15 @@ export const pages = [
             title: 'Analytics',
             description:
               'Looker Studio, Metabase and custom dashboards — with AI-drafted narrative reports for the C-suite.',
+            linkedService: 'analytics-reporting',
           },
           {
             icon: 'shield',
             image: 'card-maintenance',
-            title: 'Technical Maintenance',
+            title: 'Maintenance',
             description:
               'SLA-backed retainers. Monitoring, updates, on-call and quarterly reviews for the stack you already run.',
+            linkedService: 'technical-maintenance',
           },
         ],
       },
@@ -1004,7 +1001,7 @@ export const pages = [
           { icon: 'mail', value: 'HELLO@GREPFOX.IO' },
           { icon: 'phone', value: '+1 (415) 555 0123' },
           { icon: 'map-pin', value: 'TEL AVIV · NYC' },
-          { icon: 'clock', value: '24H REPLY · NO BOTS' },
+          { icon: 'clock', value: '< 1 BUSINESS DAY · NO BOTS' },
         ],
       },
     ],
@@ -1048,7 +1045,7 @@ export const pages = [
       {
         blockType: 'processTimeline',
         steps: [
-          { title: 'Pilot', description: 'Scoped engagement in one practice — 2 to 6 weeks.' },
+          { title: 'Pilot', description: 'Scoped engagement in one practice — 2 to 4 weeks.' },
           { title: 'Integrate', description: 'Connect the pilot to the rest of your stack.' },
           { title: 'Retain', description: 'Move to a monthly retainer with SLA.' },
           { title: 'Expand', description: 'Add adjacent practices as needs surface.' },
@@ -1089,7 +1086,7 @@ export const pages = [
         number: 'SECTION 01',
         title: 'WHAT WE BUILD.',
         subtitle:
-          'Four patterns cover 90% of what marketing and ops teams actually need from AI today.',
+          'Four patterns cover most of what marketing and ops teams actually need from AI today.',
       },
       {
         blockType: 'featureGrid',
@@ -1324,7 +1321,7 @@ export const pages = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 012',
+        eyebrow: 'TESTIMONIAL / 002',
         quote:
           'They behave like an in-house team that just happens to work remotely. We stopped looking for a CTO after the first quarter.',
         name: 'DANIEL ROTH',
@@ -1383,7 +1380,7 @@ export const pages = [
           {
             question: 'What if I do not know exactly what I need?',
             answer:
-              'That is the most common case. We scope the unknown into a small paid discovery engagement (1–2 weeks) and end with a plan and proposal.',
+              'That is the most common case. We scope the unknown into a small paid scoping engagement (1–2 weeks) and end with a plan and proposal.',
           },
           {
             question: 'Do you work with agencies as a white-label partner?',
@@ -1411,7 +1408,7 @@ export const header = {
 export const footer = {
   brandTag: 'TECH PARTNER · AI · AUTOMATION',
   tagline:
-    'Small crew, serious output. Based in the US & Israel. Book a scoping call and get a straight answer within 24h.',
+    'Small crew, serious output. Based in the US & Israel. Book a scoping call and get a straight answer within one business day.',
   columns: [
     {
       title: 'SERVICES',
