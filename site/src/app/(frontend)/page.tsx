@@ -1,7 +1,32 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { RenderBlocks } from '@/utils/RenderBlocks'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const payload = await getPayload({ config })
+  const { docs } = await payload.find({
+    collection: 'pages',
+    where: { slug: { equals: 'home' } },
+    limit: 1,
+  })
+  const page = docs[0]
+  if (!page) return {}
+  const title = (page.metaTitle as string) || (page.title as string)
+  const description = (page.metaDescription as string) || undefined
+  const metaImage = typeof page.metaImage === 'object' && page.metaImage ? page.metaImage : null
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: '/' },
+    openGraph: {
+      title,
+      description,
+      images: metaImage?.url ? [{ url: metaImage.url }] : undefined,
+    },
+  }
+}
 
 export default async function HomePage() {
   const payload = await getPayload({ config })

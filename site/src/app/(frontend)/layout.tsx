@@ -6,6 +6,7 @@ import { MotionRuntime } from '@/components/site/MotionRuntime'
 import '@/styles/grepfox.scss'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://grepfox.com'),
   title: { default: 'Grepfox — Technical Maintenance', template: '%s · Grepfox' },
   description:
     'Grepfox provides technical maintenance and reliability engineering for modern operations.',

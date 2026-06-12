@@ -29,9 +29,18 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   })
   const page = docs[0]
   if (!page) return {}
+  const title = (page.metaTitle as string) || (page.title as string)
+  const description = (page.metaDescription as string) || undefined
+  const metaImage = typeof page.metaImage === 'object' && page.metaImage ? page.metaImage : null
   return {
-    title: (page.metaTitle as string) || (page.title as string),
-    description: page.metaDescription as string | undefined,
+    title,
+    description,
+    alternates: { canonical: `/${slug}` },
+    openGraph: {
+      title,
+      description,
+      images: metaImage?.url ? [{ url: metaImage.url }] : undefined,
+    },
   }
 }
 

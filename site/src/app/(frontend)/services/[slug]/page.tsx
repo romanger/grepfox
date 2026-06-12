@@ -26,10 +26,24 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     collection: 'services',
     where: { slug: { equals: slug } },
     limit: 1,
+    depth: 1,
   })
   const svc = docs[0]
   if (!svc) return {}
-  return { title: svc.title as string, description: svc.summary as string | undefined }
+  const title = svc.title as string
+  const description = (svc.summary as string) || undefined
+  const heroImage = typeof svc.heroImage === 'object' && svc.heroImage ? svc.heroImage : null
+  const image = heroImage?.url || (svc.heroImageUrl as string | undefined)
+  return {
+    title,
+    description,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: {
+      title,
+      description,
+      images: image ? [{ url: image }] : undefined,
+    },
+  }
 }
 
 export default async function ServicePage({ params }: { params: Promise<Params> }) {
