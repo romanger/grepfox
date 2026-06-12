@@ -1863,7 +1863,9 @@ export const footer = {
   ],
   copyright: `© GREPFOX ${new Date().getFullYear()} — ALL SYSTEMS NOMINAL`,
   legal: [
-    { icon: 'github', link: { type: 'external', url: 'https://github.com/grepfox', label: 'GITHUB', newTab: true } },
+    { icon: 'linkedin', link: { type: 'external', url: 'https://www.linkedin.com/company/grepfox', label: 'LINKEDIN', newTab: true } },
+    { icon: 'x', link: { type: 'external', url: 'https://x.com/grepfox', label: 'X', newTab: true } },
+    { icon: 'youtube', link: { type: 'external', url: 'https://www.youtube.com/@grepfox', label: 'YOUTUBE', newTab: true } },
     { link: { type: 'external', url: '/privacy', label: 'PRIVACY' } },
     { link: { type: 'external', url: '/terms', label: 'TERMS' } },
   ],

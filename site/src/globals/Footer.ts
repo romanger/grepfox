@@ -28,7 +28,7 @@ export const Footer: GlobalConfig = {
     {
       name: 'legal',
       type: 'array',
-      maxRows: 4,
+      maxRows: 6,
       fields: [
         { name: 'icon', type: 'select', options: iconOptions },
         linkField({ appearances: false }),
