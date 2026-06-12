@@ -1240,8 +1240,8 @@ export const pages = [
     layout: [
       {
         blockType: 'heroFullbleed',
-        eyebrow: 'CASE · 014 / AI SOLUTIONS',
-        meta: '2026.Q2',
+        eyebrow: 'AI SOLUTIONS',
+        meta: 'RECENT WORK',
         statValue: '40%',
         description: 'tier-1 ticket deflection for a B2B SaaS — AI support agent shipped in 3 weeks.',
         background: 'ai-solutions-hero',
@@ -1255,7 +1255,7 @@ export const pages = [
       {
         blockType: 'sectionHead',
         number: 'SECTION 01',
-        title: 'WHAT WE BUILD.',
+        title: 'WHERE AI PAYS OFF.',
         subtitle:
           'Four patterns cover most of what marketing and ops teams actually need from AI today.',
       },
@@ -1270,6 +1270,7 @@ export const pages = [
             description:
               'Support bots grounded in your help center, ticket history and product docs. Escalate cleanly to humans.',
             tag: 'MOST POPULAR',
+            linkedService: 'ai-agents',
           },
           {
             icon: 'sparkles',
@@ -1277,6 +1278,7 @@ export const pages = [
             title: 'Internal copilots',
             description:
               'Assistants that answer company questions from Notion, Slack, CRM and the drive that no one wants to search.',
+            linkedService: 'ai-agents',
           },
           {
             icon: 'message',
@@ -1284,6 +1286,7 @@ export const pages = [
             title: 'Content & outreach',
             description:
               'Brief-to-draft generators tuned to your voice. Personalized outbound that does not sound personalized.',
+            linkedService: 'ai-agents',
           },
           {
             icon: 'pie-chart',
@@ -1291,6 +1294,7 @@ export const pages = [
             title: 'AI-narrated analytics',
             description:
               'Weekly executive reports drafted by an agent — with the raw dashboard underneath for the skeptics.',
+            linkedService: 'analytics-reporting',
           },
         ],
       },
@@ -1317,17 +1321,30 @@ export const pages = [
         ],
       },
       {
+        blockType: 'splitLayout',
+        imageSide: 'right',
+        eyebrow: 'AFTER THE BUILD',
+        title: 'Agents need fluent operators.',
+        image: 'svc-training',
+        content: doc(
+          p(
+            'The fastest way to waste an AI budget is to ship an agent nobody trusts or knows how to supervise. Our training programs make your team agent-fluent: prompting, supervision, safe use.',
+          ),
+        ),
+        action: link('Explore team training', '/services/team-training', 'outline-accent'),
+      },
+      {
         blockType: 'accordionFaq',
         items: [
           {
-            question: 'Which model should we use?',
+            question: 'Where should we start?',
             answer:
-              'Depends on the task, latency budget, cost, and data residency. We benchmark 2–3 options per use case and write the decision down. You are not locked in.',
+              'With the most repetitive, measurable process you own. One discovery call to find it, one scoped pilot to prove it — success metrics agreed before we build anything.',
           },
           {
-            question: 'What about hallucinations?',
+            question: 'Do we need an internal AI team for this?',
             answer:
-              'Grounded retrieval, structured outputs, evaluator models and human-in-the-loop review for anything customer-facing. Plus logging so we catch drift early.',
+              'No. We build and operate the system, and our training programs make your existing team fluent at using and supervising it.',
           },
           {
             question: 'Can we self-host?',
