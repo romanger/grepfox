@@ -58,15 +58,26 @@ export async function Footer() {
           <nav className="site-footer__legal" aria-label="Legal">
             {legal.map((l, i) =>
               l.link ? (
-                <Link
-                  key={i}
-                  href={resolveLinkHref(l.link)}
-                  target={l.link.newTab ? '_blank' : undefined}
-                  className="site-footer__legal-link"
-                >
-                  {l.icon && <Icon name={l.icon} size={13} />}
-                  {l.link.label}
-                </Link>
+                l.icon ? (
+                  <Link
+                    key={i}
+                    href={resolveLinkHref(l.link)}
+                    target={l.link.newTab ? '_blank' : undefined}
+                    className="site-footer__legal-link site-footer__legal-link--icon"
+                    aria-label={l.link.label}
+                  >
+                    <Icon name={l.icon} size={15} />
+                  </Link>
+                ) : (
+                  <Link
+                    key={i}
+                    href={resolveLinkHref(l.link)}
+                    target={l.link.newTab ? '_blank' : undefined}
+                    className="site-footer__legal-link"
+                  >
+                    {l.link.label}
+                  </Link>
+                )
               ) : null,
             )}
           </nav>
