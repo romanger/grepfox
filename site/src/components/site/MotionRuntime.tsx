@@ -20,6 +20,7 @@ const REVEAL_SELECTOR = [
   '.accordion',
   '.cta-banner__inner > *',
   '.post-card',
+  '.newsletter-band__inner > *',
 ].join(', ')
 
 const STAGGER_MS = 70

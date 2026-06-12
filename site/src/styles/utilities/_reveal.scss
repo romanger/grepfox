@@ -21,7 +21,8 @@ $reveal-targets: (
   '.logo-wall__item',
   '.accordion',
   '.cta-banner__inner > *',
-  '.post-card'
+  '.post-card',
+  '.newsletter-band__inner > *'
 );
 
 html[data-motion='on'] {

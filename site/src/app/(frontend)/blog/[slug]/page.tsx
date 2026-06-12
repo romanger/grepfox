@@ -4,9 +4,11 @@ import type { Metadata } from 'next'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { RichText } from '@/utils/RichText'
+import { Icon } from '@/components/ds/Icon'
 import { MonoLabel } from '@/components/ds/MonoLabel'
 import { Media } from '@/components/ds/Media'
 import { PostCard } from '@/components/site/PostCard'
+import { NewsletterBand } from '@/components/site/NewsletterBand'
 import { CTABanner } from '@/blocks/CTABanner/Component'
 import { readingTime } from '@/utils/readingTime'
 import { formatPostDate } from '@/utils/formatPostDate'
@@ -15,6 +17,8 @@ import type { Post } from '@/payload-types'
 type Params = { slug: string }
 
 const PUBLISHED = { _status: { equals: 'published' } } as const
+
+const ORIGIN = process.env.NEXT_PUBLIC_SERVER_URL || 'https://grepfox.com'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config })
@@ -85,23 +89,18 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
     }
   }
 
+  const shareUrl = `${ORIGIN}/blog/${post.slug}`
+  const shareX = `https://x.com/intent/post?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`
+  const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+
   return (
     <>
       <section style={{ padding: '80px 56px 40px', borderBottom: '1px solid var(--gf-rule)' }}>
-        <MonoLabel accent>
-          {[
-            category ? category.title.toUpperCase() : 'BLOG',
-            formatPostDate(post.publishedAt),
-            `${readingTime(post.body)} MIN READ`,
-            post.author ? post.author.toUpperCase() : null,
-          ]
-            .filter(Boolean)
-            .join(' · ')}
-        </MonoLabel>
+        <MonoLabel accent>BLOG · {category ? category.title.toUpperCase() : 'FIELD NOTES'}</MonoLabel>
         <h1
           style={{
             fontFamily: 'var(--ff-display)',
-            fontSize: 72,
+            fontSize: 'clamp(40px, 6.5vw, 72px)',
             fontWeight: 700,
             letterSpacing: '-0.04em',
             lineHeight: 0.95,
@@ -130,11 +129,45 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
         </div>
       )}
 
-      {post.body && (
-        <div className="block-pad" style={{ maxWidth: 760 }}>
-          <RichText data={post.body} className="richtext richtext--article" />
-        </div>
-      )}
+      <div className="post-layout">
+        <aside className="post-rail" aria-label="Post details">
+          <div className="post-rail__row">
+            <span className="post-rail__label">WRITTEN BY</span>
+            <span className="post-rail__value">{post.author || 'Grepfox Team'}</span>
+          </div>
+          <div className="post-rail__row">
+            <span className="post-rail__label">PUBLISHED</span>
+            <span className="post-rail__value">{formatPostDate(post.publishedAt)}</span>
+          </div>
+          <div className="post-rail__row">
+            <span className="post-rail__label">READ TIME</span>
+            <span className="post-rail__value">{readingTime(post.body)} MIN</span>
+          </div>
+          {category && (
+            <div className="post-rail__row">
+              <span className="post-rail__label">FILED UNDER</span>
+              <span className="post-rail__value">
+                <Link href={`/blog?category=${category.slug}`}>{category.title}</Link>
+              </span>
+            </div>
+          )}
+          <div className="post-rail__row">
+            <span className="post-rail__label">SHARE</span>
+            <span className="post-rail__share">
+              <a href={shareX} target="_blank" rel="noreferrer" aria-label="Share on X">
+                <Icon name="x-social" size={13} /> X
+              </a>
+              <a href={shareLinkedIn} target="_blank" rel="noreferrer" aria-label="Share on LinkedIn">
+                <Icon name="linkedin" size={13} /> LINKEDIN
+              </a>
+            </span>
+          </div>
+        </aside>
+
+        <article>
+          {post.body && <RichText data={post.body} className="richtext richtext--article" />}
+        </article>
+      </div>
 
       {related.length > 0 && (
         <section className="block-pad" style={{ borderTop: '1px solid var(--gf-rule)' }}>
@@ -153,6 +186,8 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
           </div>
         </section>
       )}
+
+      <NewsletterBand />
 
       <CTABanner
         accent={false}

@@ -5,6 +5,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { MonoLabel } from '@/components/ds/MonoLabel'
 import { PostCard } from '@/components/site/PostCard'
+import { NewsletterBand } from '@/components/site/NewsletterBand'
 
 const PER_PAGE = 9
 
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 }
 
 type Search = { category?: string; page?: string }
+
+const PUBLISHED = { _status: { equals: 'published' } }
 
 const pageHref = (categorySlug: string | null, page: number): string => {
   const q = new URLSearchParams()
@@ -39,7 +42,17 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
     : undefined
   if (categoryParam && !activeCategory) notFound()
 
-  const where: Record<string, unknown> = { _status: { equals: 'published' } }
+  const [{ totalDocs: totalPublished }, ...categoryCounts] = await Promise.all([
+    payload.count({ collection: 'posts', where: PUBLISHED as any }),
+    ...categories.map((c) =>
+      payload.count({
+        collection: 'posts',
+        where: { and: [PUBLISHED, { category: { equals: c.id } }] } as any,
+      }),
+    ),
+  ])
+
+  const where: Record<string, unknown> = { ...PUBLISHED }
   if (activeCategory) where.category = { equals: activeCategory.id }
 
   const result = await payload.find({
@@ -55,6 +68,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
   const showFeatured = !activeCategory && page === 1 && result.docs.length > 0
   const featured = showFeatured ? result.docs[0] : null
   const gridPosts = showFeatured ? result.docs.slice(1) : result.docs
+  const indexBase = (page - 1) * PER_PAGE + (showFeatured ? 2 : 1)
 
   return (
     <>
@@ -63,7 +77,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         <h1
           style={{
             fontFamily: 'var(--ff-display)',
-            fontSize: 96,
+            fontSize: 'clamp(52px, 9vw, 96px)',
             fontWeight: 700,
             letterSpacing: '-0.05em',
             lineHeight: 0.9,
@@ -80,15 +94,15 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
 
       <nav className="tabs" style={{ padding: '0 56px' }} aria-label="Blog categories">
         <Link href="/blog" className={activeCategory ? 'tab' : 'tab tab--active'}>
-          ALL
+          ALL <sup className="tab__count">{totalPublished}</sup>
         </Link>
-        {categories.map((c) => (
+        {categories.map((c, i) => (
           <Link
             key={c.id}
             href={pageHref(c.slug, 1)}
             className={activeCategory?.id === c.id ? 'tab tab--active' : 'tab'}
           >
-            {c.title.toUpperCase()}
+            {c.title.toUpperCase()} <sup className="tab__count">{categoryCounts[i].totalDocs}</sup>
           </Link>
         ))}
       </nav>
@@ -96,15 +110,15 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
       <div className="block-pad">
         {featured && (
           <div style={{ marginBottom: 48 }}>
-            <PostCard post={featured} featured />
+            <PostCard post={featured} featured index={1} />
           </div>
         )}
 
         {gridPosts.length > 0 ? (
           <div className="post-grid-frame">
             <div className="post-grid">
-              {gridPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
+              {gridPosts.map((post, i) => (
+                <PostCard key={post.id} post={post} index={indexBase + i} />
               ))}
             </div>
           </div>
@@ -142,6 +156,8 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
           </nav>
         )}
       </div>
+
+      <NewsletterBand />
     </>
   )
 }
