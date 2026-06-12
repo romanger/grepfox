@@ -20,6 +20,7 @@ export async function generateStaticParams() {
   const payload = await getPayload({ config })
   const { docs } = await payload.find({
     collection: 'posts',
+    where: PUBLISHED as any,
     limit: 200,
     select: { slug: true },
   })
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const payload = await getPayload({ config })
   const { docs } = await payload.find({
     collection: 'posts',
-    where: { slug: { equals: slug } },
+    where: { and: [PUBLISHED, { slug: { equals: slug } }] } as any,
     limit: 1,
     depth: 1,
   })
@@ -50,7 +51,7 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
   const payload = await getPayload({ config })
   const { docs } = await payload.find({
     collection: 'posts',
-    where: { slug: { equals: slug } },
+    where: { and: [PUBLISHED, { slug: { equals: slug } }] } as any,
     limit: 1,
     depth: 1,
   })
