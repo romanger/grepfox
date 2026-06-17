@@ -642,7 +642,10 @@ export interface Page {
              */
             eyebrow?: string | null;
             quote: string;
-            name: string;
+            /**
+             * Attribution. Omit for an unattributed principle/statement.
+             */
+            name?: string | null;
             role?: string | null;
             /**
              * Portrait (left column). Omit for stacked variant.
@@ -1326,7 +1329,10 @@ export interface Service {
              */
             eyebrow?: string | null;
             quote: string;
-            name: string;
+            /**
+             * Attribution. Omit for an unattributed principle/statement.
+             */
+            name?: string | null;
             role?: string | null;
             /**
              * Portrait (left column). Omit for stacked variant.

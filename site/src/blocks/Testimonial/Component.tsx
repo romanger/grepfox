@@ -4,7 +4,7 @@ import { Media, type MediaRef } from '@/components/ds/Media'
 type Props = {
   eyebrow?: string
   quote: string
-  name: string
+  name?: string
   role?: string
   image?: MediaRef
   imageUrl?: string
@@ -24,12 +24,14 @@ export function Testimonial({ eyebrow = 'TESTIMONIAL', quote, name, role, image,
         <div className="testimonial__content">
           <MonoLabel accent>{eyebrow}</MonoLabel>
           <blockquote className="testimonial__quote" cite={name}>
-            <p>“{quote}”</p>
+            <p>{name ? `“${quote}”` : quote}</p>
           </blockquote>
-          <figcaption className="testimonial__caption">
-            <p className="testimonial__name">{name}</p>
-            {role && <p className="testimonial__role">{role}</p>}
-          </figcaption>
+          {name && (
+            <figcaption className="testimonial__caption">
+              <p className="testimonial__name">{name}</p>
+              {role && <p className="testimonial__role">{role}</p>}
+            </figcaption>
+          )}
         </div>
       </figure>
     </section>

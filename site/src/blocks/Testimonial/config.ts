@@ -6,7 +6,7 @@ export const TestimonialBlock: Block = {
   fields: [
     { name: 'eyebrow', type: 'text', admin: { description: 'e.g. "TESTIMONIAL / 007".' } },
     { name: 'quote', type: 'textarea', required: true },
-    { name: 'name', type: 'text', required: true },
+    { name: 'name', type: 'text', admin: { description: 'Attribution. Omit for an unattributed principle/statement.' } },
     { name: 'role', type: 'text' },
     { name: 'image', type: 'upload', relationTo: 'media', admin: { description: 'Portrait (left column). Omit for stacked variant.' } },
     { name: 'imageUrl', type: 'text', admin: { description: 'External image URL (overrides upload).' } },

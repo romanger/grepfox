@@ -127,11 +127,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 012',
+        eyebrow: 'PRINCIPLE / 012',
         quote:
-          'The agent took over half of our routine inquiries in month one. By month three our CSAT was up, not down — that was the part nobody believed.',
-        name: 'DANA KOROL',
-        role: 'HEAD OF SUPPORT · NORTHBEAM RETAIL',
+          'We build support agents that take over routine inquiries fast — and measure satisfaction before and after, so impact is a number, not a hope.',
       },
       {
         blockType: 'sectionHead',
@@ -286,11 +284,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 008',
+        eyebrow: 'PRINCIPLE / 008',
         quote:
-          'We deleted eleven spreadsheets in the first quarter. Lead response time went from four hours to forty seconds, and nobody had to be hired to do it.',
-        name: 'OMER SHANI',
-        role: 'REVOPS LEAD · LATTICEWORK',
+          'We replace spreadsheet sprawl with monitored automations — cutting lead-response from hours to seconds, without new headcount.',
       },
       {
         blockType: 'sectionHead',
@@ -445,11 +441,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 015',
+        eyebrow: 'PRINCIPLE / 015',
         quote:
-          'Six weeks from kickoff to launch, and organic traffic was up 30% by the end of the quarter. The marketing team publishes everything themselves now.',
-        name: 'IRIS BAUM',
-        role: 'VP MARKETING · HELIOTROPE',
+          'We ship marketing sites in weeks, not quarters — built so your team publishes everything itself, no developer in the loop.',
       },
       {
         blockType: 'sectionHead',
@@ -605,11 +599,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 009',
+        eyebrow: 'PRINCIPLE / 009',
         quote:
-          'Monday reporting went from half a day of copy-paste to a fifteen-minute read. The first anomaly alert paid for the whole project — a broken pixel we would have found a month later.',
-        name: 'TOM REISS',
-        role: 'COO · FERNWEH TRAVEL',
+          'We turn Monday reporting from half a day of copy-paste into a fifteen-minute read — with anomaly alerts that catch broken tracking early.',
       },
       {
         blockType: 'sectionHead',
@@ -764,11 +756,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 004',
+        eyebrow: 'PRINCIPLE / 004',
         quote:
-          'Two years on retainer, zero unplanned downtime. The quarterly reviews alone are worth it — they catch problems while they are still cheap.',
-        name: 'NOA FELD',
-        role: 'IT DIRECTOR · CASCADE GROUP',
+          'On retainer we engineer for zero unplanned downtime — quarterly reviews that catch problems while they are still cheap to fix.',
       },
       {
         blockType: 'sectionHead',
@@ -924,11 +914,9 @@ export const services = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 011',
+        eyebrow: 'PRINCIPLE / 011',
         quote:
-          'After two workshops the team stopped asking us to fix prompts and started shipping their own automations. The office-hours channel went quiet — in a good way.',
-        name: 'LENA VARGA',
-        role: 'MARKETING OPS LEAD · QUARRYSTONE',
+          'We train your team to ship their own automations — the goal is you stop needing us for the everyday work.',
       },
       {
         blockType: 'sectionHead',
@@ -1386,11 +1374,9 @@ export const pages = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 007',
+        eyebrow: 'PRINCIPLE / 007',
         quote:
-          'They shipped our AI support agent in three weeks. It now handles 40% of tier-one tickets. The rest of our stack got calmer as a side-effect.',
-        name: 'MAYA LENSKY',
-        role: 'DIRECTOR OF GROWTH · ACME SAAS',
+          'We ship a working AI support agent in weeks, scoped to your tier-one tickets — and leave the rest of your stack calmer.',
         image: 'about-mission',
       },
       {
@@ -1817,11 +1803,9 @@ export const pages = [
       },
       {
         blockType: 'testimonial',
-        eyebrow: 'TESTIMONIAL / 002',
+        eyebrow: 'PRINCIPLE / 002',
         quote:
-          'They behave like an in-house team that just happens to work remotely. We stopped looking for a CTO after the first quarter.',
-        name: 'DANIEL ROTH',
-        role: 'CEO · D2C BRAND',
+          'We work like an in-house team that happens to be remote — embedded, accountable, past the first quarter.',
       },
       {
         blockType: 'ctaBanner',
