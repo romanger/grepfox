@@ -65,7 +65,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
         <h1
           style={{
             fontFamily: 'var(--ff-display)',
-            fontSize: 128,
+            fontSize: 'clamp(52px, 9vw, 96px)',
             fontWeight: 700,
             letterSpacing: '-0.05em',
             lineHeight: 0.9,
