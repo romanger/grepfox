@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '@/components/site/Header'
 import { Footer } from '@/components/site/Footer'
 import { MotionRuntime } from '@/components/site/MotionRuntime'
@@ -37,6 +39,8 @@ export default function FrontendLayout({ children }: { children: ReactNode }) {
           <Footer />
         </div>
         <MotionRuntime />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
