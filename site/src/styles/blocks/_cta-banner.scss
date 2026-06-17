@@ -12,6 +12,17 @@
     color: var(--gf-bone);
 
     .cta-banner__contacts { border-top-color: var(--gf-rule); }
+
+    // Accent (orange) button so it doesn't blend into the dark surface.
+    .cta-banner__btn {
+      background: var(--gf-accent);
+      color: var(--gf-void);
+
+      &:hover {
+        background: var(--gf-bone);
+        color: var(--gf-void);
+      }
+    }
   }
 
   &__inner {

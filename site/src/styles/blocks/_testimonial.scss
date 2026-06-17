@@ -53,10 +53,17 @@
   @include md-down {
     grid-template-columns: 1fr;
 
-    &__quote { font-size: 24px; }
+    &__content { padding: 28px; }
+    &--stacked { padding: 28px; gap: 24px; }
+    &__quote {
+      margin-top: 16px;
+      p { font-size: 24px; }
+    }
   }
 
   @include sm-down {
-    &--stacked { padding: 32px; }
+    &__content { padding: 20px; }
+    &--stacked { padding: 20px; }
+    &__quote p { font-size: 20px; }
   }
 }

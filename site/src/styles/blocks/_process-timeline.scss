@@ -36,19 +36,18 @@
     &--6col { grid-template-columns: repeat(6, 1fr); }
   }
 
+  // From tablet down the grid is a single column, so the horizontal
+  // track/progress line no longer maps to the layout — hide it and let
+  // the steps render as a vertical timeline (see .process-step below).
   @include md-down {
     &__grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+
       &--3col,
       &--4col,
       &--5col,
       &--6col { grid-template-columns: 1fr; }
-    }
-  }
-
-  @include sm-down {
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 0;
     }
 
     &__track,
@@ -87,7 +86,7 @@
     line-height: 1.5;
   }
 
-  @include sm-down {
+  @include md-down {
     padding-top: 0;
     padding-left: 28px;
     padding-bottom: 24px;
@@ -104,8 +103,11 @@
     }
 
     &__title {
-      font-size: 20px;
       margin-top: 6px;
     }
+  }
+
+  @include sm-down {
+    &__title { font-size: 20px; }
   }
 }

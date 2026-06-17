@@ -66,16 +66,21 @@
   }
 
   @include md-down {
-    flex-wrap: wrap;
+    // Tablet: the inline nav links don't fit on one row and used to wrap
+    // onto 2–3 lines. Switch to the burger menu here; keep the CTA in the
+    // bar since there's still room next to the burger.
     gap: 12px;
+
+    &__links { display: none; }
+    // On tablet show the burger and put it before the Start CTA.
+    &__burger { display: grid; order: 1; }
+    &__cta { order: 2; }
   }
 
   @include sm-down {
     padding: 14px 20px;
 
-    &__links { display: none; }
     &__cta { display: none; }
-    &__burger { display: grid; }
   }
 }
 
@@ -135,7 +140,7 @@
     justify-content: center;
   }
 
-  @include sm-down {
+  @include md-down {
     display: grid;
   }
 }
