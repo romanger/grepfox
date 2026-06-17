@@ -56,4 +56,4 @@ export default async function HomePage() {
   return <RenderBlocks blocks={(page.layout as any) || []} />
 }
 
-export const revalidate = 60
+export const dynamic = 'force-static'

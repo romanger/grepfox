@@ -59,4 +59,5 @@ export default async function DynamicPage({ params }: { params: Promise<Params> 
   return <RenderBlocks blocks={(page.layout as any) || []} />
 }
 
-export const revalidate = 60
+export const dynamic = 'force-static'
+export const dynamicParams = false

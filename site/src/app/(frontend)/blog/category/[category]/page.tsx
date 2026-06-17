@@ -4,7 +4,6 @@ import config from '@payload-config'
 import { BlogListing } from '@/components/site/BlogListing'
 
 type Params = { category: string }
-type Search = { page?: string }
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config })
@@ -35,17 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
 }
 
-export default async function BlogCategoryPage({
-  params,
-  searchParams,
-}: {
-  params: Promise<Params>
-  searchParams: Promise<Search>
-}) {
+export default async function BlogCategoryPage({ params }: { params: Promise<Params> }) {
   const { category } = await params
-  const { page: pageParam } = await searchParams
-  const page = Math.max(1, parseInt(pageParam || '1', 10) || 1)
-  return <BlogListing categorySlug={category} page={page} />
+  return <BlogListing categorySlug={category} page={1} />
 }
 
-export const revalidate = 60
+export const dynamic = 'force-static'
+export const dynamicParams = false

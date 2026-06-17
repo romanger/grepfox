@@ -206,4 +206,5 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
   )
 }
 
-export const revalidate = 60
+export const dynamic = 'force-static'
+export const dynamicParams = false
