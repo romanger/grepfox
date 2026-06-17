@@ -14,6 +14,7 @@ import { AccordionFAQ } from './AccordionFAQ/Component'
 import { RichTextBlockComponent } from './RichText/Component'
 import { Marquee } from './Marquee/Component'
 import { AccentBlock } from './AccentBlock/Component'
+import { ContactFormSection } from './ContactForm/Component'
 
 export const blockRegistry: Record<string, ComponentType<any>> = {
   heroSplit: HeroSplit,
@@ -31,4 +32,5 @@ export const blockRegistry: Record<string, ComponentType<any>> = {
   richText: RichTextBlockComponent,
   marquee: Marquee,
   accentBlock: AccentBlock,
+  contactForm: ContactFormSection,
 }

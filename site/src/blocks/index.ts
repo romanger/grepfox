@@ -13,6 +13,7 @@ import { AccordionFAQBlock } from './AccordionFAQ/config'
 import { RichTextBlock } from './RichText/config'
 import { MarqueeBlock } from './Marquee/config'
 import { AccentBlockBlock } from './AccentBlock/config'
+import { ContactFormBlock } from './ContactForm/config'
 
 export const allBlocks = [
   HeroSplitBlock,
@@ -30,6 +31,7 @@ export const allBlocks = [
   AccordionFAQBlock,
   RichTextBlock,
   CTABannerBlock,
+  ContactFormBlock,
 ]
 
 export {
@@ -48,4 +50,5 @@ export {
   RichTextBlock,
   MarqueeBlock,
   AccentBlockBlock,
+  ContactFormBlock,
 }

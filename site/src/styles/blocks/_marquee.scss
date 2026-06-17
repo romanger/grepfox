@@ -7,6 +7,15 @@
   overflow: hidden;
   white-space: nowrap;
 
+  &--accent {
+    background: var(--gf-accent);
+    color: var(--gf-void);
+    border-color: var(--gf-accent);
+  }
+
+  &__plus { color: var(--gf-accent); }
+  &--accent &__plus { color: var(--gf-void); }
+
   &__text {
     font-family: var(--ff-display);
     font-size: 72px;

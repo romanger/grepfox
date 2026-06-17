@@ -81,6 +81,9 @@
   gap: 32px;
   align-items: baseline;
 
+  // No number → single column, so the title doesn't sit in the number slot.
+  &--bare { grid-template-columns: 1fr; }
+
   &__n {
     @include mono(12px, 0.18em, var(--gf-accent));
   }

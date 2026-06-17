@@ -1422,8 +1422,7 @@ export const pages = [
         title: "Let's figure out what to ship first.",
         action: link('Start a conversation', '/contact', 'secondary'),
         contacts: [
-          { icon: 'mail', value: 'HELLO@GREPFOX.COM' },
-          { icon: 'phone', value: '+1 (415) 555 0123' },
+          { icon: 'calendar', value: 'BOOK A CALL · CAL.COM/GREPFOX' },
           { icon: 'map-pin', value: 'REMOTE · WORLDWIDE' },
           { icon: 'clock', value: '< 1 BUSINESS DAY · HUMANS + AGENTS' },
         ],
@@ -1826,26 +1825,65 @@ export const pages = [
       {
         blockType: 'heroSplit',
         eyebrow: 'CONTACT',
-        title: 'Start a conversation.',
+        title: "Let's build something.",
         subtitle:
           'A 30-minute discovery call, no slides. We map your systems, pick an entry point, and send a scoped pilot proposal within a week.',
-        actions: [
-          link('Email us', 'mailto:hello@grepfox.com', 'primary'),
-          link('Book a call', 'https://cal.com/', 'outline', true),
-        ],
         image: 'contact-hero',
-        imageCaption: 'LET US BUILD SOMETHING.',
+        imageCaption: 'OPEN A LINE.',
       },
       {
-        blockType: 'ctaBanner',
+        blockType: 'numbers',
+        surface: true,
+        items: [
+          { value: '< 1 day', label: 'First reply', sublabel: 'usually the same day', accent: true },
+          { value: '30 min', label: 'Discovery call', sublabel: 'no slides' },
+          { value: '1 week', label: 'Scoped proposal', sublabel: 'in your inbox' },
+          { value: '2–4 wks', label: 'First pilot ships', sublabel: 'measured impact' },
+        ],
+      },
+      {
+        blockType: 'contactForm',
         accent: true,
-        eyebrow: 'DIRECT LINES',
-        title: "Drop us a line. We read everything.",
-        action: link('hello@grepfox.com', 'mailto:hello@grepfox.com', 'secondary'),
-        contacts: [
-          { icon: 'mail', label: 'EMAIL', value: 'hello@grepfox.com' },
-          { icon: 'clock', label: 'RESPONSE', value: '< 1 business day' },
-          { icon: 'calendar', label: 'DISCOVERY CALL', value: '30 minutes, no slides' },
+        eyebrow: 'TRANSMIT',
+        title: 'Tell us what you need.',
+        subtitle: 'Fill in the form and it lands straight in our inbox. We read everything.',
+        asideEyebrow: 'PREFER TO TALK?',
+        asideTitle: 'Book a 30-minute call.',
+        asideText:
+          'A real human reads and replies — not a ticket bot. Within one business day, usually the same one.',
+        callLabel: 'Book a call',
+        callUrl: 'https://cal.com/grepfox',
+      },
+      {
+        blockType: 'sectionHead',
+        title: 'AFTER YOU HIT SEND.',
+        subtitle: 'No black box. Here is exactly what happens next.',
+        surface: true,
+      },
+      {
+        blockType: 'processTimeline',
+        surface: true,
+        steps: [
+          {
+            number: '01',
+            title: 'You reach out',
+            description: 'Form or a call — a sentence about what you are solving is enough to start.',
+          },
+          {
+            number: '02',
+            title: 'We reply',
+            description: 'Same day, usually. A real human, with the first questions.',
+          },
+          {
+            number: '03',
+            title: '30-min discovery call',
+            description: 'We map your systems and pick the entry point together. No slides.',
+          },
+          {
+            number: '04',
+            title: 'Scoped proposal',
+            description: 'A written plan and a scoped pilot — in your inbox within a week.',
+          },
         ],
       },
       {
@@ -1918,7 +1956,7 @@ export const pages = [
             icon: 'check',
             title: 'Your controls',
             description:
-              'Ask what we hold, fix it, or have it deleted — one email to hello@grepfox.com, answered within a business day.',
+              'Ask what we hold, fix it, or have it deleted — one message through our contact form, answered within a business day.',
           },
         ],
       },
@@ -1961,17 +1999,17 @@ export const pages = [
           ),
           h('h2', 'Your rights'),
           p(
-            'You may request access to, correction of, or deletion of your personal data at any time. Write to hello@grepfox.com and we will respond within one business day.',
+            'You may request access to, correction of, or deletion of your personal data at any time. Reach us through the contact form and we will respond within one business day.',
           ),
           h('h2', 'Contact'),
-          p('Questions about this policy: hello@grepfox.com.'),
+          p('Questions about this policy? Reach us through the contact form.'),
         ),
       },
       {
         blockType: 'ctaBanner',
         accent: false,
         title: 'Questions about your data?',
-        action: link('Write to us', 'mailto:hello@grepfox.com', 'primary'),
+        action: link('Contact us', '/contact', 'primary'),
       },
     ],
   },
@@ -2054,14 +2092,14 @@ export const pages = [
             'We may update these terms from time to time. The date above reflects the latest revision; continued use of the site after a change constitutes acceptance.',
           ),
           h('h2', 'Contact'),
-          p('Questions about these terms: hello@grepfox.com.'),
+          p('Questions about these terms? Reach us through the contact form.'),
         ),
       },
       {
         blockType: 'ctaBanner',
         accent: false,
         title: 'Questions about these terms?',
-        action: link('Write to us', 'mailto:hello@grepfox.com', 'primary'),
+        action: link('Contact us', '/contact', 'primary'),
       },
     ],
   },
@@ -2109,8 +2147,8 @@ export const footer = {
     {
       title: 'CONTACT',
       links: [
-        { icon: 'mail', link: { type: 'external', url: 'mailto:hello@grepfox.com', label: 'hello@grepfox.com' } },
-        { icon: 'phone', link: { type: 'external', url: 'tel:+14155550123', label: '+1 (415) 555 0123' } },
+        { icon: 'message', link: { type: 'external', url: '/contact', label: 'Get in touch' } },
+        { icon: 'calendar', link: { type: 'external', url: 'https://cal.com/grepfox', label: 'Book a call', newTab: true } },
         { icon: 'map-pin', link: { type: 'external', url: '/about', label: 'Remote · Worldwide' } },
       ],
     },

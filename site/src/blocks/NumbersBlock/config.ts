@@ -16,5 +16,6 @@ export const NumbersBlock: Block = {
         { name: 'accent', type: 'checkbox', admin: { description: 'Render value in hazard orange. First item defaults to accent if unset.' } },
       ],
     },
+    { name: 'surface', type: 'checkbox', admin: { description: 'Fill the band with a raised surface background.' } },
   ],
 }

@@ -10,5 +10,6 @@ export const MarqueeBlock: Block = {
       minRows: 3,
       fields: [{ name: 'text', type: 'text', required: true }],
     },
+    { name: 'accent', type: 'checkbox', admin: { description: 'Orange (hazard) background for a bright accent break.' } },
   ],
 }

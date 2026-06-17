@@ -6,13 +6,16 @@ type Item = {
   id?: string
 }
 
-type Props = { items: Item[] }
+type Props = { items: Item[]; surface?: boolean }
 
-export function Numbers({ items }: Props) {
+export function Numbers({ items, surface }: Props) {
   const cols = Math.min(Math.max(items.length, 2), 4) as 2 | 3 | 4
   return (
     <section className="block-spacer" aria-label="Key numbers">
-      <ul className={`numbers-block numbers-block--${cols}col`} role="list">
+      <ul
+        className={`numbers-block numbers-block--${cols}col${surface ? ' numbers-block--surface' : ''}`}
+        role="list"
+      >
         {items.map((item, i) => {
           const isAccent = item.accent ?? i === 0
           const valueCls = `numbers-block__value${isAccent ? ' numbers-block__value--accent' : ''}`

@@ -9,6 +9,14 @@
   padding: 0;
   list-style: none;
 
+  // Surface fill already separates the band; drop its own rules to avoid
+  // doubling up with the section dividers above/below.
+  &--surface {
+    background: var(--gf-surface);
+    border-top: none;
+    border-bottom: none;
+  }
+
   &--2col { grid-template-columns: repeat(2, 1fr); }
   &--3col { grid-template-columns: repeat(3, 1fr); }
   &--4col { grid-template-columns: repeat(4, 1fr); }

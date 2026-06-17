@@ -2,6 +2,14 @@
 
 .block-spacer + .block-spacer { border-top: 1px solid var(--gf-rule); }
 
+// Raised section background, for alternating contrast between sections.
+.is-surface { background: var(--gf-surface); }
+// Adjacent surface sections read as one panel — drop the divider between them.
+.is-surface + .is-surface { border-top: none; }
+// The section-head carries its own border-top; inside a surface wrapper that
+// doubles the section divider, so drop the inner one.
+.is-surface .section-head { border-top: none; }
+
 .block-pad {
   padding: 48px 56px;
 

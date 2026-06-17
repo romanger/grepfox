@@ -4,11 +4,12 @@ type Props = {
   number?: string
   title: string
   subtitle?: string
+  surface?: boolean
 }
 
-export function SectionHead(props: Props) {
+export function SectionHead({ surface, ...props }: Props) {
   return (
-    <header className="block-spacer">
+    <header className={`block-spacer${surface ? ' is-surface' : ''}`}>
       <SectionHeadDS {...props} />
     </header>
   )

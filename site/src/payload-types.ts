@@ -363,6 +363,10 @@ export interface Page {
             number?: string | null;
             title: string;
             subtitle?: string | null;
+            /**
+             * Raised surface background (pairs with a surface block below).
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'sectionHead';
@@ -478,6 +482,10 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Fill the band with a raised surface background.
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'numbers';
@@ -494,6 +502,10 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Raised surface background.
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'processTimeline';
@@ -632,6 +644,10 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Orange (hazard) background for a bright accent break.
+             */
+            accent?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'marquee';
@@ -792,6 +808,29 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'ctaBanner';
+          }
+        | {
+            /**
+             * e.g. "TRANSMIT".
+             */
+            eyebrow?: string | null;
+            title?: string | null;
+            subtitle?: string | null;
+            asideEyebrow?: string | null;
+            asideTitle?: string | null;
+            asideText?: string | null;
+            callLabel?: string | null;
+            /**
+             * Booking link, e.g. cal.com.
+             */
+            callUrl?: string | null;
+            /**
+             * Orange (hazard) section background.
+             */
+            accent?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactForm';
           }
       )[]
     | null;
@@ -1050,6 +1089,10 @@ export interface Service {
             number?: string | null;
             title: string;
             subtitle?: string | null;
+            /**
+             * Raised surface background (pairs with a surface block below).
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'sectionHead';
@@ -1165,6 +1208,10 @@ export interface Service {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Fill the band with a raised surface background.
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'numbers';
@@ -1181,6 +1228,10 @@ export interface Service {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Raised surface background.
+             */
+            surface?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'processTimeline';
@@ -1319,6 +1370,10 @@ export interface Service {
                   id?: string | null;
                 }[]
               | null;
+            /**
+             * Orange (hazard) background for a bright accent break.
+             */
+            accent?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'marquee';
@@ -1479,6 +1534,29 @@ export interface Service {
             id?: string | null;
             blockName?: string | null;
             blockType: 'ctaBanner';
+          }
+        | {
+            /**
+             * e.g. "TRANSMIT".
+             */
+            eyebrow?: string | null;
+            title?: string | null;
+            subtitle?: string | null;
+            asideEyebrow?: string | null;
+            asideTitle?: string | null;
+            asideText?: string | null;
+            callLabel?: string | null;
+            /**
+             * Booking link, e.g. cal.com.
+             */
+            callUrl?: string | null;
+            /**
+             * Orange (hazard) section background.
+             */
+            accent?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactForm';
           }
       )[]
     | null;
@@ -1780,6 +1858,7 @@ export interface PagesSelect<T extends boolean = true> {
               number?: T;
               title?: T;
               subtitle?: T;
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -1814,6 +1893,7 @@ export interface PagesSelect<T extends boolean = true> {
                     accent?: T;
                     id?: T;
                   };
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -1828,6 +1908,7 @@ export interface PagesSelect<T extends boolean = true> {
                     description?: T;
                     id?: T;
                   };
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -1929,6 +2010,7 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
+              accent?: T;
               id?: T;
               blockName?: T;
             };
@@ -1991,6 +2073,21 @@ export interface PagesSelect<T extends boolean = true> {
                     value?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        contactForm?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              subtitle?: T;
+              asideEyebrow?: T;
+              asideTitle?: T;
+              asideText?: T;
+              callLabel?: T;
+              callUrl?: T;
+              accent?: T;
               id?: T;
               blockName?: T;
             };
@@ -2070,6 +2167,7 @@ export interface ServicesSelect<T extends boolean = true> {
               number?: T;
               title?: T;
               subtitle?: T;
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -2104,6 +2202,7 @@ export interface ServicesSelect<T extends boolean = true> {
                     accent?: T;
                     id?: T;
                   };
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -2118,6 +2217,7 @@ export interface ServicesSelect<T extends boolean = true> {
                     description?: T;
                     id?: T;
                   };
+              surface?: T;
               id?: T;
               blockName?: T;
             };
@@ -2219,6 +2319,7 @@ export interface ServicesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
+              accent?: T;
               id?: T;
               blockName?: T;
             };
@@ -2281,6 +2382,21 @@ export interface ServicesSelect<T extends boolean = true> {
                     value?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        contactForm?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              subtitle?: T;
+              asideEyebrow?: T;
+              asideTitle?: T;
+              asideText?: T;
+              callLabel?: T;
+              callUrl?: T;
+              accent?: T;
               id?: T;
               blockName?: T;
             };

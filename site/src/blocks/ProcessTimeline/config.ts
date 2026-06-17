@@ -14,5 +14,6 @@ export const ProcessTimelineBlock: Block = {
         { name: 'description', type: 'textarea' },
       ],
     },
+    { name: 'surface', type: 'checkbox', admin: { description: 'Raised surface background.' } },
   ],
 }

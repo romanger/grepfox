@@ -6,12 +6,12 @@ type Step = {
   id?: string
 }
 
-export function ProcessTimeline({ steps }: { steps: Step[] }) {
+export function ProcessTimeline({ steps, surface }: { steps: Step[]; surface?: boolean }) {
   const cols = Math.min(Math.max(steps.length, 3), 6) as 3 | 4 | 5 | 6
   const autoDoneCutoff = Math.ceil(steps.length * 0.6)
 
   return (
-    <section className="block-spacer block-pad" aria-label="Process">
+    <section className={`block-spacer block-pad${surface ? ' is-surface' : ''}`} aria-label="Process">
       <div className="process-timeline">
         <div className="process-timeline__track" aria-hidden="true" />
         <div className="process-timeline__progress" aria-hidden="true" />

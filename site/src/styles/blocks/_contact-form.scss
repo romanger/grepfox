@@ -1,0 +1,168 @@
+@use '../abstracts' as *;
+
+.contact {
+  &__head { margin-bottom: 40px; }
+
+  &__title {
+    @include display(56px, 700, -0.03em, 1);
+    margin: 16px 0 0;
+
+    @include sm-down { font-size: 38px; }
+  }
+
+  &__subtitle {
+    margin: 16px 0 0;
+    font-size: 18px;
+    color: var(--gf-bone-dim);
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 32px;
+    align-items: start;
+
+    @include md-down { grid-template-columns: 1fr; }
+  }
+
+  &__aside {
+    border: 1px solid var(--gf-rule);
+    background: var(--gf-surface);
+    padding: 32px;
+
+    @include sm-down { padding: 24px; }
+  }
+
+  &__aside-title {
+    @include display(28px, 700, -0.02em, 1.05);
+    margin: 16px 0 24px;
+  }
+
+  &__aside-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__aside-text {
+    margin: 24px 0 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--gf-rule);
+    font-size: 15px;
+    color: var(--gf-bone-dim);
+    line-height: 1.5;
+  }
+
+  // Orange (hazard) section — flip text and controls to dark for contrast,
+  // and turn the aside / success panels into dark cards on the orange field.
+  &--accent {
+    background: var(--gf-accent);
+    color: var(--gf-void);
+
+    .contact__title { color: var(--gf-void); }
+    .contact__subtitle {
+      color: var(--gf-void);
+      opacity: 0.82;
+    }
+    // The form's own eyebrow (not the aside's) sits on orange — dark it.
+    > .contact__head .mono-label--accent { color: var(--gf-void); }
+
+    .input {
+      background: var(--gf-void);
+      border-color: var(--gf-void);
+      color: var(--gf-bone);
+
+      &:focus { border-color: var(--gf-bone); }
+    }
+
+    .btn--primary {
+      background: var(--gf-void);
+      color: var(--gf-accent);
+
+      &:hover {
+        background: var(--gf-bone);
+        color: var(--gf-void);
+      }
+    }
+
+    .input-group__hint--error,
+    .contact-form__msg,
+    .contact-form__msg--error { color: var(--gf-void); }
+
+    .contact__aside,
+    .contact-form__success {
+      background: var(--gf-void);
+      border-color: var(--gf-void);
+      color: var(--gf-bone);
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @include sm-down { grid-template-columns: 1fr; }
+  }
+
+  &__message { min-height: 160px; }
+
+  // Honeypot — visually and functionally hidden, off-screen for bots only.
+  &__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn { align-self: flex-start; }
+
+  &__msg {
+    @include mono(12px, 0.08em, var(--gf-subtle));
+    margin: 0;
+
+    &--error { color: var(--gf-accent); }
+  }
+
+  &__success {
+    max-width: 640px;
+    padding: 40px;
+    border: 1px solid var(--gf-rule);
+    background: var(--gf-surface);
+    animation: contact-success-in 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &__success-title {
+    @include display(32px, 700, -0.02em, 1.05);
+    margin: 16px 0 0;
+  }
+
+  &__success-text {
+    margin: 12px 0 0;
+    max-width: 480px;
+    font-size: 16px;
+    color: var(--gf-bone-dim);
+    line-height: 1.5;
+  }
+}
+
+@keyframes contact-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

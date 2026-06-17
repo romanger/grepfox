@@ -10,7 +10,7 @@ function Line({ items }: { items: Item[] }) {
           {i > 0 && (
             <>
               {' '}
-              <span style={{ color: 'var(--gf-accent)' }}>+</span>{' '}
+              <span className="marquee__plus">+</span>{' '}
             </>
           )}
           {it.text}
@@ -20,10 +20,10 @@ function Line({ items }: { items: Item[] }) {
   )
 }
 
-export function Marquee({ items }: { items: Item[] }) {
+export function Marquee({ items, accent }: { items: Item[]; accent?: boolean }) {
   return (
     <section className="block-spacer" aria-label="Marquee">
-      <div className="marquee">
+      <div className={`marquee${accent ? ' marquee--accent' : ''}`}>
         <p className="marquee__text">
           <Line items={items} />
           <span aria-hidden="true">
